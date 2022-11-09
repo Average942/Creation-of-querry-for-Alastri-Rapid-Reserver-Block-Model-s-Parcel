@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -27,7 +28,32 @@ namespace Diplom
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            firstMethod.Visibility = Visibility.Visible;
+            secondMethod.Visibility = Visibility.Collapsed;
+            thirdMethod.Visibility = Visibility.Collapsed;
+            BtnM1.BorderBrush = new SolidColorBrush(Colors.LightSkyBlue);
+            BtnM2.BorderBrush = new SolidColorBrush(Colors.Gray);
+            BtnM3.BorderBrush = new SolidColorBrush(Colors.Gray);
+        }
 
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            firstMethod.Visibility=Visibility.Collapsed;
+            secondMethod.Visibility=Visibility.Visible;
+            thirdMethod.Visibility=Visibility.Collapsed;
+            BtnM1.BorderBrush = new SolidColorBrush(Colors.Gray);
+            BtnM2.BorderBrush = new SolidColorBrush(Colors.LightSkyBlue);
+            BtnM3.BorderBrush = new SolidColorBrush(Colors.Gray);
+        }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            firstMethod.Visibility= Visibility.Collapsed;
+            secondMethod.Visibility = Visibility.Collapsed;
+            thirdMethod.Visibility = Visibility.Visible;
+            BtnM1.BorderBrush = new SolidColorBrush(Colors.Gray);
+            BtnM2.BorderBrush = new SolidColorBrush(Colors.Gray);
+            BtnM3.BorderBrush = new SolidColorBrush(Colors.LightSkyBlue);
         }
     }
 }

@@ -9,11 +9,11 @@
     <Grid>
         <Border BorderBrush="Gray" BorderThickness="1" HorizontalAlignment="Center" Height="17" VerticalAlignment="Top" Width="800"/>
 
-        <Button Content="Method 3" HorizontalAlignment="Left" VerticalAlignment="Top" Height="17" Width="110" Margin="218,0,0,0"/>
+        <Button x:Name="BtnM3" Content="Method 3" HorizontalAlignment="Left" VerticalAlignment="Top" Height="17" Width="110" Margin="218,0,0,0" Click="Button_Click_2" BorderBrush="Gray"/>
 
-        <Button Content="Method 2" HorizontalAlignment="Left" VerticalAlignment="Top" Height="17" Width="110" Margin="109,0,0,0"/>
+        <Button x:Name="BtnM2" Content="Method 2" HorizontalAlignment="Left" VerticalAlignment="Top" Height="17" Width="110" Margin="109,0,0,0" Click="Button_Click_1" BorderBrush="Gray"/>
 
-        <Button Content="Method 1" HorizontalAlignment="Left" VerticalAlignment="Top" Height="17" Width="110" Click="Button_Click"/>
+        <Button x:Name="BtnM1" Content="Method 1" HorizontalAlignment="Left" VerticalAlignment="Top" Height="17" Width="110" Click="Button_Click" BorderBrush="LightSkyBlue"/>
         <Grid x:Name="firstMethod" Visibility="Visible" HorizontalAlignment="Left" Height="50" VerticalAlignment="Top" Width="428" Margin="18,22,0,0">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="209*"/>
@@ -28,10 +28,10 @@
             <Label Content="Result of &gt;value" HorizontalAlignment="Left" Margin="330,0,0,0" VerticalAlignment="Top" Height="27" Width="98" Grid.ColumnSpan="2"/>
             <TextBox HorizontalAlignment="Left" Margin="330,32,0,0" TextWrapping="Wrap" Text="waste" VerticalAlignment="Top" Width="98" Grid.ColumnSpan="2"/>
         </Grid>
-        <Grid x:Name="secondMethod" Visibility="Collapsed" HorizontalAlignment="Left" Height="112" VerticalAlignment="Top" Width="566" Margin="18,83,0,0">
+        <Grid x:Name="secondMethod" Visibility="Collapsed" HorizontalAlignment="Left" Height="112" VerticalAlignment="Top" Width="566" Margin="18,22,0,0">
             <Label Content="Ore Name" HorizontalAlignment="Left" VerticalAlignment="Top" Height="27" Width="120"/>
             <TextBox HorizontalAlignment="Left" Margin="0,32,0,0" TextWrapping="Wrap" Text="OreName" VerticalAlignment="Top" Width="120"/>
-            <Label Content="Value hg" HorizontalAlignment="Left" Margin="136,0,0,0" VerticalAlignment="Top" Height="27" Width="66"/>
+            <Label Content="Value hg" HorizontalAlignment="Left" Margin="135,0,0,0" VerticalAlignment="Top" Height="27" Width="66"/>
             <TextBox HorizontalAlignment="Left" Margin="136,32,0,0" TextWrapping="Wrap" Text="hg" VerticalAlignment="Top" Width="66"/>
             <Label Content="&gt;hg" HorizontalAlignment="Left" Margin="136,63,0,0" VerticalAlignment="Top" Height="28" Width="50"/>
             <TextBox HorizontalAlignment="Left" Margin="136,95,0,0" TextWrapping="Wrap" Text="hg" VerticalAlignment="Top" Width="50"/>
@@ -57,7 +57,7 @@
             <TextBox HorizontalAlignment="Left" Margin="500,32,0,0" TextWrapping="Wrap" Text="w" VerticalAlignment="Top" Width="66"/>
 
         </Grid>
-        <Grid x:Name="thirdMethod"  Visibility="Collapsed" HorizontalAlignment="Left" Height="236" VerticalAlignment="Top" Width="566" Margin="18,200,0,0">
+        <Grid x:Name="thirdMethod"  Visibility="Collapsed" HorizontalAlignment="Left" Height="236" VerticalAlignment="Top" Width="566" Margin="18,22,0,0">
             <Label Content="Main Ore Name" HorizontalAlignment="Left" VerticalAlignment="Top" Width="102"/>
             <Label Content="Add Ore 1 Name" HorizontalAlignment="Left" Margin="1,25,0,0" VerticalAlignment="Top" Width="70" FontSize="8" Height="21"/>
             <Label Content="Add Ore 2 Name" HorizontalAlignment="Left" Margin="0,51,0,0" VerticalAlignment="Top" Width="70" FontSize="8" Height="21"/>
