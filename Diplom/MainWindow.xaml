@@ -1,0 +1,115 @@
+﻿<Window x:Class="Diplom.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Diplom"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="718" Width="800">
+    <Grid>
+        <Border BorderBrush="Gray" BorderThickness="1" HorizontalAlignment="Center" Height="17" VerticalAlignment="Top" Width="800"/>
+
+        <Button Content="Method 3" HorizontalAlignment="Left" VerticalAlignment="Top" Height="17" Width="110" Margin="218,0,0,0"/>
+
+        <Button Content="Method 2" HorizontalAlignment="Left" VerticalAlignment="Top" Height="17" Width="110" Margin="109,0,0,0"/>
+
+        <Button Content="Method 1" HorizontalAlignment="Left" VerticalAlignment="Top" Height="17" Width="110" Click="Button_Click"/>
+        <Grid x:Name="firstMethod" Visibility="Visible" HorizontalAlignment="Left" Height="50" VerticalAlignment="Top" Width="428" Margin="18,22,0,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="209*"/>
+                <ColumnDefinition Width="5*"/>
+            </Grid.ColumnDefinitions>
+            <Label Content="Ore Name" HorizontalAlignment="Left" VerticalAlignment="Top" Height="27" Width="120"/>
+            <TextBox HorizontalAlignment="Left" Margin="0,32,0,0" TextWrapping="Wrap" Text="OreName" VerticalAlignment="Top" Width="120"/>
+            <Label Content="Value" HorizontalAlignment="Left" Margin="135,0,0,0" VerticalAlignment="Top" Height="27" Width="66"/>
+            <TextBox HorizontalAlignment="Left" Margin="135,32,0,0" TextWrapping="Wrap" Text="Value" VerticalAlignment="Top" Width="66"/>
+            <Label Content="Result of &gt;value" HorizontalAlignment="Left" Margin="216,0,0,0" VerticalAlignment="Top" Height="27" Width="98"/>
+            <TextBox HorizontalAlignment="Left" Margin="216,32,0,0" TextWrapping="Wrap" Text="ore" VerticalAlignment="Top" Width="98"/>
+            <Label Content="Result of &gt;value" HorizontalAlignment="Left" Margin="330,0,0,0" VerticalAlignment="Top" Height="27" Width="98" Grid.ColumnSpan="2"/>
+            <TextBox HorizontalAlignment="Left" Margin="330,32,0,0" TextWrapping="Wrap" Text="waste" VerticalAlignment="Top" Width="98" Grid.ColumnSpan="2"/>
+        </Grid>
+        <Grid x:Name="secondMethod" Visibility="Collapsed" HorizontalAlignment="Left" Height="112" VerticalAlignment="Top" Width="566" Margin="18,83,0,0">
+            <Label Content="Ore Name" HorizontalAlignment="Left" VerticalAlignment="Top" Height="27" Width="120"/>
+            <TextBox HorizontalAlignment="Left" Margin="0,32,0,0" TextWrapping="Wrap" Text="OreName" VerticalAlignment="Top" Width="120"/>
+            <Label Content="Value hg" HorizontalAlignment="Left" Margin="136,0,0,0" VerticalAlignment="Top" Height="27" Width="66"/>
+            <TextBox HorizontalAlignment="Left" Margin="136,32,0,0" TextWrapping="Wrap" Text="hg" VerticalAlignment="Top" Width="66"/>
+            <Label Content="&gt;hg" HorizontalAlignment="Left" Margin="136,63,0,0" VerticalAlignment="Top" Height="28" Width="50"/>
+            <TextBox HorizontalAlignment="Left" Margin="136,95,0,0" TextWrapping="Wrap" Text="hg" VerticalAlignment="Top" Width="50"/>
+            <Label Content="Value mg" HorizontalAlignment="Left" Margin="210,0,0,0" VerticalAlignment="Top" Height="27" Width="66"/>
+            <TextBox HorizontalAlignment="Left" Margin="210,32,0,0" TextWrapping="Wrap" Text="mg" VerticalAlignment="Top" Width="66"/>
+            <Label Content="&gt;mg" HorizontalAlignment="Left" Margin="210,63,0,0" VerticalAlignment="Top" Height="28" Width="50"/>
+            <TextBox HorizontalAlignment="Left" Margin="210,95,0,0" TextWrapping="Wrap" Text="mg" VerticalAlignment="Top" Width="50"/>
+            <Label Content="Value lg1" HorizontalAlignment="Left" Margin="282,0,0,0" VerticalAlignment="Top" Height="27" Width="66"/>
+            <TextBox HorizontalAlignment="Left" Margin="282,32,0,0" TextWrapping="Wrap" Text="lg1" VerticalAlignment="Top" Width="66"/>
+            <Label Content="&gt;lg1" HorizontalAlignment="Left" Margin="282,63,0,0" VerticalAlignment="Top" Height="28" Width="50"/>
+            <TextBox HorizontalAlignment="Left" Margin="282,95,0,0" TextWrapping="Wrap" Text="lg1" VerticalAlignment="Top" Width="50" />
+            <Label Content="Value lg2" HorizontalAlignment="Left" Margin="352,0,0,0" VerticalAlignment="Top" Height="27" Width="66"/>
+            <TextBox HorizontalAlignment="Left" Margin="352,32,0,0" TextWrapping="Wrap" Text="lg2" VerticalAlignment="Top" Width="66"/>
+            <Label Content="&gt;lg2" HorizontalAlignment="Left" Margin="352,63,0,0" VerticalAlignment="Top" Height="28" Width="50"/>
+            <TextBox HorizontalAlignment="Left" Margin="352,95,0,0" TextWrapping="Wrap" Text="lg2" VerticalAlignment="Top" Width="50"/>
+            <Label Content="Value minv" HorizontalAlignment="Left" Margin="424,0,0,0" VerticalAlignment="Top" Height="27" Width="70"/>
+            <TextBox HorizontalAlignment="Left" Margin="424,32,0,0" TextWrapping="Wrap" Text="minv" VerticalAlignment="Top" Width="66"/>
+            <Label Content="&gt;minv" HorizontalAlignment="Left" Margin="424,63,0,0" VerticalAlignment="Top" Height="28" Width="50"/>
+            <TextBox HorizontalAlignment="Left" Margin="424,95,0,0" TextWrapping="Wrap" Text="minw" VerticalAlignment="Top" Width="50"/>
+            <Label Content="other" HorizontalAlignment="Left" Margin="500,63,0,0" VerticalAlignment="Top" Height="28" Width="50"/>
+            <TextBox HorizontalAlignment="Left" Margin="500,95,0,0" TextWrapping="Wrap" Text="w" VerticalAlignment="Top" Width="50"/>
+            <Label Content="Value w" HorizontalAlignment="Left" Margin="500,0,0,0" VerticalAlignment="Top" Height="27" Width="66"/>
+            <TextBox HorizontalAlignment="Left" Margin="500,32,0,0" TextWrapping="Wrap" Text="w" VerticalAlignment="Top" Width="66"/>
+
+        </Grid>
+        <Grid x:Name="thirdMethod"  Visibility="Collapsed" HorizontalAlignment="Left" Height="236" VerticalAlignment="Top" Width="566" Margin="18,200,0,0">
+            <Label Content="Main Ore Name" HorizontalAlignment="Left" VerticalAlignment="Top" Width="102"/>
+            <Label Content="Add Ore 1 Name" HorizontalAlignment="Left" Margin="1,25,0,0" VerticalAlignment="Top" Width="70" FontSize="8" Height="21"/>
+            <Label Content="Add Ore 2 Name" HorizontalAlignment="Left" Margin="0,51,0,0" VerticalAlignment="Top" Width="70" FontSize="8" Height="21"/>
+            <Label Content="AO1 Value" HorizontalAlignment="Left" Margin="208,131,0,0" VerticalAlignment="Top" Width="66" FontSize="8" Height="20"/>
+            <Label Content="AO2 Value" HorizontalAlignment="Left" Margin="282,131,0,0" VerticalAlignment="Top" Width="66" FontSize="8" Height="20"/>
+            <Label Content="Value hg" HorizontalAlignment="Left" Margin="208,0,0,0" VerticalAlignment="Top" Height="27" Width="66"/>
+            <TextBox HorizontalAlignment="Left" Margin="208,32,0,0" TextWrapping="Wrap" Text="hg" VerticalAlignment="Top" Width="66"/>
+            <Label Content="&gt;hg" HorizontalAlignment="Left" Margin="208,63,0,0" VerticalAlignment="Top" Height="28" Width="50"/>
+            <TextBox HorizontalAlignment="Left" Margin="208,95,0,0" TextWrapping="Wrap" Text="hg" VerticalAlignment="Top" Width="50"/>
+            <Label Content="Value bg" HorizontalAlignment="Left" Margin="282,0,0,0" VerticalAlignment="Top" Height="27" Width="66"/>
+            <TextBox HorizontalAlignment="Left" Margin="282,32,0,0" TextWrapping="Wrap" Text="bg" VerticalAlignment="Top" Width="66"/>
+            <Label Content="&gt;bg" HorizontalAlignment="Left" Margin="282,63,0,0" VerticalAlignment="Top" Height="28" Width="50"/>
+            <TextBox HorizontalAlignment="Left" Margin="282,95,0,0" TextWrapping="Wrap" Text="bg" VerticalAlignment="Top" Width="50"/>
+            <Label Content="Value lg" HorizontalAlignment="Left" Margin="354,0,0,0" VerticalAlignment="Top" Height="27" Width="66"/>
+            <TextBox HorizontalAlignment="Left" Margin="354,32,0,0" TextWrapping="Wrap" Text="lg" VerticalAlignment="Top" Width="66"/>
+            <Label Content="&gt;lg" HorizontalAlignment="Left" Margin="354,63,0,0" VerticalAlignment="Top" Height="28" Width="50"/>
+            <TextBox HorizontalAlignment="Left" Margin="354,95,0,0" TextWrapping="Wrap" Text="lg" VerticalAlignment="Top" Width="50" />
+            <Label Content="Value minv" HorizontalAlignment="Left" Margin="425,0,0,0" VerticalAlignment="Top" Height="27" Width="70"/>
+            <TextBox HorizontalAlignment="Left" Margin="425,32,0,0" TextWrapping="Wrap" Text="minv" VerticalAlignment="Top" Width="66"/>
+            <Label Content="&gt;minv" HorizontalAlignment="Left" Margin="425,63,0,0" VerticalAlignment="Top" Height="28" Width="50"/>
+            <TextBox HorizontalAlignment="Left" Margin="425,95,0,0" TextWrapping="Wrap" Text="minw" VerticalAlignment="Top" Width="50"/>
+            <Label Content="other" HorizontalAlignment="Left" Margin="500,63,0,0" VerticalAlignment="Top" Height="28" Width="50"/>
+            <TextBox HorizontalAlignment="Left" Margin="500,95,0,0" TextWrapping="Wrap" Text="w" VerticalAlignment="Top" Width="50"/>
+            <Label Content="Value w" HorizontalAlignment="Left" Margin="500,1,0,0" VerticalAlignment="Top" Height="27" Width="66"/>
+            <TextBox HorizontalAlignment="Left" Margin="500,33,0,0" TextWrapping="Wrap" Text="w" VerticalAlignment="Top" Width="66"/>
+            <TextBox HorizontalAlignment="Left" Margin="107,5,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="58" Text="MOName"></TextBox>
+            <TextBox HorizontalAlignment="Left" Margin="107,28,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="18" Width="58" FontSize="8" Text="AO1Name"></TextBox>
+            <TextBox HorizontalAlignment="Left" Margin="208,156,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="18" Width="66" FontSize="8" Text="AO1Value"></TextBox>
+            <TextBox HorizontalAlignment="Left" Margin="106,53,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="18" Width="58" FontSize="8" Text="AO2Name"></TextBox>
+            <TextBox HorizontalAlignment="Left" Margin="283,156,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="18" Width="65" FontSize="8" Text="AO2Value"></TextBox>
+            <Label Content="&lt;=AO2 &amp; &lt;=AO1" HorizontalAlignment="Left" Margin="209,188,0,0" VerticalAlignment="Top" Height="24" Width="50" FontSize="8" RenderTransformOrigin="0.5,0.5">
+                <Label.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform AngleY="-1.102"/>
+                        <RotateTransform/>
+                        <TranslateTransform Y="-0.481"/>
+                    </TransformGroup>
+                </Label.RenderTransform>
+            </Label>
+            <TextBox HorizontalAlignment="Left" Margin="209,217,0,0" TextWrapping="Wrap" Text="None" VerticalAlignment="Top" Width="50" FontSize="8"/>
+            <Label Content="&gt;AO2 &amp; &lt;=AO1" HorizontalAlignment="Left" Margin="283,188,0,0" VerticalAlignment="Top" Height="25" Width="50" FontSize="8"/>
+            <TextBox HorizontalAlignment="Left" Margin="283,217,0,0" TextWrapping="Wrap" Text="+HAO2" VerticalAlignment="Top" Width="50" FontSize="8"/>
+            <Label Content="&lt;=AO2 &amp; &gt;AO1" HorizontalAlignment="Left" Margin="355,188,0,0" VerticalAlignment="Top" Height="25" Width="50" FontSize="8"/>
+            <TextBox HorizontalAlignment="Left" Margin="355,217,0,0" TextWrapping="Wrap" Text="+HAO1" VerticalAlignment="Top" Width="50" FontSize="8" />
+            <Label Content="other" HorizontalAlignment="Left" Margin="425,188,0,0" VerticalAlignment="Top" Height="25" Width="50" FontSize="8"/>
+            <TextBox HorizontalAlignment="Left" Margin="425,217,0,0" TextWrapping="Wrap" Text="bg" VerticalAlignment="Top" Width="50" FontSize="8"/>
+
+        </Grid>
+        <TextBox HorizontalAlignment="Left" Margin="18,526,0,0" TextWrapping="Wrap" Text="Result" VerticalAlignment="Top" Width="726"/>
+        <Button Content="Start" HorizontalAlignment="Left" Margin="18,501,0,0" VerticalAlignment="Top" Width="92" FontSize="14"/>
+        <Button Content="Copy" HorizontalAlignment="Left" Margin="749,526,0,0" VerticalAlignment="Top" Height="18" FontSize="10"/>
+
+    </Grid>
+</Window>
