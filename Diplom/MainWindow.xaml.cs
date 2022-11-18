@@ -98,11 +98,16 @@ namespace Diplom
             string query = "N(\"" + oreMainNameM3.Text + "\") > " + oreValue1M3.Text + " ? " +(q1)+" : " + "N(\"" + oreMainNameM3.Text + "\") > " + oreValue2M3.Text + " ? \"" + oreResult2M3.Text + "\" : " + "N(\"" + oreMainNameM3.Text + "\") > " + oreValue3M3.Text + " ? \"" + oreResult3M3.Text + "\" : " + "N(\"" + oreMainNameM3.Text + "\") > " + oreValue4M3.Text + " ? \"" + oreResult4M3.Text + "\" : \""+oreResult5M3.Text + "\"";
             return query;
         }
+
+        private void Button_Click_4(object sender, RoutedEventArgs e)
+        {
+            Clipboard.SetData(DataFormats.Text, resultQuery.Text);
+        }
         /*
 private void TextBox_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
 {
-   TextBox txtBx = sender as TextBox;//This looks like it will be needed, so even though code is not working I leave it for the time being
-   txtBx.Text = "";
+TextBox txtBx = sender as TextBox;//This looks like it will be needed, so even though code is not working I leave it for the time being
+txtBx.Text = "";
 }*/
     }
 }

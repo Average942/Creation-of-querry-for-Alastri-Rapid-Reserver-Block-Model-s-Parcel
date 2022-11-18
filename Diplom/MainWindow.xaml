@@ -103,7 +103,7 @@
         </Grid>
         <TextBox x:Name="resultQuery" HorizontalAlignment="Left" Margin="18,526,0,0" TextWrapping="Wrap" Text="Result" VerticalAlignment="Top" Width="726"/>
         <Button Content="Start" HorizontalAlignment="Left" Margin="18,501,0,0" VerticalAlignment="Top" Width="92" FontSize="14" Click="Button_Click_3"/>
-        <Button Content="Copy" HorizontalAlignment="Left" Margin="749,526,0,0" VerticalAlignment="Top" Height="18" FontSize="10"/>
+        <Button Content="Copy" HorizontalAlignment="Left" Margin="749,526,0,0" VerticalAlignment="Top" Height="18" FontSize="10" Click="Button_Click_4"/>
 
     </Grid>
 </Window>
