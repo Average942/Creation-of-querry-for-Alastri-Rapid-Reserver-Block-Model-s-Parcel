@@ -20,90 +20,94 @@
                 <ColumnDefinition Width="5*"/>
             </Grid.ColumnDefinitions>
             <Label Content="Ore Name" HorizontalAlignment="Left" VerticalAlignment="Top" Height="27" Width="120"/>
-            <TextBox x:Name="oreNameM1" HorizontalAlignment="Left" Margin="0,32,0,0" TextWrapping="Wrap" Text="Ore Name" VerticalAlignment="Top" Width="120"/>
+            <TextBox x:Name="oreNameM1" HorizontalAlignment="Left" Margin="0,32,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
             <Label Content="Value" HorizontalAlignment="Left" Margin="135,0,0,0" VerticalAlignment="Top" Height="27" Width="66"/>
-            <TextBox x:Name="oreValueM1" HorizontalAlignment="Left" Margin="135,32,0,0" TextWrapping="Wrap" Text="Value" VerticalAlignment="Top" Width="66"/>
-            <Label Content="Result of &gt;value" HorizontalAlignment="Left" Margin="216,0,0,0" VerticalAlignment="Top" Height="27" Width="98"/>
-            <TextBox x:Name="firstResultM1" HorizontalAlignment="Left" Margin="216,32,0,0" TextWrapping="Wrap" Text="ore" VerticalAlignment="Top" Width="98"/>
-            <Label Content="Result of &gt;value" HorizontalAlignment="Left" Margin="330,0,0,0" VerticalAlignment="Top" Height="27" Width="98" Grid.ColumnSpan="2"/>
-            <TextBox x:Name="secondResultM1" HorizontalAlignment="Left" Margin="330,32,0,0" TextWrapping="Wrap" Text="waste" VerticalAlignment="Top" Width="98" Grid.ColumnSpan="2"/>
+            <TextBox x:Name="oreValueM1" HorizontalAlignment="Left" Margin="135,32,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="66"/>
+            <Label Content="&gt;value" HorizontalAlignment="Left" Margin="216,0,0,0" VerticalAlignment="Top" Height="27" Width="98"/>
+            <TextBox x:Name="firstResultM1" HorizontalAlignment="Left" Margin="216,32,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="98"/>
+            <Label Content="other" HorizontalAlignment="Left" Margin="330,0,0,0" VerticalAlignment="Top" Height="27" Width="98" Grid.ColumnSpan="2"/>
+            <TextBox x:Name="secondResultM1" HorizontalAlignment="Left" Margin="330,32,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="98" Grid.ColumnSpan="2"/>
         </Grid>
         <Grid x:Name="secondMethod" Visibility="Collapsed" HorizontalAlignment="Left" Height="112" VerticalAlignment="Top" Width="566" Margin="18,22,0,0">
             <Label Content="Ore Name" HorizontalAlignment="Left" VerticalAlignment="Top" Height="27" Width="120"/>
-            <TextBox x:Name="oreNameM2" HorizontalAlignment="Left" Margin="0,32,0,0" TextWrapping="Wrap" Text="OreName" VerticalAlignment="Top" Width="120"/>
+            <TextBox x:Name="oreNameM2" HorizontalAlignment="Left" Margin="0,32,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
             <Label Content="Value hg" HorizontalAlignment="Left" Margin="135,0,0,0" VerticalAlignment="Top" Height="27" Width="66"/>
-            <TextBox x:Name="oreValue1M2" HorizontalAlignment="Left" Margin="136,32,0,0" TextWrapping="Wrap" Text="hg" VerticalAlignment="Top" Width="66"/>
+            <TextBox x:Name="oreValue1M2" HorizontalAlignment="Left" Margin="136,32,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="66"/>
             <Label Content="&gt;hg" HorizontalAlignment="Left" Margin="136,63,0,0" VerticalAlignment="Top" Height="28" Width="50"/>
-            <TextBox x:Name="oreResult1M2" HorizontalAlignment="Left" Margin="136,95,0,0" TextWrapping="Wrap" Text="hg" VerticalAlignment="Top" Width="50"/>
+            <TextBox x:Name="oreResult1M2" HorizontalAlignment="Left" Margin="136,95,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="50"/>
             <Label Content="Value mg" HorizontalAlignment="Left" Margin="210,0,0,0" VerticalAlignment="Top" Height="27" Width="66"/>
-            <TextBox x:Name="oreValue2M2" HorizontalAlignment="Left" Margin="210,32,0,0" TextWrapping="Wrap" Text="mg" VerticalAlignment="Top" Width="66"/>
+            <TextBox x:Name="oreValue2M2" HorizontalAlignment="Left" Margin="210,32,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="66"/>
             <Label Content="&gt;mg" HorizontalAlignment="Left" Margin="210,63,0,0" VerticalAlignment="Top" Height="28" Width="50"/>
-            <TextBox x:Name="oreResult2M2" HorizontalAlignment="Left" Margin="210,95,0,0" TextWrapping="Wrap" Text="mg" VerticalAlignment="Top" Width="50"/>
+            <TextBox x:Name="oreResult2M2" HorizontalAlignment="Left" Margin="210,95,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="50"/>
             <Label Content="Value lg1" HorizontalAlignment="Left" Margin="282,0,0,0" VerticalAlignment="Top" Height="27" Width="66"/>
-            <TextBox x:Name="oreValue3M2" HorizontalAlignment="Left" Margin="282,32,0,0" TextWrapping="Wrap" Text="lg1" VerticalAlignment="Top" Width="66"/>
+            <TextBox x:Name="oreValue3M2" HorizontalAlignment="Left" Margin="282,32,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="66"/>
             <Label Content="&gt;lg1" HorizontalAlignment="Left" Margin="282,63,0,0" VerticalAlignment="Top" Height="28" Width="50"/>
-            <TextBox x:Name="oreResult3M2" HorizontalAlignment="Left" Margin="282,95,0,0" TextWrapping="Wrap" Text="lg1" VerticalAlignment="Top" Width="50" />
+            <TextBox x:Name="oreResult3M2" HorizontalAlignment="Left" Margin="282,95,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="50" />
             <Label Content="Value lg2" HorizontalAlignment="Left" Margin="352,0,0,0" VerticalAlignment="Top" Height="27" Width="66"/>
-            <TextBox x:Name="oreValue4M2" HorizontalAlignment="Left" Margin="352,32,0,0" TextWrapping="Wrap" Text="lg2" VerticalAlignment="Top" Width="66"/>
+            <TextBox x:Name="oreValue4M2" HorizontalAlignment="Left" Margin="352,32,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="66"/>
             <Label Content="&gt;lg2" HorizontalAlignment="Left" Margin="352,63,0,0" VerticalAlignment="Top" Height="28" Width="50"/>
-            <TextBox x:Name="oreResult4M2" HorizontalAlignment="Left" Margin="352,95,0,0" TextWrapping="Wrap" Text="lg2" VerticalAlignment="Top" Width="50"/>
+            <TextBox x:Name="oreResult4M2" HorizontalAlignment="Left" Margin="352,95,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="50"/>
             <Label Content="Value minv" HorizontalAlignment="Left" Margin="424,0,0,0" VerticalAlignment="Top" Height="27" Width="70"/>
-            <TextBox x:Name="oreValue5M2" HorizontalAlignment="Left" Margin="424,32,0,0" TextWrapping="Wrap" Text="minv" VerticalAlignment="Top" Width="66"/>
+            <TextBox x:Name="oreValue5M2" HorizontalAlignment="Left" Margin="424,32,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="66"/>
             <Label Content="&gt;minv" HorizontalAlignment="Left" Margin="424,63,0,0" VerticalAlignment="Top" Height="28" Width="50"/>
-            <TextBox x:Name="oreResult5M2" HorizontalAlignment="Left" Margin="424,95,0,0" TextWrapping="Wrap" Text="minw" VerticalAlignment="Top" Width="50"/>
+            <TextBox x:Name="oreResult5M2" HorizontalAlignment="Left" Margin="424,95,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="50"/>
             <Label Content="other" HorizontalAlignment="Left" Margin="500,63,0,0" VerticalAlignment="Top" Height="28" Width="50"/>
-            <TextBox x:Name="oreResult6M2" HorizontalAlignment="Left" Margin="500,95,0,0" TextWrapping="Wrap" Text="w" VerticalAlignment="Top" Width="50"/>
+            <TextBox x:Name="oreResult6M2" HorizontalAlignment="Left" Margin="500,95,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="50"/>
 
         </Grid>
-        <Grid x:Name="thirdMethod"  Visibility="Collapsed" HorizontalAlignment="Left" Height="236" VerticalAlignment="Top" Width="566" Margin="18,22,0,0">
-            <Label Content="Main Ore Name" HorizontalAlignment="Left" VerticalAlignment="Top" Width="102"/>
-            <Label Content="Add Ore 1 Name" HorizontalAlignment="Left" Margin="1,25,0,0" VerticalAlignment="Top" Width="70" FontSize="8" Height="21"/>
-            <Label Content="Add Ore 2 Name" HorizontalAlignment="Left" Margin="0,51,0,0" VerticalAlignment="Top" Width="70" FontSize="8" Height="21"/>
-            <Label Content="AO1 Value" HorizontalAlignment="Left" Margin="175,69,0,0" VerticalAlignment="Top" Width="66" FontSize="8" Height="20"/>
-            <Label Content="AO2 Value" HorizontalAlignment="Center" Margin="0,69,0,0" VerticalAlignment="Top" Width="66" FontSize="8" Height="20"/>
-            <Label Content="Value hg" HorizontalAlignment="Left" Margin="208,0,0,0" VerticalAlignment="Top" Height="27" Width="66"/>
-            <TextBox x:Name="oreValue1M3" HorizontalAlignment="Left" Margin="208,32,0,0" TextWrapping="Wrap" Text="hg" VerticalAlignment="Top" Width="66"/>
-            <Label Content="Value bg" HorizontalAlignment="Left" Margin="349,-1,0,0" VerticalAlignment="Top" Height="27" Width="66"/>
-            <TextBox x:Name="oreValue2M3" HorizontalAlignment="Left" Margin="349,31,0,0" TextWrapping="Wrap" Text="bg" VerticalAlignment="Top" Width="66"/>
-            <Label Content="&gt;bg" HorizontalAlignment="Left" Margin="349,130,0,0" VerticalAlignment="Top" Height="28" Width="50"/>
-            <TextBox x:Name="oreResult2M3" HorizontalAlignment="Left" Margin="349,162,0,0" TextWrapping="Wrap" Text="bg" VerticalAlignment="Top" Width="50"/>
-            <Label Content="Value lg" HorizontalAlignment="Left" Margin="421,-1,0,0" VerticalAlignment="Top" Height="27" Width="66"/>
-            <TextBox x:Name="oreValue3M3" HorizontalAlignment="Left" Margin="421,31,0,0" TextWrapping="Wrap" Text="lg" VerticalAlignment="Top" Width="66"/>
-            <Label Content="&gt;lg" HorizontalAlignment="Left" Margin="421,130,0,0" VerticalAlignment="Top" Height="28" Width="50"/>
-            <TextBox x:Name="oreResult3M3" HorizontalAlignment="Left" Margin="421,162,0,0" TextWrapping="Wrap" Text="lg" VerticalAlignment="Top" Width="50" />
-            <Label Content="Value minv" HorizontalAlignment="Left" Margin="492,-1,0,0" VerticalAlignment="Top" Height="27" Width="70"/>
-            <TextBox x:Name="oreValue4M3" HorizontalAlignment="Left" Margin="492,31,0,0" TextWrapping="Wrap" Text="minv" VerticalAlignment="Top" Width="66"/>
-            <Label Content="&gt;minv" HorizontalAlignment="Left" Margin="492,130,0,0" VerticalAlignment="Top" Height="28" Width="50"/>
-            <TextBox x:Name="oreResult4M3" HorizontalAlignment="Left" Margin="492,162,0,0" TextWrapping="Wrap" Text="minw" VerticalAlignment="Top" Width="50"/>
-            <Label Content="other" HorizontalAlignment="Left" Margin="567,62,0,0" VerticalAlignment="Top" Height="28" Width="50"/>
-            <TextBox x:Name="oreResult5M3" HorizontalAlignment="Left" Margin="567,94,0,0" TextWrapping="Wrap" Text="w" VerticalAlignment="Top" Width="50"/>
-            <TextBox x:Name="oreMainNameM3" HorizontalAlignment="Left" Margin="107,5,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="58" Text="MOName"></TextBox>
-            <TextBox x:Name="oreAdd1NameM3" HorizontalAlignment="Left" Margin="107,28,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="18" Width="58" FontSize="8" Text="AO1Name"></TextBox>
-            <TextBox x:Name="oreAdd1ValueM3" HorizontalAlignment="Left" Margin="175,94,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="18" Width="66" FontSize="8" Text="AO1Value"></TextBox>
-            <TextBox x:Name="oreAdd2NameM3" HorizontalAlignment="Left" Margin="106,53,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="18" Width="58" FontSize="8" Text="AO2Name"></TextBox>
-            <TextBox x:Name="oreAdd2ValueM3" HorizontalAlignment="Center" Margin="0,94,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="18" Width="65" FontSize="8" Text="AO2Value"></TextBox>
-            <Label Content="&lt;=AO2 &amp; &lt;=AO1" HorizontalAlignment="Left" Margin="27,137,0,0" VerticalAlignment="Top" Height="24" Width="77" FontSize="8" RenderTransformOrigin="0.5,0.5">
-                <Label.RenderTransform>
-                    <TransformGroup>
-                        <ScaleTransform/>
-                        <SkewTransform AngleY="-1.102"/>
-                        <RotateTransform/>
-                        <TranslateTransform Y="-0.481"/>
-                    </TransformGroup>
-                </Label.RenderTransform>
-            </Label>
-            <TextBox x:Name="oreAddResult1M3" HorizontalAlignment="Left" Margin="40,166,0,0" TextWrapping="Wrap" Text="hg" VerticalAlignment="Top" Width="50" FontSize="8"/>
-            <Label Content="&gt;AO2 &amp; &lt;=AO1" HorizontalAlignment="Left" Margin="111,135,0,0" VerticalAlignment="Top" Height="25" Width="78" FontSize="8"/>
-            <TextBox x:Name="oreAddResult2M3" HorizontalAlignment="Left" Margin="121,166,0,0" TextWrapping="Wrap" Text="hghAO2" VerticalAlignment="Top" Width="50" FontSize="8"/>
-            <Label Content="&lt;=AO2 &amp; &gt;AO1" HorizontalAlignment="Left" Margin="188,135,0,0" VerticalAlignment="Top" Height="25" Width="71" FontSize="8"/>
-            <TextBox x:Name="oreAddResult3M3" HorizontalAlignment="Left" Margin="201,166,0,0" TextWrapping="Wrap" Text="hghAO1" VerticalAlignment="Top" Width="50" FontSize="8" />
-            <Label Content="other" HorizontalAlignment="Left" Margin="266,135,0,0" VerticalAlignment="Top" Height="25" Width="50" FontSize="8"/>
-            <TextBox x:Name="oreAddResult4M3" HorizontalAlignment="Left" Margin="266,165,0,0" TextWrapping="Wrap" Text="bg" VerticalAlignment="Top" Width="50" FontSize="8"/>
+        <Grid x:Name="thirdMethod"  Visibility="Collapsed" HorizontalAlignment="Left" Height="282" VerticalAlignment="Top" Width="764" Margin="18,22,0,0">
+            <Label Content="Main Ore Name" HorizontalAlignment="Left" VerticalAlignment="Top" Width="96" Margin="0,1,0,0"/>
+            <Label Content="Add Ore 1 Name" HorizontalAlignment="Left" Margin="0,62,0,0" VerticalAlignment="Top" Width="70" FontSize="8" Height="20"/>
+            <Label Content="Add Ore 2 Name" HorizontalAlignment="Left" Margin="0,121,0,0" VerticalAlignment="Top" Width="70" FontSize="8" Height="22"/>
+            <Label Content="AO1 Value" HorizontalAlignment="Left" Margin="102,62,0,0" VerticalAlignment="Top" Width="66" FontSize="8" Height="20"/>
+            <Label Content="AO2 Value" HorizontalAlignment="Left" Margin="102,123,0,0" VerticalAlignment="Top" Width="64" FontSize="8" Height="20"/>
+            <Label Content="Value hg" HorizontalAlignment="Left" Margin="102,0,0,0" VerticalAlignment="Top" Height="27" Width="66"/>
+            <TextBox x:Name="oreValue1M3" HorizontalAlignment="Left" Margin="102,32,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="66"/>
+            <Label Content="Value bg" HorizontalAlignment="Left" Margin="170,0,0,0" VerticalAlignment="Top" Height="27" Width="66"/>
+            <TextBox x:Name="oreValue2M3" HorizontalAlignment="Left" Margin="170,32,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="66"/>
+            <Label Content="Value lg" HorizontalAlignment="Left" Margin="242,0,0,0" VerticalAlignment="Top" Height="27" Width="66"/>
+            <TextBox x:Name="oreValue3M3" HorizontalAlignment="Left" Margin="242,32,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="66"/>
+            <Label Content="Value minv" HorizontalAlignment="Left" Margin="314,0,0,0" VerticalAlignment="Top" Height="27" Width="70"/>
+            <TextBox x:Name="oreValue4M3" HorizontalAlignment="Left" Margin="314,32,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="66"/>
+            <TextBox x:Name="oreMainNameM3" HorizontalAlignment="Left" Margin="0,32,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="96" Text=""></TextBox>
+            <TextBox x:Name="oreAdd1NameM3" HorizontalAlignment="Left" Margin="0,87,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="18" Width="66" FontSize="8" Text=""></TextBox>
+            <TextBox x:Name="oreAdd1ValueM3" HorizontalAlignment="Left" Margin="102,87,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="18" Width="64" FontSize="8" Text=""></TextBox>
+            <TextBox x:Name="oreAdd2NameM3" HorizontalAlignment="Left" Margin="0,147,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="18" Width="66" FontSize="8" Text=""></TextBox>
+            <TextBox x:Name="oreAdd2ValueM3" HorizontalAlignment="Left" Margin="102,147,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="18" Width="64" FontSize="8" Text=""></TextBox>
+            <Grid HorizontalAlignment="Left" Height="66" Margin="102,199,0,0" VerticalAlignment="Top" Width="611">
+                <Grid HorizontalAlignment="Left" Height="64" VerticalAlignment="Center" Width="280" Margin="331,0,0,0">
+                    <Label Content="&gt;bg" HorizontalAlignment="Left" VerticalAlignment="Top" Height="28" Width="50"/>
+                    <TextBox x:Name="oreResult2M3" HorizontalAlignment="Left" Margin="0,45,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="50"/>
+                    <Label Content="&gt;lg" HorizontalAlignment="Left" Margin="75,0,0,0" VerticalAlignment="Top" Height="28" Width="50"/>
+                    <TextBox x:Name="oreResult3M3" HorizontalAlignment="Left" Margin="75,45,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="50" />
+                    <Label Content="&gt;minv" HorizontalAlignment="Left" Margin="150,0,0,0" VerticalAlignment="Top" Height="28" Width="50"/>
+                    <TextBox x:Name="oreResult4M3" HorizontalAlignment="Left" Margin="150,45,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="50"/>
+                    <Label Content="other" HorizontalAlignment="Left" Margin="225,0,0,0" VerticalAlignment="Top" Height="28" Width="50"/>
+                    <TextBox x:Name="oreResult5M3" HorizontalAlignment="Left" Margin="225,45,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="50"/>
+                </Grid>
+                <Grid  HorizontalAlignment="Left" VerticalAlignment="Center" Height="66" Width="326" Background="#FFD2D2D2">
+                    <Grid HorizontalAlignment="Center" VerticalAlignment="Center" Height="64" Width="324" Background="White" >
+                        <Label VerticalAlignment="Top" HorizontalAlignment="Left" Margin="2,2,0,0" Height="26" Width="32" Content="&gt;hg"/>
+                        <Label Content="&lt;=AO2 &amp; &lt;=AO1" HorizontalAlignment="Left" Margin="25,25,0,0" VerticalAlignment="Top" Height="24" Width="77" FontSize="8"/>
+                        <TextBox x:Name="oreAddResult1M3" HorizontalAlignment="Left" Margin="35,50,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="50" FontSize="8"/>
+                        <Label Content="&gt;AO2 &amp; &lt;=AO1" HorizontalAlignment="Left" Margin="100,25,0,0" VerticalAlignment="Top" Height="25" Width="78" FontSize="8"/>
+                        <TextBox x:Name="oreAddResult2M3" HorizontalAlignment="Left" Margin="110,50,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="50" FontSize="8"/>
+                        <Label Content="&lt;=AO2 &amp; &gt;AO1" HorizontalAlignment="Left" Margin="175,25,0,0" VerticalAlignment="Top" Height="25" Width="71" FontSize="8"/>
+                        <TextBox x:Name="oreAddResult3M3" HorizontalAlignment="Left" Margin="185,50,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="50" FontSize="8" />
+                        <Label Content="other" HorizontalAlignment="Left" Margin="260,25,0,0" VerticalAlignment="Top" Height="25" Width="50" FontSize="8"/>
+                        <TextBox x:Name="oreAddResult4M3" HorizontalAlignment="Left" Margin="260,50,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="50" FontSize="8"/>
+                    </Grid>
+                </Grid>
+
+            </Grid>
 
         </Grid>
-        <TextBox x:Name="resultQuery" HorizontalAlignment="Left" Margin="18,526,0,0" TextWrapping="Wrap" Text="Result" VerticalAlignment="Top" Width="726"/>
-        <Button Content="Start" HorizontalAlignment="Left" Margin="18,501,0,0" VerticalAlignment="Top" Width="92" FontSize="14" Click="Button_Click_3"/>
-        <Button Content="Copy" HorizontalAlignment="Left" Margin="749,526,0,0" VerticalAlignment="Top" Height="18" FontSize="10" Click="Button_Click_4"/>
+        <Grid HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="775" Margin="18,325,0,0">
+            <Button Content="Start" HorizontalAlignment="Left" VerticalAlignment="Top" Height="25" Width="100" FontSize="14" Click="Button_Click_3"/>
+            <TextBox x:Name="resultQuery" HorizontalAlignment="Left" Margin="0,32,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="700" Height="50"/>
+            <Button Content="Copy" HorizontalAlignment="Left" Margin="707,32,0,0" VerticalAlignment="Top" Height="50" Width="50" FontSize="10" Click="Button_Click_4"/>
+
+        </Grid>
 
     </Grid>
 </Window>
