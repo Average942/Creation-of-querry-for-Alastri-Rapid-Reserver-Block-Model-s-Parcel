@@ -82,21 +82,21 @@ namespace Diplom
         //Methods realisation 
         private string firstM()
         {
-            string query = "N(\"" + oreNameM1.Text + "\") > " + oreValueM1.Text + " ? \"" + firstResultM1.Text + "\" : \"" + secondResultM1.Text + "\"";
-            return query;
+            string parcel = "N(\"" + oreNameM1.Text + "\") > " + oreValueM1.Text + " ? \"" + firstResultM1.Text + "\" : \"" + secondResultM1.Text + "\"";
+            return parcel;
         }
         private string secondM()
         {
-            string query = "N(\"" + oreNameM2.Text + "\") > " + oreValue1M2.Text + " ? \"" + oreResult1M2.Text + "\" : " + "N(\"" + oreNameM2.Text + "\") > " + oreValue2M2.Text + " ? \"" + oreResult2M2.Text + "\" : " + "N(\"" + oreNameM2.Text + "\") > " + oreValue3M2.Text + " ? \"" + oreResult3M2.Text + "\" : " + "N(\"" + oreNameM2.Text + "\") > " + oreValue4M2.Text + " ? \"" + oreResult4M2.Text + "\" : " + "N(\"" + oreNameM2.Text + "\") > " + oreValue5M2.Text + " ? \"" + oreResult5M2.Text + "\" : \"" + oreResult6M2.Text + "\"";
-            return query;
+            string parcel = "N(\"" + oreNameM2.Text + "\") > " + oreValue1M2.Text + " ? \"" + oreResult1M2.Text + "\" : " + "N(\"" + oreNameM2.Text + "\") > " + oreValue2M2.Text + " ? \"" + oreResult2M2.Text + "\" : " + "N(\"" + oreNameM2.Text + "\") > " + oreValue3M2.Text + " ? \"" + oreResult3M2.Text + "\" : " + "N(\"" + oreNameM2.Text + "\") > " + oreValue4M2.Text + " ? \"" + oreResult4M2.Text + "\" : " + "N(\"" + oreNameM2.Text + "\") > " + oreValue5M2.Text + " ? \"" + oreResult5M2.Text + "\" : \"" + oreResult6M2.Text + "\"";
+            return parcel;
         }
         private string thirdM()
         {
-            string q3 = "N(\"" + oreAdd2NameM3.Text + "\") > " + oreAdd2ValueM3.Text + " ? " + "\"" + oreAddResult2M3.Text + "\" : \"" + oreAddResult1M3.Text + "\"";
-            string q2 = "N(\"" + oreAdd2NameM3.Text + "\") > " + oreAdd2ValueM3.Text + " ? " + "\"" + oreAddResult4M3.Text + "\" : \"" + oreAddResult3M3.Text + "\"";
-            string q1 = "N(\""+oreAdd1NameM3.Text+ "\") > "+oreAdd1ValueM3.Text+" ? "+(q2)+" : "+(q3);
-            string query = "N(\"" + oreMainNameM3.Text + "\") > " + oreValue1M3.Text + " ? " +(q1)+" : " + "N(\"" + oreMainNameM3.Text + "\") > " + oreValue2M3.Text + " ? \"" + oreResult2M3.Text + "\" : " + "N(\"" + oreMainNameM3.Text + "\") > " + oreValue3M3.Text + " ? \"" + oreResult3M3.Text + "\" : " + "N(\"" + oreMainNameM3.Text + "\") > " + oreValue4M3.Text + " ? \"" + oreResult4M3.Text + "\" : \""+oreResult5M3.Text + "\"";
-            return query;
+            string p3 = "N(\"" + oreAdd2NameM3.Text + "\") > " + oreAdd2ValueM3.Text + " ? " + "\"" + oreAddResult2M3.Text + "\" : \"" + oreAddResult1M3.Text + "\"";
+            string p2 = "N(\"" + oreAdd2NameM3.Text + "\") > " + oreAdd2ValueM3.Text + " ? " + "\"" + oreAddResult4M3.Text + "\" : \"" + oreAddResult3M3.Text + "\"";
+            string p1 = "N(\""+oreAdd1NameM3.Text+ "\") > "+oreAdd1ValueM3.Text+" ? "+(p2)+" : "+(p3);
+            string parcel = "N(\"" + oreMainNameM3.Text + "\") > " + oreValue1M3.Text + " ? " +(p1)+" : " + "N(\"" + oreMainNameM3.Text + "\") > " + oreValue2M3.Text + " ? \"" + oreResult2M3.Text + "\" : " + "N(\"" + oreMainNameM3.Text + "\") > " + oreValue3M3.Text + " ? \"" + oreResult3M3.Text + "\" : " + "N(\"" + oreMainNameM3.Text + "\") > " + oreValue4M3.Text + " ? \"" + oreResult4M3.Text + "\" : \""+oreResult5M3.Text + "\"";
+            return parcel;
         }
 
         private void Button_Click_4(object sender, RoutedEventArgs e)

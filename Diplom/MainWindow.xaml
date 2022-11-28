@@ -7,68 +7,72 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="500" Width="800">
     <Grid>
-        <Border BorderBrush="Gray" BorderThickness="1" HorizontalAlignment="Center" Height="17" VerticalAlignment="Top" Width="800"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="61*"/>
+            <ColumnDefinition Width="99*"/>
+        </Grid.ColumnDefinitions>
+        <Border BorderBrush="Gray" BorderThickness="1" HorizontalAlignment="Left" Height="17" VerticalAlignment="Top" Width="800" Grid.ColumnSpan="2"/>
 
-        <Button x:Name="BtnM3" Content="Method 3" HorizontalAlignment="Left" VerticalAlignment="Top" Height="17" Width="110" Margin="218,0,0,0" Click="Button_Click_2" BorderBrush="Gray"/>
+        <Button x:Name="BtnM3" Content="Method 3" HorizontalAlignment="Left" VerticalAlignment="Top" Height="17" Width="110" Margin="218,0,0,0" Click="Button_Click_2" BorderBrush="Gray" Grid.ColumnSpan="2"/>
 
         <Button x:Name="BtnM2" Content="Method 2" HorizontalAlignment="Left" VerticalAlignment="Top" Height="17" Width="110" Margin="109,0,0,0" Click="Button_Click_1" BorderBrush="Gray"/>
 
         <Button x:Name="BtnM1" Content="Method 1" HorizontalAlignment="Left" VerticalAlignment="Top" Height="17" Width="110" Click="Button_Click" BorderBrush="LightSkyBlue"/>
-        <Grid x:Name="firstMethod" Visibility="Visible" HorizontalAlignment="Left" Height="50" VerticalAlignment="Top" Width="428" Margin="18,22,0,0">
+        <Grid x:Name="firstMethod" Visibility="Visible" HorizontalAlignment="Left" Height="50" VerticalAlignment="Top" Width="428" Margin="18,22,0,0" Grid.ColumnSpan="2">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="209*"/>
                 <ColumnDefinition Width="5*"/>
             </Grid.ColumnDefinitions>
-            <Label Content="Ore Name" HorizontalAlignment="Left" VerticalAlignment="Top" Height="27" Width="120"/>
+            <Label Content="Руда" HorizontalAlignment="Left" VerticalAlignment="Top" Height="27" Width="120"/>
             <TextBox x:Name="oreNameM1" HorizontalAlignment="Left" Margin="0,32,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-            <Label Content="Value" HorizontalAlignment="Left" Margin="135,0,0,0" VerticalAlignment="Top" Height="27" Width="66"/>
+            <Label Content="Значение" HorizontalAlignment="Left" Margin="135,0,0,0" VerticalAlignment="Top" Height="27" Width="66"/>
             <TextBox x:Name="oreValueM1" HorizontalAlignment="Left" Margin="135,32,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="66"/>
-            <Label Content="&gt;value" HorizontalAlignment="Left" Margin="216,0,0,0" VerticalAlignment="Top" Height="27" Width="98"/>
+            <Label Content="&gt;значение" HorizontalAlignment="Left" Margin="216,0,0,0" VerticalAlignment="Top" Height="27" Width="98"/>
             <TextBox x:Name="firstResultM1" HorizontalAlignment="Left" Margin="216,32,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="98"/>
-            <Label Content="other" HorizontalAlignment="Left" Margin="330,0,0,0" VerticalAlignment="Top" Height="27" Width="98" Grid.ColumnSpan="2"/>
+            <Label Content="иначе" HorizontalAlignment="Left" Margin="330,0,0,0" VerticalAlignment="Top" Height="27" Width="98" Grid.ColumnSpan="2"/>
             <TextBox x:Name="secondResultM1" HorizontalAlignment="Left" Margin="330,32,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="98" Grid.ColumnSpan="2"/>
         </Grid>
-        <Grid x:Name="secondMethod" Visibility="Collapsed" HorizontalAlignment="Left" Height="112" VerticalAlignment="Top" Width="566" Margin="18,22,0,0">
-            <Label Content="Ore Name" HorizontalAlignment="Left" VerticalAlignment="Top" Height="27" Width="120"/>
+        <Grid x:Name="secondMethod" Visibility="Collapsed" HorizontalAlignment="Left" Height="112" VerticalAlignment="Top" Width="566" Margin="18,22,0,0" Grid.ColumnSpan="2">
+            <Label Content="Руда" HorizontalAlignment="Left" VerticalAlignment="Top" Height="27" Width="120"/>
             <TextBox x:Name="oreNameM2" HorizontalAlignment="Left" Margin="0,32,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-            <Label Content="Value hg" HorizontalAlignment="Left" Margin="135,0,0,0" VerticalAlignment="Top" Height="27" Width="66"/>
+            <Label Content="Значение 1" HorizontalAlignment="Left" Margin="135,0,0,0" VerticalAlignment="Top" Height="27" Width="70"/>
             <TextBox x:Name="oreValue1M2" HorizontalAlignment="Left" Margin="136,32,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="66"/>
-            <Label Content="&gt;hg" HorizontalAlignment="Left" Margin="136,63,0,0" VerticalAlignment="Top" Height="28" Width="50"/>
+            <Label Content="&gt;Зн.1" HorizontalAlignment="Left" Margin="136,63,0,0" VerticalAlignment="Top" Height="28" Width="50"/>
             <TextBox x:Name="oreResult1M2" HorizontalAlignment="Left" Margin="136,95,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="50"/>
-            <Label Content="Value mg" HorizontalAlignment="Left" Margin="210,0,0,0" VerticalAlignment="Top" Height="27" Width="66"/>
+            <Label Content="Значение 2" HorizontalAlignment="Left" Margin="210,0,0,0" VerticalAlignment="Top" Height="27" Width="72"/>
             <TextBox x:Name="oreValue2M2" HorizontalAlignment="Left" Margin="210,32,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="66"/>
-            <Label Content="&gt;mg" HorizontalAlignment="Left" Margin="210,63,0,0" VerticalAlignment="Top" Height="28" Width="50"/>
+            <Label Content="&gt;Зн.2" HorizontalAlignment="Left" Margin="210,63,0,0" VerticalAlignment="Top" Height="28" Width="50"/>
             <TextBox x:Name="oreResult2M2" HorizontalAlignment="Left" Margin="210,95,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="50"/>
-            <Label Content="Value lg1" HorizontalAlignment="Left" Margin="282,0,0,0" VerticalAlignment="Top" Height="27" Width="66"/>
+            <Label Content="Значение 3" HorizontalAlignment="Left" Margin="282,0,0,0" VerticalAlignment="Top" Height="27" Width="73"/>
             <TextBox x:Name="oreValue3M2" HorizontalAlignment="Left" Margin="282,32,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="66"/>
-            <Label Content="&gt;lg1" HorizontalAlignment="Left" Margin="282,63,0,0" VerticalAlignment="Top" Height="28" Width="50"/>
+            <Label Content="&gt;Зн.3" HorizontalAlignment="Left" Margin="282,63,0,0" VerticalAlignment="Top" Height="28" Width="50"/>
             <TextBox x:Name="oreResult3M2" HorizontalAlignment="Left" Margin="282,95,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="50" />
-            <Label Content="Value lg2" HorizontalAlignment="Left" Margin="352,0,0,0" VerticalAlignment="Top" Height="27" Width="66"/>
+            <Label Content="Значение 4" HorizontalAlignment="Left" Margin="352,0,0,0" VerticalAlignment="Top" Height="27" Width="75"/>
             <TextBox x:Name="oreValue4M2" HorizontalAlignment="Left" Margin="352,32,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="66"/>
-            <Label Content="&gt;lg2" HorizontalAlignment="Left" Margin="352,63,0,0" VerticalAlignment="Top" Height="28" Width="50"/>
+            <Label Content="&gt;Зн.4" HorizontalAlignment="Left" Margin="352,63,0,0" VerticalAlignment="Top" Height="28" Width="50"/>
             <TextBox x:Name="oreResult4M2" HorizontalAlignment="Left" Margin="352,95,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="50"/>
-            <Label Content="Value minv" HorizontalAlignment="Left" Margin="424,0,0,0" VerticalAlignment="Top" Height="27" Width="70"/>
+            <Label Content="Значение 5" HorizontalAlignment="Left" Margin="424,0,0,0" VerticalAlignment="Top" Height="27" Width="74"/>
             <TextBox x:Name="oreValue5M2" HorizontalAlignment="Left" Margin="424,32,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="66"/>
-            <Label Content="&gt;minv" HorizontalAlignment="Left" Margin="424,63,0,0" VerticalAlignment="Top" Height="28" Width="50"/>
+            <Label Content="&gt;Зн.5" HorizontalAlignment="Left" Margin="424,63,0,0" VerticalAlignment="Top" Height="28" Width="50"/>
             <TextBox x:Name="oreResult5M2" HorizontalAlignment="Left" Margin="424,95,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="50"/>
-            <Label Content="other" HorizontalAlignment="Left" Margin="500,63,0,0" VerticalAlignment="Top" Height="28" Width="50"/>
+            <Label Content="Иначе" HorizontalAlignment="Left" Margin="500,63,0,0" VerticalAlignment="Top" Height="28" Width="50"/>
             <TextBox x:Name="oreResult6M2" HorizontalAlignment="Left" Margin="500,95,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="50"/>
 
         </Grid>
-        <Grid x:Name="thirdMethod"  Visibility="Collapsed" HorizontalAlignment="Left" Height="282" VerticalAlignment="Top" Width="764" Margin="18,22,0,0">
-            <Label Content="Main Ore Name" HorizontalAlignment="Left" VerticalAlignment="Top" Width="96" Margin="0,1,0,0"/>
-            <Label Content="Add Ore 1 Name" HorizontalAlignment="Left" Margin="0,62,0,0" VerticalAlignment="Top" Width="70" FontSize="8" Height="20"/>
-            <Label Content="Add Ore 2 Name" HorizontalAlignment="Left" Margin="0,121,0,0" VerticalAlignment="Top" Width="70" FontSize="8" Height="22"/>
-            <Label Content="AO1 Value" HorizontalAlignment="Left" Margin="102,62,0,0" VerticalAlignment="Top" Width="66" FontSize="8" Height="20"/>
-            <Label Content="AO2 Value" HorizontalAlignment="Left" Margin="102,123,0,0" VerticalAlignment="Top" Width="64" FontSize="8" Height="20"/>
-            <Label Content="Value hg" HorizontalAlignment="Left" Margin="102,0,0,0" VerticalAlignment="Top" Height="27" Width="66"/>
-            <TextBox x:Name="oreValue1M3" HorizontalAlignment="Left" Margin="102,32,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="66"/>
-            <Label Content="Value bg" HorizontalAlignment="Left" Margin="170,0,0,0" VerticalAlignment="Top" Height="27" Width="66"/>
-            <TextBox x:Name="oreValue2M3" HorizontalAlignment="Left" Margin="170,32,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="66"/>
-            <Label Content="Value lg" HorizontalAlignment="Left" Margin="242,0,0,0" VerticalAlignment="Top" Height="27" Width="66"/>
-            <TextBox x:Name="oreValue3M3" HorizontalAlignment="Left" Margin="242,32,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="66"/>
-            <Label Content="Value minv" HorizontalAlignment="Left" Margin="314,0,0,0" VerticalAlignment="Top" Height="27" Width="70"/>
-            <TextBox x:Name="oreValue4M3" HorizontalAlignment="Left" Margin="314,32,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="66"/>
+        <Grid x:Name="thirdMethod"  Visibility="Collapsed" HorizontalAlignment="Left" Height="282" VerticalAlignment="Top" Width="764" Margin="18,22,0,0" Grid.ColumnSpan="2">
+            <Label Content="Руда 1" HorizontalAlignment="Left" VerticalAlignment="Top" Width="96" Margin="0,1,0,0"/>
+            <Label Content="Руда 2" HorizontalAlignment="Left" Margin="0,62,0,0" VerticalAlignment="Top" Width="70" FontSize="8" Height="20"/>
+            <Label Content="Руда 3" HorizontalAlignment="Left" Margin="0,121,0,0" VerticalAlignment="Top" Width="70" FontSize="8" Height="22"/>
+            <Label Content="Р.2 Значение" HorizontalAlignment="Left" Margin="102,62,0,0" VerticalAlignment="Top" Width="66" FontSize="8" Height="20"/>
+            <Label Content="Р.3 Значение" HorizontalAlignment="Left" Margin="102,123,0,0" VerticalAlignment="Top" Width="64" FontSize="8" Height="20"/>
+            <Label Content="Р.1 Значение 1" HorizontalAlignment="Left" Margin="100,0,0,0" VerticalAlignment="Top" Height="27" Width="96"/>
+            <TextBox x:Name="oreValue1M3" HorizontalAlignment="Left" Margin="110,32,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="66"/>
+            <Label Content="Р.1 Значение 2" HorizontalAlignment="Left" Margin="195,0,0,0" VerticalAlignment="Top" Height="27" Width="96"/>
+            <TextBox x:Name="oreValue2M3" HorizontalAlignment="Left" Margin="205,32,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="66"/>
+            <Label Content="Р.1 Значение 3" HorizontalAlignment="Left" Margin="290,0,0,0" VerticalAlignment="Top" Height="27" Width="96"/>
+            <TextBox x:Name="oreValue3M3" HorizontalAlignment="Left" Margin="300,32,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="66"/>
+            <Label Content="Р.1 Значение 4" HorizontalAlignment="Left" Margin="385,0,0,0" VerticalAlignment="Top" Height="27" Width="96"/>
+            <TextBox x:Name="oreValue4M3" HorizontalAlignment="Left" Margin="395,32,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="66"/>
             <TextBox x:Name="oreMainNameM3" HorizontalAlignment="Left" Margin="0,32,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="96" Text=""></TextBox>
             <TextBox x:Name="oreAdd1NameM3" HorizontalAlignment="Left" Margin="0,87,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="18" Width="66" FontSize="8" Text=""></TextBox>
             <TextBox x:Name="oreAdd1ValueM3" HorizontalAlignment="Left" Margin="102,87,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="18" Width="64" FontSize="8" Text=""></TextBox>
@@ -76,25 +80,25 @@
             <TextBox x:Name="oreAdd2ValueM3" HorizontalAlignment="Left" Margin="102,147,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="18" Width="64" FontSize="8" Text=""></TextBox>
             <Grid HorizontalAlignment="Left" Height="66" Margin="102,199,0,0" VerticalAlignment="Top" Width="611">
                 <Grid HorizontalAlignment="Left" Height="64" VerticalAlignment="Center" Width="280" Margin="331,0,0,0">
-                    <Label Content="&gt;bg" HorizontalAlignment="Left" VerticalAlignment="Top" Height="28" Width="50"/>
+                    <Label Content="&gt;Р.1 З.2" HorizontalAlignment="Left" VerticalAlignment="Top" Height="28" Width="55"/>
                     <TextBox x:Name="oreResult2M3" HorizontalAlignment="Left" Margin="0,45,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="50"/>
-                    <Label Content="&gt;lg" HorizontalAlignment="Left" Margin="75,0,0,0" VerticalAlignment="Top" Height="28" Width="50"/>
+                    <Label Content="&gt;Р.1 З.3" HorizontalAlignment="Left" Margin="75,0,0,0" VerticalAlignment="Top" Height="28" Width="55"/>
                     <TextBox x:Name="oreResult3M3" HorizontalAlignment="Left" Margin="75,45,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="50" />
-                    <Label Content="&gt;minv" HorizontalAlignment="Left" Margin="150,0,0,0" VerticalAlignment="Top" Height="28" Width="50"/>
+                    <Label Content="&gt;Р.1 З.4" HorizontalAlignment="Left" Margin="150,0,0,0" VerticalAlignment="Top" Height="28" Width="55"/>
                     <TextBox x:Name="oreResult4M3" HorizontalAlignment="Left" Margin="150,45,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="50"/>
-                    <Label Content="other" HorizontalAlignment="Left" Margin="225,0,0,0" VerticalAlignment="Top" Height="28" Width="50"/>
+                    <Label Content="Иначе" HorizontalAlignment="Left" Margin="225,0,0,0" VerticalAlignment="Top" Height="28" Width="55"/>
                     <TextBox x:Name="oreResult5M3" HorizontalAlignment="Left" Margin="225,45,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="50"/>
                 </Grid>
                 <Grid  HorizontalAlignment="Left" VerticalAlignment="Center" Height="66" Width="326" Background="#FFD2D2D2">
                     <Grid HorizontalAlignment="Center" VerticalAlignment="Center" Height="64" Width="324" Background="White" >
-                        <Label VerticalAlignment="Top" HorizontalAlignment="Left" Margin="2,2,0,0" Height="26" Width="32" Content="&gt;hg"/>
-                        <Label Content="&lt;=AO2 &amp; &lt;=AO1" HorizontalAlignment="Left" Margin="25,25,0,0" VerticalAlignment="Top" Height="24" Width="77" FontSize="8"/>
+                        <Label VerticalAlignment="Top" HorizontalAlignment="Left" Margin="2,2,0,0" Height="26" Width="58" Content="&gt;Р. 1 Зн. 1"/>
+                        <Label Content="&lt;=Р.3 &amp; &lt;=Р.2" HorizontalAlignment="Left" Margin="25,25,0,0" VerticalAlignment="Top" Height="24" Width="77" FontSize="8"/>
                         <TextBox x:Name="oreAddResult1M3" HorizontalAlignment="Left" Margin="35,50,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="50" FontSize="8"/>
-                        <Label Content="&gt;AO2 &amp; &lt;=AO1" HorizontalAlignment="Left" Margin="100,25,0,0" VerticalAlignment="Top" Height="25" Width="78" FontSize="8"/>
+                        <Label Content="&gt;Р.3 &amp; &lt;=Р.2" HorizontalAlignment="Left" Margin="100,25,0,0" VerticalAlignment="Top" Height="25" Width="78" FontSize="8"/>
                         <TextBox x:Name="oreAddResult2M3" HorizontalAlignment="Left" Margin="110,50,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="50" FontSize="8"/>
-                        <Label Content="&lt;=AO2 &amp; &gt;AO1" HorizontalAlignment="Left" Margin="175,25,0,0" VerticalAlignment="Top" Height="25" Width="71" FontSize="8"/>
+                        <Label Content="&lt;=Р.3 &amp; &gt;Р.2" HorizontalAlignment="Left" Margin="175,25,0,0" VerticalAlignment="Top" Height="25" Width="71" FontSize="8"/>
                         <TextBox x:Name="oreAddResult3M3" HorizontalAlignment="Left" Margin="185,50,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="50" FontSize="8" />
-                        <Label Content="other" HorizontalAlignment="Left" Margin="260,25,0,0" VerticalAlignment="Top" Height="25" Width="50" FontSize="8"/>
+                        <Label Content="иначе" HorizontalAlignment="Left" Margin="260,25,0,0" VerticalAlignment="Top" Height="25" Width="50" FontSize="8"/>
                         <TextBox x:Name="oreAddResult4M3" HorizontalAlignment="Left" Margin="260,50,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="50" FontSize="8"/>
                     </Grid>
                 </Grid>
@@ -102,7 +106,7 @@
             </Grid>
 
         </Grid>
-        <Grid HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="775" Margin="18,325,0,0">
+        <Grid HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="775" Margin="18,325,0,0" Grid.ColumnSpan="2">
             <Button Content="Start" HorizontalAlignment="Left" VerticalAlignment="Top" Height="25" Width="100" FontSize="14" Click="Button_Click_3"/>
             <TextBox x:Name="resultQuery" HorizontalAlignment="Left" Margin="0,32,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="700" Height="50"/>
             <Button Content="Copy" HorizontalAlignment="Left" Margin="707,32,0,0" VerticalAlignment="Top" Height="50" Width="50" FontSize="10" Click="Button_Click_4"/>
