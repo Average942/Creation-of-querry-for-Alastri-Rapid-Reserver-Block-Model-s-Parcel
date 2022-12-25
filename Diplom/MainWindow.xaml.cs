@@ -13,6 +13,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Xml;
+using System.Xml.Linq;
 
 namespace Diplom
 {
@@ -21,12 +23,48 @@ namespace Diplom
     /// </summary>
     public partial class MainWindow : Window
     {
+        //private Object[] addOres;#
+        private int counter = 0;
+        private Dictionary<int, object> addOres = new Dictionary<int, object>();
         private byte methodnum = 1;
         public MainWindow()
         {
-            InitializeComponent();
             
+            InitializeComponent();
+            //addOres[0] = AOG1;
+            //addOres[1] = AOG2;
         }
+
+        //Simple Check for Textbox values to make sure input is correct
+        private void isNumber(object sender, KeyEventArgs e)
+        {
+            //Check if it is spacebar key
+            if (e.Key == Key.Space)
+            {
+                e.Handled = true;
+            }
+            //check if it is not number or control keys (delete, backspace, left, right, delete)
+            e.Handled = !checkBothNumberAndNumpad(e.Key) && !checkControlKeys(e.Key);
+            base.OnPreviewKeyDown(e);
+        }
+        private bool checkBothNumberAndNumpad(Key inKey)
+        {
+            if (inKey < Key.D0 || inKey > Key.D9)
+            {
+                if (inKey < Key.NumPad0 || inKey > Key.NumPad9)
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+        private bool checkControlKeys(Key inKey)
+        {
+            return inKey == Key.Delete || inKey == Key.Back || inKey == Key.Left || inKey == Key.Right || inKey == Key.Delete;
+        }
+
+        
+
         //This method will return symbol instead of string for comparison
         private string ConditionStringToSymbol(string textValue)
         {
@@ -110,7 +148,7 @@ namespace Diplom
                     resultQuery.Text = secondM();
                     break;
                 case 3:
-                    resultQuery.Text = thirdM();
+                    //resultQuery.Text = thirdM();
                     break;
                 default:
                     break;
@@ -180,18 +218,107 @@ namespace Diplom
                 return "Error " + "\"NullReferenceException\"" + "!\nSelect ALL Conditions before start!!!";
             }
         }
-        private string thirdM()
+        /*private string thirdM()
         {
             string p3 = "N(\"" + oreAdd2NameM3.Text + "\") > " + oreAdd2ValueM3.Text + " ? " + "\"" + oreAddResult2M3.Text + "\" : \"" + oreAddResult1M3.Text + "\"";
             string p2 = "N(\"" + oreAdd2NameM3.Text + "\") > " + oreAdd2ValueM3.Text + " ? " + "\"" + oreAddResult4M3.Text + "\" : \"" + oreAddResult3M3.Text + "\"";
             string p1 = "N(\""+oreAdd1NameM3.Text+ "\") > "+oreAdd1ValueM3.Text+" ? "+(p2)+" : "+(p3);
             string parcel = "N(\"" + oreMainNameM3.Text + "\") > " + oreValue1M3.Text + " ? " +(p1)+" : " + "N(\"" + oreMainNameM3.Text + "\") > " + oreValue2M3.Text + " ? \"" + oreResult2M3.Text + "\" : " + "N(\"" + oreMainNameM3.Text + "\") > " + oreValue3M3.Text + " ? \"" + oreResult3M3.Text + "\" : " + "N(\"" + oreMainNameM3.Text + "\") > " + oreValue4M3.Text + " ? \"" + oreResult4M3.Text + "\" : \""+oreResult5M3.Text + "\"";
             return parcel;
-        }
+        }*/
 
         private void Button_Click_4(object sender, RoutedEventArgs e)
         {
             Clipboard.SetData(DataFormats.Text, resultQuery.Text);
+        }
+
+        private void AddOreBtn_Click(object sender, RoutedEventArgs e)
+        {
+            AddOreToMethod3();
+            counter++;
+        }
+
+        private void AddOreToMethod3()
+        {
+            Grid addOreGrid = new Grid();
+            Label addOreNameLabel = new Label();
+            TextBox addOreNameText = new TextBox();
+            Label addOreValueLabel = new Label();
+            TextBox addOreValueText = new TextBox();
+            Label   addOreCondLabel = new Label();
+            ListBox addOreCondList = new ListBox();
+          //StackPanel stackPanel = new StackPanel();
+          //StackPanel stackPanel_list = new StackPanel();
+          //ListBoxItem listBoxItem = new ListBoxItem();
+
+            //place items inside listbox
+            addOreCondList.Items.Add("больше");
+            addOreCondList.Items.Add("больше или равно");
+            addOreCondList.Items.Add("меньше");
+            addOreCondList.Items.Add("меньше или равно");
+            addOreCondList.Items.Add("равно");
+            addOreCondList.Items.Add("неравное");
+            //fill elemts' properties
+            addOreNameLabel.Content = "Руда";
+            addOreNameLabel.Height = 25;
+            addOreNameLabel.Width = 120;
+            addOreNameLabel.Margin = new Thickness(0, 0, 0, 0);
+            addOreNameLabel.HorizontalAlignment = HorizontalAlignment.Left;
+            addOreNameLabel.VerticalAlignment = VerticalAlignment.Top;
+            
+            addOreValueLabel.Content = "Значение";
+            addOreValueLabel.Height = 25;
+            addOreValueLabel.Width = 75;
+            addOreValueLabel.Margin = new Thickness(135, 0, 0, 0);
+            addOreValueLabel.HorizontalAlignment = HorizontalAlignment.Left;
+            addOreValueLabel.VerticalAlignment = VerticalAlignment.Top;
+
+            addOreCondLabel.Content = "Условие";
+            addOreCondLabel.Height = 25;
+            addOreCondLabel.Width = 120;
+            addOreCondLabel.Margin = new Thickness(210,0, 0, 0);
+            addOreCondLabel.HorizontalAlignment = HorizontalAlignment.Left;
+            addOreCondLabel.VerticalAlignment = VerticalAlignment.Top;
+
+            addOreNameText.Name = "AON" + counter;
+            addOreNameText.Height = 25;
+            addOreNameText.Width = 120;
+            addOreNameText.Margin = new Thickness(0, 35, 0, 0);
+            addOreNameText.HorizontalAlignment = HorizontalAlignment.Left;
+            addOreNameText.VerticalAlignment = VerticalAlignment.Top;
+
+            addOreValueText.Name = "AOV" + counter;
+            addOreValueText.Height = 25;
+            addOreValueText.Width = 65;
+            addOreValueText.Margin = new Thickness(135, 35, 0, 0);
+            addOreValueText.HorizontalAlignment = HorizontalAlignment.Left;
+            addOreValueText.VerticalAlignment = VerticalAlignment.Top;
+            addOreValueText.PreviewKeyDown += new KeyEventHandler(isNumber);
+
+            addOreCondList.Name = "AOC" + counter;
+            addOreCondList.Height = 25;
+            addOreCondList.Width = 140;
+            addOreCondList.Margin = new Thickness(210, 35, 0, 0);
+            addOreCondList.HorizontalAlignment = HorizontalAlignment.Left;
+            addOreCondList.VerticalAlignment = VerticalAlignment.Top;
+
+            //step by step place all elements inside
+            addOreGrid.Children.Add(addOreNameLabel);
+            addOreGrid.Children.Add(addOreNameText);
+            addOreGrid.Children.Add(addOreValueLabel);
+            addOreGrid.Children.Add(addOreValueText);
+            addOreGrid.Children.Add(addOreCondLabel);
+            addOreGrid.Children.Add(addOreCondList);
+            //set up add Ore Grid then 
+            addOreGrid.Name = "AOG" + counter;
+            addOreGrid.Margin = new Thickness(0, 30 + 90 * counter, 0, 0);
+            addOreGrid.Height = 90;
+            //addOreGrid.Width=320;
+            addOreGrid.HorizontalAlignment= HorizontalAlignment.Left;
+            addOreGrid.VerticalAlignment= VerticalAlignment.Top;
+            //then place this stack inside AddOre grid as children
+            AddOre.Children.Add(addOreGrid);
+            //AddOre.Children.Add();
         }
         /*
 private void TextBox_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
