@@ -26,22 +26,16 @@ namespace Diplom
     /// </summary>
     public partial class MainWindow : Window
     {
-        //private Object[] addOres;#
+        
         private int counter = 1;
         private Dictionary<int, object> addOres = new Dictionary<int, object>();
-        //private List<string[]> aOGeneric = new List<string[]>();
-        /*
-        private List<string> aON = new List<string>();
-        private List<string> aOV = new List<string>();
-        private List<string> aOC = new List<string>();*/
+        
 
         private byte methodnum = 1;
         public MainWindow()
         {
 
             InitializeComponent();
-            //addOres[0] = AOG1;
-            //addOres[1] = AOG2;
         }
 
         //Simple Check for Textbox values to make sure input is correct
@@ -254,14 +248,7 @@ namespace Diplom
                 return "Ошибка!\nВыберите ВСЕ условия перед Стартом";
             }
         }
-        /*private string thirdM()
-        {
-            string p3 = "N(\"" + oreAdd2NameM3.Text + "\") > " + oreAdd2ValueM3.Text + " ? " + "\"" + oreAddResult2M3.Text + "\" : \"" + oreAddResult1M3.Text + "\"";
-            string p2 = "N(\"" + oreAdd2NameM3.Text + "\") > " + oreAdd2ValueM3.Text + " ? " + "\"" + oreAddResult4M3.Text + "\" : \"" + oreAddResult3M3.Text + "\"";
-            string p1 = "N(\""+oreAdd1NameM3.Text+ "\") > "+oreAdd1ValueM3.Text+" ? "+(p2)+" : "+(p3);
-            string parcel = "N(\"" + oreMainNameM3.Text + "\") > " + oreValue1M3.Text + " ? " +(p1)+" : " + "N(\"" + oreMainNameM3.Text + "\") > " + oreValue2M3.Text + " ? \"" + oreResult2M3.Text + "\" : " + "N(\"" + oreMainNameM3.Text + "\") > " + oreValue3M3.Text + " ? \"" + oreResult3M3.Text + "\" : " + "N(\"" + oreMainNameM3.Text + "\") > " + oreValue4M3.Text + " ? \"" + oreResult4M3.Text + "\" : \""+oreResult5M3.Text + "\"";
-            return parcel;
-        }*/
+        
         private string thirdM()
         {
             try
@@ -278,12 +265,7 @@ namespace Diplom
                     Add_Ore_Name[i] = GetInput[0];
                     Add_Ore_Value[i] = GetInput[1];//Convert.ToDouble(GetInput[1]);
                     Add_Ore_Condition[i] = ConditionStringToSymbol(GetInput[2]);
-                    //...if correct, should set input iside arrays then we need to make code with these values and return it
-                    /*//Example of Convertation array to string for print
-                    string s = "{" + string.Join(", ", mainOreControlValues) + "}";//nums
-                    Console.WriteLine(s);
-                    s = "{\"" + string.Join("\", \"", gradeOre) + "\"}";//chrs
-                    Console.WriteLine(s);*/
+                    
                 }
 
                 //Get Input:
@@ -321,29 +303,15 @@ namespace Diplom
         }
         private string[] GetAddOresInput(int i = 0)
         {
-            //XmlDocument doc = new XmlDocument();
-            //doc.Load("MainWindow.xml");
-
-            //XmlNode grid;
-            //XmlNode root = doc.DocumentElement;////<-Can't find file in debug...
-            //grid = root.SelectSingleNode("descendant::Grid[@x:Name='AddOre']");
+            
             string OreName;
             string OreValue;//string->-TO->double later
             string OreCondition;
 
-            // oreGrid = grid.SelectSingleNode("descendant::Grid[@x:Name='AOG" + i + "']");
-            //XmlNode OreNameI = oreGrid.SelectSingleNode("descendant::TextBox[@x:Name='AON" + i + "']");
-            //XmlNode OreValueI = oreGrid.SelectSingleNode("descendant::TextBox[@x:Name='AOV" + i + "']");
-            //XmlNode OreConditionI = oreGrid.SelectSingleNode("descendant::ListBox[@x:Name='AOC" + i + "']");
-            //XmlNode OreCondList_selected = OreConditionI.SelectSingleNode("descendant::ListBoxItem[@Selected='OnSelected']");
-            //
 
             OreName = ReturnTextBoxText("AON_", i);
             OreValue = ReturnTextBoxText("AOV_", i);
             OreCondition = ReturnListBoxItemText("AOC_", i);
-            //OreName = //OreNameI.InnerText;
-            //OreValue = OreValueI.InnerText;
-            //OreCondition =ConditionStringToSymbol(OreCondList_selected.InnerText);
             string[] group = new string[3] { OreName, OreValue, OreCondition };
             return group;
         }
@@ -361,16 +329,7 @@ namespace Diplom
         }
         private string ReturnListBoxItemText(string part, int i)
         {
-            /*
-            object wantedNode = AddOre.FindName(part + i);
-            if (wantedNode is ListBox)
-            {
-                ListBox wantedChild = wantedNode as ListBox;
-                string cont = ((ListBoxItem)wantedChild.SelectedItem).Content.ToString();
-                return ConditionStringToSymbol(cont);
-            }
-            return "";
-            */
+            
             switch (i)
             {
                 case 0:
@@ -404,7 +363,7 @@ namespace Diplom
 
         private void AddOreBtn_Click(object sender, RoutedEventArgs e)
         {
-            //AddOreToMethod3();
+            
             ActivateAddOreGrid(counter);
             counter++;
         }
@@ -420,10 +379,7 @@ namespace Diplom
                 Application.Current.MainWindow.Height = this.Height + 75;
                 switch (i)
                 {
-                    /*case 0:
-                        AOG_0.Visibility = Visibility.Visible;
-                        DelOreBtn.Visibility = Visibility.Visible;
-                        break;*/
+                    
                     case 1:
                         AOG_1.Visibility = Visibility.Visible;
                         AOG_1.Margin = new Thickness(0, 0 + i * 75, 0, 0);
@@ -465,93 +421,7 @@ namespace Diplom
                 }
             }
         }
-        /*
-        private void AddOreToMethod3()
-        {
-            Grid addOreGrid = new Grid();
-            Label addOreNameLabel = new Label();
-            TextBox addOreNameText = new TextBox();
-            Label addOreValueLabel = new Label();
-            TextBox addOreValueText = new TextBox();
-            Label   addOreCondLabel = new Label();
-            ListBox addOreCondList = new ListBox();
-          //StackPanel stackPanel = new StackPanel();
-          //StackPanel stackPanel_list = new StackPanel();
-          //ListBoxItem listBoxItem = new ListBoxItem();
-
-            //place items inside listbox
-            addOreCondList.Items.Add("больше");
-            addOreCondList.Items.Add("больше или равно");
-            addOreCondList.Items.Add("меньше");
-            addOreCondList.Items.Add("меньше или равно");
-            addOreCondList.Items.Add("равно");
-            addOreCondList.Items.Add("неравное");
-            //fill elemts' properties
-            addOreNameLabel.Content = "Руда";
-            addOreNameLabel.Height = 25;
-            addOreNameLabel.Width = 120;
-            addOreNameLabel.Margin = new Thickness(0, 0, 0, 0);
-            addOreNameLabel.HorizontalAlignment = HorizontalAlignment.Left;
-            addOreNameLabel.VerticalAlignment = VerticalAlignment.Top;
-            
-            addOreValueLabel.Content = "Значение";
-            addOreValueLabel.Height = 25;
-            addOreValueLabel.Width = 75;
-            addOreValueLabel.Margin = new Thickness(135, 0, 0, 0);
-            addOreValueLabel.HorizontalAlignment = HorizontalAlignment.Left;
-            addOreValueLabel.VerticalAlignment = VerticalAlignment.Top;
-
-            addOreCondLabel.Content = "Условие";
-            addOreCondLabel.Height = 25;
-            addOreCondLabel.Width = 120;
-            addOreCondLabel.Margin = new Thickness(210,0, 0, 0);
-            addOreCondLabel.HorizontalAlignment = HorizontalAlignment.Left;
-            addOreCondLabel.VerticalAlignment = VerticalAlignment.Top;
-
-            addOreNameText.Name = "AON" + counter;
-            addOreNameText.Height = 25;
-            addOreNameText.Width = 120;
-            addOreNameText.Margin = new Thickness(0, 35, 0, 0);
-            addOreNameText.HorizontalAlignment = HorizontalAlignment.Left;
-            addOreNameText.VerticalAlignment = VerticalAlignment.Top;
-
-            addOreValueText.Name = "AOV" + counter;
-            addOreValueText.Height = 25;
-            addOreValueText.Width = 65;
-            addOreValueText.Margin = new Thickness(135, 35, 0, 0);
-            addOreValueText.HorizontalAlignment = HorizontalAlignment.Left;
-            addOreValueText.VerticalAlignment = VerticalAlignment.Top;
-            addOreValueText.PreviewKeyDown += new KeyEventHandler(isNumber);
-
-            addOreCondList.Name = "AOC" + counter;
-            addOreCondList.Height = 25;
-            addOreCondList.Width = 140;
-            addOreCondList.Margin = new Thickness(210, 35, 0, 0);
-            addOreCondList.HorizontalAlignment = HorizontalAlignment.Left;
-            addOreCondList.VerticalAlignment = VerticalAlignment.Top;
-
-            //
-            /*aON.Add(addOreNameText.Name);
-            aOV.Add(addOreValueText.Name);
-            aOC.Add(addOreCondList.Name);*//*
-            //step by step place all elements inside
-            addOreGrid.Children.Add(addOreNameLabel);
-            addOreGrid.Children.Add(addOreNameText);
-            addOreGrid.Children.Add(addOreValueLabel);
-            addOreGrid.Children.Add(addOreValueText);
-            addOreGrid.Children.Add(addOreCondLabel);
-            addOreGrid.Children.Add(addOreCondList);
-            //set up add Ore Grid then 
-            addOreGrid.Name = "AOG" + counter;
-            addOreGrid.Margin = new Thickness(0, 30 + 90 * counter, 0, 0);
-            addOreGrid.Height = 90;
-            //addOreGrid.Width=320;
-            addOreGrid.HorizontalAlignment= HorizontalAlignment.Left;
-            addOreGrid.VerticalAlignment= VerticalAlignment.Top;
-            //then place this stack inside AddOre grid as children
-            AddOre.Children.Add(addOreGrid);
-            //AddOre.Children.Add();
-        }*/
+        
 
         private void DelOreBtn_Click(object sender, RoutedEventArgs e)
         {
@@ -569,13 +439,7 @@ namespace Diplom
                 Application.Current.MainWindow.Height = this.Height - 75;
                 switch (i - 1)
                 {
-                    /*case 0:
-                        AOG_0.Visibility = Visibility.Collapsed;
-                        AON_0.Text = "";
-                        AOV_0.Text = "";
-                        AOC_0.SelectedItem = null;
-                        DelOreBtn.Visibility = Visibility.Collapsed;
-                        break;*/
+                    
                     case 1:
                         AOG_1.Visibility = Visibility.Collapsed;
                         AON_1.Text = "";
@@ -635,11 +499,6 @@ namespace Diplom
                 }
             }
         }
-        /*
-private void TextBox_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
-{
-TextBox txtBx = sender as TextBox;//This looks like it will be needed, so even though code is not working I leave it for the time being
-txtBx.Text = "";
-}*/
+        
     }
 }
