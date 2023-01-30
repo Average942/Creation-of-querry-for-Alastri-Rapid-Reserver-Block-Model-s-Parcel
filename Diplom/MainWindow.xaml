@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Diplom"
         mc:Ignorable="d"
-        Title="MainWindow" Height="325" Width="850">
+        Title="Генератор сортов полезного ископаемого" Height="325" Width="850">
     <Grid Height="Auto" Width="Auto">
         <Border BorderBrush="Gray" BorderThickness="1" HorizontalAlignment="Left" Height="17" VerticalAlignment="Top" Width="1300" Grid.ColumnSpan="2"/>
 
@@ -16,7 +16,7 @@
         <Button x:Name="BtnM1" Content="Метод 1" HorizontalAlignment="Left" VerticalAlignment="Top" Height="17" Width="110" Click="Button_Click" BorderBrush="LightSkyBlue"/>
 
         <Grid x:Name="firstMethod" Visibility="Visible" HorizontalAlignment="Left" Height="70" VerticalAlignment="Top" Width="666" Margin="18,22,0,0" Grid.ColumnSpan="2">
-            <Label Content="Руда" HorizontalAlignment="Left" VerticalAlignment="Top" Height="25" Width="120"/>
+            <Label Content="Полезное ископаемое" HorizontalAlignment="Left" VerticalAlignment="Top" Height="25" Width="135" Margin="-8,0,0,0"/>
             <TextBox x:Name="oreNameM1" HorizontalAlignment="Left" Margin="0,35,0,0" HorizontalContentAlignment="Center" VerticalAlignment="Top" Width="120" Height="25"/>
             <Label Content="Значение" HorizontalAlignment="Left" Margin="135,0,0,0" VerticalAlignment="Top" Height="25" Width="66" />
             <TextBox x:Name="oreValueM1" HorizontalAlignment="Left" Margin="135,35,0,0" HorizontalContentAlignment="Center" VerticalAlignment="Top" Width="65" Height="25" PreviewKeyDown="isNumber"/>
@@ -35,7 +35,7 @@
             <TextBox x:Name="secondResultM1" HorizontalAlignment="Left" Margin="495,35,0,0" HorizontalContentAlignment="Center" VerticalAlignment="Top" Width="100" Height="25" />
         </Grid>
         <Grid x:Name="secondMethod" Visibility="Collapsed" HorizontalAlignment="Left" Height="152" VerticalAlignment="Top" Width="1250" Margin="18,22,0,0" Grid.ColumnSpan="2">
-            <Label Content="Руда" HorizontalAlignment="Left" VerticalAlignment="Top" Height="25" Width="120"/>
+            <Label Content="Полезное ископаемое" HorizontalAlignment="Left" VerticalAlignment="Top" Height="25" Width="135" Margin="-8,0,0,0"/>
             <TextBox x:Name="oreNameM2" HorizontalAlignment="Left" Margin="0,35,0,0" HorizontalContentAlignment="Center" VerticalAlignment="Top" Width="120" Height="25"/>
 
             <Label Content="Значение 1" HorizontalAlignment="Left" Margin="135,0,0,0" VerticalAlignment="Top" Height="25" Width="75"/>
@@ -113,7 +113,7 @@
 
         </Grid>
         <Grid x:Name="thirdMethod" Visibility="Collapsed" HorizontalAlignment="Left" Height="Auto" VerticalAlignment="Top" Width="1250" Margin="18,22,0,0" Grid.ColumnSpan="2">
-            <Label Content="Руда" HorizontalAlignment="Left" VerticalAlignment="Top" Height="25" Width="120"/>
+            <Label Content="Полезное ископаемое" HorizontalAlignment="Left" VerticalAlignment="Top" Height="25" Width="135" Margin="-8,0,0,0"/>
             <TextBox x:Name="oreNameM3" HorizontalAlignment="Left" Margin="0,35,0,0" HorizontalContentAlignment="Center" VerticalAlignment="Top" Width="120" Height="25"/>
 
             <Label Content="Значение 1" HorizontalAlignment="Left" Margin="135,0,0,0" VerticalAlignment="Top" Height="25" Width="75"/>
@@ -193,7 +193,7 @@
                 <Button x:Name="AddOreBtn" Width="120" Height="25" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,75,0,0" Click="AddOreBtn_Click">Добавить руду</Button>
                 <Button x:Name="DelOreBtn" Width="120" Height="25" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="135,75,0,0" Visibility="Collapsed" Click="DelOreBtn_Click">Убрать руду</Button>
                 <Grid x:Name="AOG_0" Height="65" Width="360" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,0,0,0" Visibility="Visible">
-                    <Label Height="25" Width="120" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,0,0,0">Руда</Label>
+                    <Label Height="25" Width="135" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="-8,0,0,0">Полезное ископаемое</Label>
                     <TextBox x:Name="AON_0" Height="25" Width="120" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Center" Margin="0,35,0,0"></TextBox>
                     <Label Height="25" Width="75" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="130,0,0,0">Значение</Label>
                     <TextBox x:Name="AOV_0" Height="25" Width="75" HorizontalAlignment="Left" VerticalAlignment=" Top" HorizontalContentAlignment="Center" Margin="130,35,0,0" PreviewKeyDown="isNumber"></TextBox>
@@ -208,7 +208,7 @@
                     </ListBox>
                 </Grid>
                 <Grid x:Name="AOG_1" Height="65" Width="360" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,0,0,0" Visibility="Collapsed">
-                    <Label Height="25" Width="120" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,0,0,0">Руда</Label>
+                    <Label Height="25" Width="135" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="-8,0,0,0">Полезное ископаемое</Label>
                     <TextBox x:Name="AON_1" Height="25" Width="120" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Center" Margin="0,35,0,0"></TextBox>
                     <Label Height="25" Width="75" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="130,0,0,0">Значение</Label>
                     <TextBox x:Name="AOV_1" Height="25" Width="75" HorizontalAlignment="Left" VerticalAlignment=" Top" HorizontalContentAlignment="Center" Margin="130,35,0,0" PreviewKeyDown="isNumber"></TextBox>
@@ -223,7 +223,7 @@
                     </ListBox>
                 </Grid>
                 <Grid x:Name="AOG_2" Height="65" Width="360" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,35,0,0" Visibility="Collapsed">
-                    <Label Height="25" Width="120" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,0,0,0">Руда</Label>
+                    <Label Height="25" Width="135" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="-8,0,0,0">Полезное ископаемое</Label>
                     <TextBox x:Name="AON_2" Height="25" Width="120" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Center" Margin="0,35,0,0"></TextBox>
                     <Label Height="25" Width="75" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="130,0,0,0">Значение</Label>
                     <TextBox x:Name="AOV_2" Height="25" Width="75" HorizontalAlignment="Left" VerticalAlignment=" Top" HorizontalContentAlignment="Center" Margin="130,35,0,0" PreviewKeyDown="isNumber"></TextBox>
@@ -238,7 +238,7 @@
                     </ListBox>
                 </Grid>
                 <Grid x:Name="AOG_3" Height="65" Width="360" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,35,0,0" Visibility="Collapsed">
-                    <Label Height="25" Width="120" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,0,0,0">Руда</Label>
+                    <Label Height="25" Width="135" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="-8,0,0,0">Полезное ископаемое</Label>
                     <TextBox x:Name="AON_3" Height="25" Width="120" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Center" Margin="0,35,0,0"></TextBox>
                     <Label Height="25" Width="75" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="130,0,0,0">Значение</Label>
                     <TextBox x:Name="AOV_3" Height="25" Width="75" HorizontalAlignment="Left" VerticalAlignment=" Top" HorizontalContentAlignment="Center" Margin="130,35,0,0" PreviewKeyDown="isNumber"></TextBox>
@@ -253,7 +253,7 @@
                     </ListBox>
                 </Grid>
                 <Grid x:Name="AOG_4" Height="65" Width="360" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,35,0,0" Visibility="Collapsed">
-                    <Label Height="25" Width="120" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,0,0,0">Руда</Label>
+                    <Label Height="25" Width="135" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="-8,0,0,0">Полезное ископаемое</Label>
                     <TextBox x:Name="AON_4" Height="25" Width="120" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Center" Margin="0,35,0,0"></TextBox>
                     <Label Height="25" Width="75" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="130,0,0,0">Значение</Label>
                     <TextBox x:Name="AOV_4" Height="25" Width="75" HorizontalAlignment="Left" VerticalAlignment=" Top" HorizontalContentAlignment="Center" Margin="130,35,0,0" PreviewKeyDown="isNumber"></TextBox>
@@ -268,7 +268,7 @@
                     </ListBox>
                 </Grid>
                 <Grid x:Name="AOG_5" Height="65" Width="360" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,35,0,0" Visibility="Collapsed">
-                    <Label Height="25" Width="120" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,0,0,0">Руда</Label>
+                    <Label Height="25" Width="135" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="-8,0,0,0">Полезное ископаемое</Label>
                     <TextBox x:Name="AON_5" Height="25" Width="120" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Center" Margin="0,35,0,0"></TextBox>
                     <Label Height="25" Width="75" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="130,0,0,0">Значение</Label>
                     <TextBox x:Name="AOV_5" Height="25" Width="75" HorizontalAlignment="Left" VerticalAlignment=" Top" HorizontalContentAlignment="Center" Margin="130,35,0,0" PreviewKeyDown="isNumber"></TextBox>
@@ -283,7 +283,7 @@
                     </ListBox>
                 </Grid>
                 <Grid x:Name="AOG_6" Height="65" Width="360" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,35,0,0" Visibility="Collapsed">
-                    <Label Height="25" Width="120" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,0,0,0">Руда</Label>
+                    <Label Height="25" Width="135" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="-8,0,0,0">Полезное ископаемое</Label>
                     <TextBox x:Name="AON_6" Height="25" Width="120" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Center" Margin="0,35,0,0"></TextBox>
                     <Label Height="25" Width="75" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="130,0,0,0">Значение</Label>
                     <TextBox x:Name="AOV_6" Height="25" Width="75" HorizontalAlignment="Left" VerticalAlignment=" Top" HorizontalContentAlignment="Center" Margin="130,35,0,0" PreviewKeyDown="isNumber"></TextBox>
@@ -298,7 +298,7 @@
                     </ListBox>
                 </Grid>
                 <Grid x:Name="AOG_7" Height="65" Width="360" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,35,0,0" Visibility="Collapsed">
-                    <Label Height="25" Width="120" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,0,0,0">Руда</Label>
+                    <Label Height="25" Width="135" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="-8,0,0,0">Полезное ископаемое</Label>
                     <TextBox x:Name="AON_7" Height="25" Width="120" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Center" Margin="0,35,0,0"></TextBox>
                     <Label Height="25" Width="75" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="130,0,0,0">Значение</Label>
                     <TextBox x:Name="AOV_7" Height="25" Width="75" HorizontalAlignment="Left" VerticalAlignment=" Top" HorizontalContentAlignment="Center" Margin="130,35,0,0" PreviewKeyDown="isNumber"></TextBox>
@@ -313,7 +313,7 @@
                     </ListBox>
                 </Grid>
                 <Grid x:Name="AOG_8" Height="65" Width="360" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,35,0,0" Visibility="Collapsed">
-                    <Label Height="25" Width="120" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,0,0,0">Руда</Label>
+                    <Label Height="25" Width="135" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="-8,0,0,0">Полезное ископаемое</Label>
                     <TextBox x:Name="AON_8" Height="25" Width="120" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Center" Margin="0,35,0,0"></TextBox>
                     <Label Height="25" Width="75" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="130,0,0,0">Значение</Label>
                     <TextBox x:Name="AOV_8" Height="25" Width="75" HorizontalAlignment="Left" VerticalAlignment=" Top" HorizontalContentAlignment="Center" Margin="130,35,0,0" PreviewKeyDown="isNumber"></TextBox>
@@ -328,7 +328,7 @@
                     </ListBox>
                 </Grid>
                 <Grid x:Name="AOG_9" Height="65" Width="360" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,35,0,0" Visibility="Collapsed">
-                    <Label Height="25" Width="120" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,0,0,0">Руда</Label>
+                    <Label Height="25" Width="135" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="-8,0,0,0">Полезное ископаемое</Label>
                     <TextBox x:Name="AON_9" Height="25" Width="120" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Center" Margin="0,35,0,0"></TextBox>
                     <Label Height="25" Width="75" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="130,0,0,0">Значение</Label>
                     <TextBox x:Name="AOV_9" Height="25" Width="75" HorizontalAlignment="Left" VerticalAlignment=" Top" HorizontalContentAlignment="Center" Margin="130,35,0,0" PreviewKeyDown="isNumber"></TextBox>

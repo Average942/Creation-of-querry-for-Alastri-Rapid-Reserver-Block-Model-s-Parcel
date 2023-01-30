@@ -201,7 +201,7 @@ namespace Diplom
             catch (NullReferenceException e)
             {
                 resultQuery.Foreground = Brushes.Red;
-                return "Ошибка!\nВыберите условие перед Стартом";
+                return "Ошибка!\nВыберите условие перед Стартом (Кликнуть по нужному тексту в списке)";
             }
         }
         private string secondM()
@@ -245,7 +245,7 @@ namespace Diplom
             catch (NullReferenceException e)
             {
                 resultQuery.Foreground = Brushes.Red;
-                return "Ошибка!\nВыберите ВСЕ условия перед Стартом";
+                return "Ошибка!\nВыберите ВСЕ условия перед Стартом (Кликнуть по нужному тексту в списке)";
             }
         }
         
@@ -298,7 +298,7 @@ namespace Diplom
             catch (NullReferenceException e)
             {
                 resultQuery.Foreground = Brushes.Red;
-                return "Ошибка!\nВыберите ВСЕ условия перед Стартом";
+                return "Ошибка!\nВыберите ВСЕ условия перед Стартом (Кликнуть по нужному тексту в списке)";
             }
         }
         private string[] GetAddOresInput(int i = 0)
