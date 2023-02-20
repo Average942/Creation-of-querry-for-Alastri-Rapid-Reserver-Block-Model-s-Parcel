@@ -5,13 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Diplom"
         mc:Ignorable="d"
-        Title="MainWindow" Height="500" Width="1300">
-    <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="61*"/>
-            <ColumnDefinition Width="99*"/>
-        </Grid.ColumnDefinitions>
-        <Border BorderBrush="Gray" BorderThickness="1" HorizontalAlignment="Left" Height="17" VerticalAlignment="Top" Width="800" Grid.ColumnSpan="2"/>
+        Title="Генератор сортов полезного ископаемого" Height="325" Width="850">
+    <Grid Height="Auto" Width="Auto">
+        <Border BorderBrush="Gray" BorderThickness="1" HorizontalAlignment="Left" Height="17" VerticalAlignment="Top" Width="1300" Grid.ColumnSpan="2"/>
 
         <Button x:Name="BtnM3" Content="Метод 3" HorizontalAlignment="Left" VerticalAlignment="Top" Height="17" Width="110" Margin="218,0,0,0" Click="Button_Click_2" BorderBrush="Gray" Grid.ColumnSpan="2"/>
 
@@ -19,8 +15,8 @@
 
         <Button x:Name="BtnM1" Content="Метод 1" HorizontalAlignment="Left" VerticalAlignment="Top" Height="17" Width="110" Click="Button_Click" BorderBrush="LightSkyBlue"/>
 
-        <Grid x:Name="firstMethod" Visibility="Collapsed" HorizontalAlignment="Left" Height="70" VerticalAlignment="Top" Width="666" Margin="18,22,0,0" Grid.ColumnSpan="2">
-            <Label Content="Руда" HorizontalAlignment="Left" VerticalAlignment="Top" Height="25" Width="120"/>
+        <Grid x:Name="firstMethod" Visibility="Visible" HorizontalAlignment="Left" Height="70" VerticalAlignment="Top" Width="666" Margin="18,22,0,0" Grid.ColumnSpan="2">
+            <Label Content="Полезное ископаемое" HorizontalAlignment="Left" VerticalAlignment="Top" Height="25" Width="135" Margin="-8,0,0,0"/>
             <TextBox x:Name="oreNameM1" HorizontalAlignment="Left" Margin="0,35,0,0" HorizontalContentAlignment="Center" VerticalAlignment="Top" Width="120" Height="25"/>
             <Label Content="Значение" HorizontalAlignment="Left" Margin="135,0,0,0" VerticalAlignment="Top" Height="25" Width="66" />
             <TextBox x:Name="oreValueM1" HorizontalAlignment="Left" Margin="135,35,0,0" HorizontalContentAlignment="Center" VerticalAlignment="Top" Width="65" Height="25" PreviewKeyDown="isNumber"/>
@@ -39,7 +35,7 @@
             <TextBox x:Name="secondResultM1" HorizontalAlignment="Left" Margin="495,35,0,0" HorizontalContentAlignment="Center" VerticalAlignment="Top" Width="100" Height="25" />
         </Grid>
         <Grid x:Name="secondMethod" Visibility="Collapsed" HorizontalAlignment="Left" Height="152" VerticalAlignment="Top" Width="1250" Margin="18,22,0,0" Grid.ColumnSpan="2">
-            <Label Content="Руда" HorizontalAlignment="Left" VerticalAlignment="Top" Height="25" Width="120"/>
+            <Label Content="Полезное ископаемое" HorizontalAlignment="Left" VerticalAlignment="Top" Height="25" Width="135" Margin="-8,0,0,0"/>
             <TextBox x:Name="oreNameM2" HorizontalAlignment="Left" Margin="0,35,0,0" HorizontalContentAlignment="Center" VerticalAlignment="Top" Width="120" Height="25"/>
 
             <Label Content="Значение 1" HorizontalAlignment="Left" Margin="135,0,0,0" VerticalAlignment="Top" Height="25" Width="75"/>
@@ -116,8 +112,8 @@
             <TextBox x:Name="oreResult6M2" HorizontalAlignment="Left" Margin="735,95,0,0" HorizontalContentAlignment="Center" VerticalAlignment="Top" Width="110" Height="25"/>
 
         </Grid>
-        <Grid x:Name="thirdMethod" Visibility="Visible" HorizontalAlignment="Left" Height="340" VerticalAlignment="Top" Width="1250" Margin="18,22,0,0" Grid.ColumnSpan="2">
-            <Label Content="Руда" HorizontalAlignment="Left" VerticalAlignment="Top" Height="25" Width="120"/>
+        <Grid x:Name="thirdMethod" Visibility="Collapsed" HorizontalAlignment="Left" Height="Auto" VerticalAlignment="Top" Width="1250" Margin="18,22,0,0" Grid.ColumnSpan="2">
+            <Label Content="Полезное ископаемое" HorizontalAlignment="Left" VerticalAlignment="Top" Height="25" Width="135" Margin="-8,0,0,0"/>
             <TextBox x:Name="oreNameM3" HorizontalAlignment="Left" Margin="0,35,0,0" HorizontalContentAlignment="Center" VerticalAlignment="Top" Width="120" Height="25"/>
 
             <Label Content="Значение 1" HorizontalAlignment="Left" Margin="135,0,0,0" VerticalAlignment="Top" Height="25" Width="75"/>
@@ -193,17 +189,168 @@
             <Label Content="Иначе" HorizontalAlignment="Left" Margin="960,64,0,0" VerticalAlignment="Top" Height="30" Width="110"/>
             <TextBox x:Name="oreResult6M3" HorizontalAlignment="Left" Margin="960,95,0,0" HorizontalContentAlignment="Center" VerticalAlignment="Top" Width="110" Height="25"/>
 
-            <Grid x:Name="AddOre" HorizontalAlignment="Left" VerticalAlignment="Top" Width="365" Height="250" Margin="0,64,0,0">
-                <Button x:Name="AddOreBtn" Content="Добавить руду" Width="120" Height="25" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,0,0,0" Click="AddOreBtn_Click" />
-                
+            <Grid x:Name="AddOre" HorizontalAlignment="Left" VerticalAlignment="Top" Width="365" Height="Auto" Margin="0,64,0,0" Visibility="Visible">
+                <Button x:Name="AddOreBtn" Width="120" Height="25" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,75,0,0" Click="AddOreBtn_Click">Добавить руду</Button>
+                <Button x:Name="DelOreBtn" Width="120" Height="25" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="135,75,0,0" Visibility="Collapsed" Click="DelOreBtn_Click">Убрать руду</Button>
+                <Grid x:Name="AOG_0" Height="65" Width="360" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,0,0,0" Visibility="Visible">
+                    <Label Height="25" Width="135" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="-8,0,0,0">Полезное ископаемое</Label>
+                    <TextBox x:Name="AON_0" Height="25" Width="120" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Center" Margin="0,35,0,0"></TextBox>
+                    <Label Height="25" Width="75" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="130,0,0,0">Значение</Label>
+                    <TextBox x:Name="AOV_0" Height="25" Width="75" HorizontalAlignment="Left" VerticalAlignment=" Top" HorizontalContentAlignment="Center" Margin="130,35,0,0" PreviewKeyDown="isNumber"></TextBox>
+                    <Label Height="25" Width="135" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="215,0,0,0">Условие</Label>
+                    <ListBox x:Name="AOC_0" Height="25" Width="135" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="215,35,0,0">
+                        <ListBoxItem>больше</ListBoxItem>
+                        <ListBoxItem>больше или равно</ListBoxItem>
+                        <ListBoxItem>меньше</ListBoxItem>
+                        <ListBoxItem>меньше или равно</ListBoxItem>
+                        <ListBoxItem>равно</ListBoxItem>
+                        <ListBoxItem>неравное</ListBoxItem>
+                    </ListBox>
+                </Grid>
+                <Grid x:Name="AOG_1" Height="65" Width="360" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,0,0,0" Visibility="Collapsed">
+                    <Label Height="25" Width="135" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="-8,0,0,0">Полезное ископаемое</Label>
+                    <TextBox x:Name="AON_1" Height="25" Width="120" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Center" Margin="0,35,0,0"></TextBox>
+                    <Label Height="25" Width="75" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="130,0,0,0">Значение</Label>
+                    <TextBox x:Name="AOV_1" Height="25" Width="75" HorizontalAlignment="Left" VerticalAlignment=" Top" HorizontalContentAlignment="Center" Margin="130,35,0,0" PreviewKeyDown="isNumber"></TextBox>
+                    <Label Height="25" Width="135" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="215,0,0,0">Условие</Label>
+                    <ListBox x:Name="AOC_1" Height="25" Width="135" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="215,35,0,0">
+                        <ListBoxItem>больше</ListBoxItem>
+                        <ListBoxItem>больше или равно</ListBoxItem>
+                        <ListBoxItem>меньше</ListBoxItem>
+                        <ListBoxItem>меньше или равно</ListBoxItem>
+                        <ListBoxItem>равно</ListBoxItem>
+                        <ListBoxItem>неравное</ListBoxItem>
+                    </ListBox>
+                </Grid>
+                <Grid x:Name="AOG_2" Height="65" Width="360" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,35,0,0" Visibility="Collapsed">
+                    <Label Height="25" Width="135" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="-8,0,0,0">Полезное ископаемое</Label>
+                    <TextBox x:Name="AON_2" Height="25" Width="120" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Center" Margin="0,35,0,0"></TextBox>
+                    <Label Height="25" Width="75" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="130,0,0,0">Значение</Label>
+                    <TextBox x:Name="AOV_2" Height="25" Width="75" HorizontalAlignment="Left" VerticalAlignment=" Top" HorizontalContentAlignment="Center" Margin="130,35,0,0" PreviewKeyDown="isNumber"></TextBox>
+                    <Label Height="25" Width="135" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="215,0,0,0">Условие</Label>
+                    <ListBox x:Name="AOC_2" Height="25" Width="135" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="215,35,0,0">
+                        <ListBoxItem>больше</ListBoxItem>
+                        <ListBoxItem>больше или равно</ListBoxItem>
+                        <ListBoxItem>меньше</ListBoxItem>
+                        <ListBoxItem>меньше или равно</ListBoxItem>
+                        <ListBoxItem>равно</ListBoxItem>
+                        <ListBoxItem>неравное</ListBoxItem>
+                    </ListBox>
+                </Grid>
+                <Grid x:Name="AOG_3" Height="65" Width="360" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,35,0,0" Visibility="Collapsed">
+                    <Label Height="25" Width="135" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="-8,0,0,0">Полезное ископаемое</Label>
+                    <TextBox x:Name="AON_3" Height="25" Width="120" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Center" Margin="0,35,0,0"></TextBox>
+                    <Label Height="25" Width="75" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="130,0,0,0">Значение</Label>
+                    <TextBox x:Name="AOV_3" Height="25" Width="75" HorizontalAlignment="Left" VerticalAlignment=" Top" HorizontalContentAlignment="Center" Margin="130,35,0,0" PreviewKeyDown="isNumber"></TextBox>
+                    <Label Height="25" Width="135" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="215,0,0,0">Условие</Label>
+                    <ListBox x:Name="AOC_3" Height="25" Width="135" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="215,35,0,0">
+                        <ListBoxItem>больше</ListBoxItem>
+                        <ListBoxItem>больше или равно</ListBoxItem>
+                        <ListBoxItem>меньше</ListBoxItem>
+                        <ListBoxItem>меньше или равно</ListBoxItem>
+                        <ListBoxItem>равно</ListBoxItem>
+                        <ListBoxItem>неравное</ListBoxItem>
+                    </ListBox>
+                </Grid>
+                <Grid x:Name="AOG_4" Height="65" Width="360" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,35,0,0" Visibility="Collapsed">
+                    <Label Height="25" Width="135" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="-8,0,0,0">Полезное ископаемое</Label>
+                    <TextBox x:Name="AON_4" Height="25" Width="120" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Center" Margin="0,35,0,0"></TextBox>
+                    <Label Height="25" Width="75" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="130,0,0,0">Значение</Label>
+                    <TextBox x:Name="AOV_4" Height="25" Width="75" HorizontalAlignment="Left" VerticalAlignment=" Top" HorizontalContentAlignment="Center" Margin="130,35,0,0" PreviewKeyDown="isNumber"></TextBox>
+                    <Label Height="25" Width="135" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="215,0,0,0">Условие</Label>
+                    <ListBox x:Name="AOC_4" Height="25" Width="135" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="215,35,0,0">
+                        <ListBoxItem>больше</ListBoxItem>
+                        <ListBoxItem>больше или равно</ListBoxItem>
+                        <ListBoxItem>меньше</ListBoxItem>
+                        <ListBoxItem>меньше или равно</ListBoxItem>
+                        <ListBoxItem>равно</ListBoxItem>
+                        <ListBoxItem>неравное</ListBoxItem>
+                    </ListBox>
+                </Grid>
+                <Grid x:Name="AOG_5" Height="65" Width="360" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,35,0,0" Visibility="Collapsed">
+                    <Label Height="25" Width="135" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="-8,0,0,0">Полезное ископаемое</Label>
+                    <TextBox x:Name="AON_5" Height="25" Width="120" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Center" Margin="0,35,0,0"></TextBox>
+                    <Label Height="25" Width="75" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="130,0,0,0">Значение</Label>
+                    <TextBox x:Name="AOV_5" Height="25" Width="75" HorizontalAlignment="Left" VerticalAlignment=" Top" HorizontalContentAlignment="Center" Margin="130,35,0,0" PreviewKeyDown="isNumber"></TextBox>
+                    <Label Height="25" Width="135" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="215,0,0,0">Условие</Label>
+                    <ListBox x:Name="AOC_5" Height="25" Width="135" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="215,35,0,0">
+                        <ListBoxItem>больше</ListBoxItem>
+                        <ListBoxItem>больше или равно</ListBoxItem>
+                        <ListBoxItem>меньше</ListBoxItem>
+                        <ListBoxItem>меньше или равно</ListBoxItem>
+                        <ListBoxItem>равно</ListBoxItem>
+                        <ListBoxItem>неравное</ListBoxItem>
+                    </ListBox>
+                </Grid>
+                <Grid x:Name="AOG_6" Height="65" Width="360" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,35,0,0" Visibility="Collapsed">
+                    <Label Height="25" Width="135" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="-8,0,0,0">Полезное ископаемое</Label>
+                    <TextBox x:Name="AON_6" Height="25" Width="120" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Center" Margin="0,35,0,0"></TextBox>
+                    <Label Height="25" Width="75" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="130,0,0,0">Значение</Label>
+                    <TextBox x:Name="AOV_6" Height="25" Width="75" HorizontalAlignment="Left" VerticalAlignment=" Top" HorizontalContentAlignment="Center" Margin="130,35,0,0" PreviewKeyDown="isNumber"></TextBox>
+                    <Label Height="25" Width="135" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="215,0,0,0">Условие</Label>
+                    <ListBox x:Name="AOC_6" Height="25" Width="135" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="215,35,0,0">
+                        <ListBoxItem>больше</ListBoxItem>
+                        <ListBoxItem>больше или равно</ListBoxItem>
+                        <ListBoxItem>меньше</ListBoxItem>
+                        <ListBoxItem>меньше или равно</ListBoxItem>
+                        <ListBoxItem>равно</ListBoxItem>
+                        <ListBoxItem>неравное</ListBoxItem>
+                    </ListBox>
+                </Grid>
+                <Grid x:Name="AOG_7" Height="65" Width="360" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,35,0,0" Visibility="Collapsed">
+                    <Label Height="25" Width="135" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="-8,0,0,0">Полезное ископаемое</Label>
+                    <TextBox x:Name="AON_7" Height="25" Width="120" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Center" Margin="0,35,0,0"></TextBox>
+                    <Label Height="25" Width="75" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="130,0,0,0">Значение</Label>
+                    <TextBox x:Name="AOV_7" Height="25" Width="75" HorizontalAlignment="Left" VerticalAlignment=" Top" HorizontalContentAlignment="Center" Margin="130,35,0,0" PreviewKeyDown="isNumber"></TextBox>
+                    <Label Height="25" Width="135" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="215,0,0,0">Условие</Label>
+                    <ListBox x:Name="AOC_7" Height="25" Width="135" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="215,35,0,0">
+                        <ListBoxItem>больше</ListBoxItem>
+                        <ListBoxItem>больше или равно</ListBoxItem>
+                        <ListBoxItem>меньше</ListBoxItem>
+                        <ListBoxItem>меньше или равно</ListBoxItem>
+                        <ListBoxItem>равно</ListBoxItem>
+                        <ListBoxItem>неравное</ListBoxItem>
+                    </ListBox>
+                </Grid>
+                <Grid x:Name="AOG_8" Height="65" Width="360" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,35,0,0" Visibility="Collapsed">
+                    <Label Height="25" Width="135" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="-8,0,0,0">Полезное ископаемое</Label>
+                    <TextBox x:Name="AON_8" Height="25" Width="120" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Center" Margin="0,35,0,0"></TextBox>
+                    <Label Height="25" Width="75" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="130,0,0,0">Значение</Label>
+                    <TextBox x:Name="AOV_8" Height="25" Width="75" HorizontalAlignment="Left" VerticalAlignment=" Top" HorizontalContentAlignment="Center" Margin="130,35,0,0" PreviewKeyDown="isNumber"></TextBox>
+                    <Label Height="25" Width="135" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="215,0,0,0">Условие</Label>
+                    <ListBox x:Name="AOC_8" Height="25" Width="135" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="215,35,0,0">
+                        <ListBoxItem>больше</ListBoxItem>
+                        <ListBoxItem>больше или равно</ListBoxItem>
+                        <ListBoxItem>меньше</ListBoxItem>
+                        <ListBoxItem>меньше или равно</ListBoxItem>
+                        <ListBoxItem>равно</ListBoxItem>
+                        <ListBoxItem>неравное</ListBoxItem>
+                    </ListBox>
+                </Grid>
+                <Grid x:Name="AOG_9" Height="65" Width="360" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,35,0,0" Visibility="Collapsed">
+                    <Label Height="25" Width="135" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="-8,0,0,0">Полезное ископаемое</Label>
+                    <TextBox x:Name="AON_9" Height="25" Width="120" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Center" Margin="0,35,0,0"></TextBox>
+                    <Label Height="25" Width="75" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="130,0,0,0">Значение</Label>
+                    <TextBox x:Name="AOV_9" Height="25" Width="75" HorizontalAlignment="Left" VerticalAlignment=" Top" HorizontalContentAlignment="Center" Margin="130,35,0,0" PreviewKeyDown="isNumber"></TextBox>
+                    <Label Height="25" Width="135" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="215,0,0,0">Условие</Label>
+                    <ListBox x:Name="AOC_9" Height="25" Width="135" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="215,35,0,0">
+                        <ListBoxItem>больше</ListBoxItem>
+                        <ListBoxItem>больше или равно</ListBoxItem>
+                        <ListBoxItem>меньше</ListBoxItem>
+                        <ListBoxItem>меньше или равно</ListBoxItem>
+                        <ListBoxItem>равно</ListBoxItem>
+                        <ListBoxItem>неравное</ListBoxItem>
+                    </ListBox>
+                </Grid>
 
             </Grid>
         </Grid>
-        <Grid HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="775" Margin="18,360,0,0" Grid.ColumnSpan="2">
-            <Button Content="Start" HorizontalAlignment="Left" VerticalAlignment="Top" Height="25" Width="100" FontSize="14" Click="Button_Click_3"/>
-            <TextBox x:Name="resultQuery" HorizontalAlignment="Left" Margin="0,35,0,0" HorizontalContentAlignment="Center" VerticalAlignment="Top" Width="700" Height="50"/>
-            <Button Content="Copy" HorizontalAlignment="Left" Margin="707,35,0,0" VerticalAlignment="Top" Height="50" Width="50" FontSize="10" Click="Button_Click_4"/>
-        
+        <Grid x:Name="ResultGrid" HorizontalAlignment="Left" Height="125" VerticalAlignment="Top" Width="800" Margin="18,160,0,0" Grid.ColumnSpan="2">
+            <Button Content="Старт" HorizontalAlignment="Left" VerticalAlignment="Top" Height="25" Width="100" FontSize="14" Click="Button_Click_3"/>
+            <TextBox x:Name="resultQuery" HorizontalAlignment="Left" Margin="0,35,0,0" HorizontalContentAlignment="Center" VerticalAlignment="Top" Width="700" Height="85"/>
+            <Button x:Name="Copy" Content="Копировать" HorizontalAlignment="Left" Margin="705,35,0,0" VerticalAlignment="Top" Height="85" Width="85" FontSize="10" Click="Button_Click_4"/>
+            <Label x:Name="Note" Content="Внимание: Метод 3 выводит c# код!" HorizontalAlignment="Left" Height="30" Margin="116,0,0,0" VerticalAlignment="Top" Width="641" FontSize="14" Foreground="Blue" Visibility="Collapsed"/>
+
         </Grid>
 
     </Grid>
