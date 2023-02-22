@@ -7,21 +7,23 @@
         mc:Ignorable="d"
         Title="Генератор сортов полезного ископаемого" Height="325" Width="850">
     <Grid Height="Auto" Width="Auto">
-        <Border BorderBrush="Gray" BorderThickness="1" HorizontalAlignment="Left" Height="17" VerticalAlignment="Top" Width="1300" Grid.ColumnSpan="2"/>
+        <Border BorderBrush="Gray" BorderThickness="1" HorizontalAlignment="Left" Height="22" VerticalAlignment="Top" Width="1300" Grid.ColumnSpan="2"/>
 
-        <Button x:Name="BtnM3" Content="Метод 3" HorizontalAlignment="Left" VerticalAlignment="Top" Height="17" Width="110" Margin="218,0,0,0" Click="Button_Click_2" BorderBrush="Gray" Grid.ColumnSpan="2"/>
+        <Label x:Name="currentHint" Content="Метод 1 и Метод 2 собирают запрос в окошко parcel" HorizontalAlignment="Left" VerticalAlignment="Top" Height="22" Width="510" Margin="335,0,0,0" FontSize="10"/>
 
-        <Button x:Name="BtnM2" Content="Метод 2" HorizontalAlignment="Left" VerticalAlignment="Top" Height="17" Width="110" Margin="109,0,0,0" Click="Button_Click_1" BorderBrush="Gray"/>
+        <Button x:Name="BtnM3" Content="Метод 3" HorizontalAlignment="Left" VerticalAlignment="Top" Height="22" Width="110" Margin="220,0,0,0" Click="Button_Click_2" MouseEnter="changeCurrentHint" BorderBrush="Gray"/>
 
-        <Button x:Name="BtnM1" Content="Метод 1" HorizontalAlignment="Left" VerticalAlignment="Top" Height="17" Width="110" Click="Button_Click" BorderBrush="LightSkyBlue"/>
+        <Button x:Name="BtnM2" Content="Метод 2" HorizontalAlignment="Left" VerticalAlignment="Top" Height="22" Width="110" Margin="110,0,0,0" Click="Button_Click_1" MouseEnter="changeCurrentHint" BorderBrush="Gray"/>
 
+        <Button x:Name="BtnM1" Content="Метод 1" HorizontalAlignment="Left" VerticalAlignment="Top" Height="22" Width="110" Click="Button_Click" MouseEnter="changeCurrentHint" BorderBrush="LightSkyBlue"/>
+              
         <Grid x:Name="firstMethod" Visibility="Visible" HorizontalAlignment="Left" Height="70" VerticalAlignment="Top" Width="666" Margin="18,22,0,0" Grid.ColumnSpan="2">
             <Label Content="Полезное ископаемое" HorizontalAlignment="Left" VerticalAlignment="Top" Height="25" Width="135" Margin="-8,0,0,0"/>
             <TextBox x:Name="oreNameM1" HorizontalAlignment="Left" Margin="0,35,0,0" HorizontalContentAlignment="Center" VerticalAlignment="Top" Width="120" Height="25"/>
             <Label Content="Значение" HorizontalAlignment="Left" Margin="135,0,0,0" VerticalAlignment="Top" Height="25" Width="66" />
-            <TextBox x:Name="oreValueM1" HorizontalAlignment="Left" Margin="135,35,0,0" HorizontalContentAlignment="Center" VerticalAlignment="Top" Width="65" Height="25" PreviewKeyDown="isNumber"/>
+            <TextBox x:Name="oreValueM1" HorizontalAlignment="Left" Margin="135,35,0,0" HorizontalContentAlignment="Center" VerticalAlignment="Top" Width="65" Height="25" PreviewKeyDown="isNumber" MouseEnter="changeCurrentHint"/>
             <Label Content="Условие" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="215,0,0,0" Width="140" Height="25" HorizontalContentAlignment="Center"></Label>
-            <ListBox x:Name="MethodOneList" Width="140" Height="25" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="215,35,0,0">
+            <ListBox x:Name="MethodOneList" Width="140" Height="25" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="215,35,0,0" MouseEnter="changeCurrentHint">
                 <ListBoxItem >больше</ListBoxItem>
                 <ListBoxItem>больше или равно</ListBoxItem>
                 <ListBoxItem>меньше</ListBoxItem>
@@ -39,9 +41,9 @@
             <TextBox x:Name="oreNameM2" HorizontalAlignment="Left" Margin="0,35,0,0" HorizontalContentAlignment="Center" VerticalAlignment="Top" Width="120" Height="25"/>
 
             <Label Content="Значение 1" HorizontalAlignment="Left" Margin="135,0,0,0" VerticalAlignment="Top" Height="25" Width="75"/>
-            <TextBox x:Name="oreValue1M2" HorizontalAlignment="Left" Margin="135,35,0,0" HorizontalContentAlignment="Center" VerticalAlignment="Top" Width="65" Height="25" PreviewKeyDown="isNumber"/>
+            <TextBox x:Name="oreValue1M2" HorizontalAlignment="Left" Margin="135,35,0,0" HorizontalContentAlignment="Center" VerticalAlignment="Top" Width="65" Height="25" PreviewKeyDown="isNumber" MouseEnter="changeCurrentHint"/>
             <Label Content="Условие 1" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="210,0,0,0" Width="140" Height="25" HorizontalContentAlignment="Center"></Label>
-            <ListBox x:Name="MTL1" Width="140" Height="25" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="210,35,0,0">
+            <ListBox x:Name="MTL1" Width="140" Height="25" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="210,35,0,0" MouseEnter="changeCurrentHint">
                 <ListBoxItem>больше</ListBoxItem>
                 <ListBoxItem>больше или равно</ListBoxItem>
                 <ListBoxItem>меньше</ListBoxItem>
@@ -51,9 +53,9 @@
             </ListBox>
 
             <Label Content="Значение 2" HorizontalAlignment="Left" Margin="360,0,0,0" VerticalAlignment="Top" Height="25" Width="75"/>
-            <TextBox x:Name="oreValue2M2" HorizontalAlignment="Left" Margin="360,35,0,0" HorizontalContentAlignment="Center" VerticalAlignment="Top" Width="65" Height="25" PreviewKeyDown="isNumber"/>
+            <TextBox x:Name="oreValue2M2" HorizontalAlignment="Left" Margin="360,35,0,0" HorizontalContentAlignment="Center" VerticalAlignment="Top" Width="65" Height="25" PreviewKeyDown="isNumber" MouseEnter="changeCurrentHint"/>
             <Label Content="Условие 2" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="435,0,0,0" Width="140" Height="25" HorizontalContentAlignment="Center"></Label>
-            <ListBox x:Name="MTL2" Width="140" Height="25" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="435,35,0,0">
+            <ListBox x:Name="MTL2" Width="140" Height="25" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="435,35,0,0" MouseEnter="changeCurrentHint">
                 <ListBoxItem>больше</ListBoxItem>
                 <ListBoxItem>больше или равно</ListBoxItem>
                 <ListBoxItem>меньше</ListBoxItem>
@@ -63,9 +65,9 @@
             </ListBox>
 
             <Label Content="Значение 3" HorizontalAlignment="Left" Margin="585,0,0,0" VerticalAlignment="Top" Height="25" Width="75"/>
-            <TextBox x:Name="oreValue3M2" HorizontalAlignment="Left" Margin="585,35,0,0" HorizontalContentAlignment="Center" VerticalAlignment="Top" Width="65" Height="25" PreviewKeyDown="isNumber"/>
+            <TextBox x:Name="oreValue3M2" HorizontalAlignment="Left" Margin="585,35,0,0" HorizontalContentAlignment="Center" VerticalAlignment="Top" Width="65" Height="25" PreviewKeyDown="isNumber" MouseEnter="changeCurrentHint"/>
             <Label Content="Условие 3" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="660,0,0,0" Width="140" Height="25" HorizontalContentAlignment="Center"></Label>
-            <ListBox x:Name="MTL3" Width="140" Height="25" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="660,35,0,0">
+            <ListBox x:Name="MTL3" Width="140" Height="25" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="660,35,0,0" MouseEnter="changeCurrentHint">
                 <ListBoxItem>больше</ListBoxItem>
                 <ListBoxItem>больше или равно</ListBoxItem>
                 <ListBoxItem>меньше</ListBoxItem>
@@ -75,9 +77,9 @@
             </ListBox>
 
             <Label Content="Значение 4" HorizontalAlignment="Left" Margin="810,0,0,0" VerticalAlignment="Top" Height="25" Width="75"/>
-            <TextBox x:Name="oreValue4M2" HorizontalAlignment="Left" Margin="810,35,0,0" HorizontalContentAlignment="Center" VerticalAlignment="Top" Width="65" Height="25" PreviewKeyDown="isNumber"/>
+            <TextBox x:Name="oreValue4M2" HorizontalAlignment="Left" Margin="810,35,0,0" HorizontalContentAlignment="Center" VerticalAlignment="Top" Width="65" Height="25" PreviewKeyDown="isNumber" MouseEnter="changeCurrentHint"/>
             <Label Content="Условие 4" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="885,0,0,0" Width="140" Height="25" HorizontalContentAlignment="Center"></Label>
-            <ListBox x:Name="MTL4" Width="140" Height="25" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="885,35,0,0">
+            <ListBox x:Name="MTL4" Width="140" Height="25" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="885,35,0,0" MouseEnter="changeCurrentHint">
                 <ListBoxItem>больше</ListBoxItem>
                 <ListBoxItem>больше или равно</ListBoxItem>
                 <ListBoxItem>меньше</ListBoxItem>
@@ -87,9 +89,9 @@
             </ListBox>
 
             <Label Content="Значение 5" HorizontalAlignment="Left" Margin="1035,0,0,0" VerticalAlignment="Top" Height="25" Width="75"/>
-            <TextBox x:Name="oreValue5M2" HorizontalAlignment="Left" Margin="1035,35,0,0" HorizontalContentAlignment="Center" VerticalAlignment="Top" Width="65" Height="25" PreviewKeyDown="isNumber"/>
+            <TextBox x:Name="oreValue5M2" HorizontalAlignment="Left" Margin="1035,35,0,0" HorizontalContentAlignment="Center" VerticalAlignment="Top" Width="65" Height="25" PreviewKeyDown="isNumber" MouseEnter="changeCurrentHint"/>
             <Label Content="Условие 5" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="1110,0,0,0" Width="140" Height="25" HorizontalContentAlignment="Center"></Label>
-            <ListBox x:Name="MTL5" Width="140" Height="25" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="1110,35,0,0">
+            <ListBox x:Name="MTL5" Width="140" Height="25" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="1110,35,0,0" MouseEnter="changeCurrentHint">
                 <ListBoxItem>больше</ListBoxItem>
                 <ListBoxItem>больше или равно</ListBoxItem>
                 <ListBoxItem>меньше</ListBoxItem>
@@ -117,9 +119,9 @@
             <TextBox x:Name="oreNameM3" HorizontalAlignment="Left" Margin="0,35,0,0" HorizontalContentAlignment="Center" VerticalAlignment="Top" Width="120" Height="25"/>
 
             <Label Content="Значение 1" HorizontalAlignment="Left" Margin="135,0,0,0" VerticalAlignment="Top" Height="25" Width="75"/>
-            <TextBox x:Name="oreValue1M3" HorizontalAlignment="Left" Margin="135,35,0,0" HorizontalContentAlignment="Center" VerticalAlignment="Top" Width="65" Height="25" PreviewKeyDown="isNumber"/>
+            <TextBox x:Name="oreValue1M3" HorizontalAlignment="Left" Margin="135,35,0,0" HorizontalContentAlignment="Center" VerticalAlignment="Top" Width="65" Height="25" PreviewKeyDown="isNumber" MouseEnter="changeCurrentHint"/>
             <Label Content="Условие 1" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="210,0,0,0" Width="140" Height="25" HorizontalContentAlignment="Center"></Label>
-            <ListBox x:Name="MMTL1" Width="140" Height="25" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="210,35,0,0">
+            <ListBox x:Name="MMTL1" Width="140" Height="25" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="210,35,0,0" MouseEnter="changeCurrentHint">
                 <ListBoxItem>больше</ListBoxItem>
                 <ListBoxItem>больше или равно</ListBoxItem>
                 <ListBoxItem>меньше</ListBoxItem>
@@ -129,9 +131,9 @@
             </ListBox>
 
             <Label Content="Значение 2" HorizontalAlignment="Left" Margin="360,0,0,0" VerticalAlignment="Top" Height="25" Width="75"/>
-            <TextBox x:Name="oreValue2M3" HorizontalAlignment="Left" Margin="360,35,0,0" HorizontalContentAlignment="Center" VerticalAlignment="Top" Width="65" Height="25" PreviewKeyDown="isNumber"/>
+            <TextBox x:Name="oreValue2M3" HorizontalAlignment="Left" Margin="360,35,0,0" HorizontalContentAlignment="Center" VerticalAlignment="Top" Width="65" Height="25" PreviewKeyDown="isNumber" MouseEnter="changeCurrentHint"/>
             <Label Content="Условие 2" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="435,0,0,0" Width="140" Height="25" HorizontalContentAlignment="Center"></Label>
-            <ListBox x:Name="MMTL2" Width="140" Height="25" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="435,35,0,0">
+            <ListBox x:Name="MMTL2" Width="140" Height="25" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="435,35,0,0" MouseEnter="changeCurrentHint">
                 <ListBoxItem>больше</ListBoxItem>
                 <ListBoxItem>больше или равно</ListBoxItem>
                 <ListBoxItem>меньше</ListBoxItem>
@@ -141,9 +143,9 @@
             </ListBox>
 
             <Label Content="Значение 3" HorizontalAlignment="Left" Margin="585,0,0,0" VerticalAlignment="Top" Height="25" Width="75"/>
-            <TextBox x:Name="oreValue3M3" HorizontalAlignment="Left" Margin="585,35,0,0" HorizontalContentAlignment="Center" VerticalAlignment="Top" Width="65" Height="25" PreviewKeyDown="isNumber"/>
+            <TextBox x:Name="oreValue3M3" HorizontalAlignment="Left" Margin="585,35,0,0" HorizontalContentAlignment="Center" VerticalAlignment="Top" Width="65" Height="25" PreviewKeyDown="isNumber" MouseEnter="changeCurrentHint"/>
             <Label Content="Условие 3" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="660,0,0,0" Width="140" Height="25" HorizontalContentAlignment="Center"></Label>
-            <ListBox x:Name="MMTL3" Width="140" Height="25" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="660,35,0,0">
+            <ListBox x:Name="MMTL3" Width="140" Height="25" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="660,35,0,0" MouseEnter="changeCurrentHint">
                 <ListBoxItem>больше</ListBoxItem>
                 <ListBoxItem>больше или равно</ListBoxItem>
                 <ListBoxItem>меньше</ListBoxItem>
@@ -153,9 +155,9 @@
             </ListBox>
 
             <Label Content="Значение 4" HorizontalAlignment="Left" Margin="810,0,0,0" VerticalAlignment="Top" Height="25" Width="75"/>
-            <TextBox x:Name="oreValue4M3" HorizontalAlignment="Left" Margin="810,35,0,0" HorizontalContentAlignment="Center" VerticalAlignment="Top" Width="65" Height="25" PreviewKeyDown="isNumber"/>
+            <TextBox x:Name="oreValue4M3" HorizontalAlignment="Left" Margin="810,35,0,0" HorizontalContentAlignment="Center" VerticalAlignment="Top" Width="65" Height="25" PreviewKeyDown="isNumber" MouseEnter="changeCurrentHint"/>
             <Label Content="Условие 4" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="885,0,0,0" Width="140" Height="25" HorizontalContentAlignment="Center"></Label>
-            <ListBox x:Name="MMTL4" Width="140" Height="25" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="885,35,0,0">
+            <ListBox x:Name="MMTL4" Width="140" Height="25" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="885,35,0,0" MouseEnter="changeCurrentHint">
                 <ListBoxItem>больше</ListBoxItem>
                 <ListBoxItem>больше или равно</ListBoxItem>
                 <ListBoxItem>меньше</ListBoxItem>
@@ -165,9 +167,9 @@
             </ListBox>
 
             <Label Content="Значение 5" HorizontalAlignment="Left" Margin="1035,0,0,0" VerticalAlignment="Top" Height="25" Width="75"/>
-            <TextBox x:Name="oreValue5M3" HorizontalAlignment="Left" Margin="1035,35,0,0" HorizontalContentAlignment="Center" VerticalAlignment="Top" Width="65" Height="25" PreviewKeyDown="isNumber"/>
+            <TextBox x:Name="oreValue5M3" HorizontalAlignment="Left" Margin="1035,35,0,0" HorizontalContentAlignment="Center" VerticalAlignment="Top" Width="65" Height="25" PreviewKeyDown="isNumber" MouseEnter="changeCurrentHint"/>
             <Label Content="Условие 5" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="1110,0,0,0" Width="140" Height="25" HorizontalContentAlignment="Center"></Label>
-            <ListBox x:Name="MMTL5" Width="140" Height="25" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="1110,35,0,0">
+            <ListBox x:Name="MMTL5" Width="140" Height="25" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="1110,35,0,0" MouseEnter="changeCurrentHint">
                 <ListBoxItem>больше</ListBoxItem>
                 <ListBoxItem>больше или равно</ListBoxItem>
                 <ListBoxItem>меньше</ListBoxItem>
@@ -196,9 +198,9 @@
                     <Label Height="25" Width="135" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="-8,0,0,0">Полезное ископаемое</Label>
                     <TextBox x:Name="AON_0" Height="25" Width="120" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Center" Margin="0,35,0,0"></TextBox>
                     <Label Height="25" Width="75" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="130,0,0,0">Значение</Label>
-                    <TextBox x:Name="AOV_0" Height="25" Width="75" HorizontalAlignment="Left" VerticalAlignment=" Top" HorizontalContentAlignment="Center" Margin="130,35,0,0" PreviewKeyDown="isNumber"></TextBox>
+                    <TextBox x:Name="AOV_0" Height="25" Width="75" HorizontalAlignment="Left" VerticalAlignment=" Top" HorizontalContentAlignment="Center" Margin="130,35,0,0" PreviewKeyDown="isNumber" MouseEnter="changeCurrentHint"></TextBox>
                     <Label Height="25" Width="135" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="215,0,0,0">Условие</Label>
-                    <ListBox x:Name="AOC_0" Height="25" Width="135" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="215,35,0,0">
+                    <ListBox x:Name="AOC_0" Height="25" Width="135" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="215,35,0,0" MouseEnter="changeCurrentHint">
                         <ListBoxItem>больше</ListBoxItem>
                         <ListBoxItem>больше или равно</ListBoxItem>
                         <ListBoxItem>меньше</ListBoxItem>
@@ -211,9 +213,9 @@
                     <Label Height="25" Width="135" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="-8,0,0,0">Полезное ископаемое</Label>
                     <TextBox x:Name="AON_1" Height="25" Width="120" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Center" Margin="0,35,0,0"></TextBox>
                     <Label Height="25" Width="75" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="130,0,0,0">Значение</Label>
-                    <TextBox x:Name="AOV_1" Height="25" Width="75" HorizontalAlignment="Left" VerticalAlignment=" Top" HorizontalContentAlignment="Center" Margin="130,35,0,0" PreviewKeyDown="isNumber"></TextBox>
+                    <TextBox x:Name="AOV_1" Height="25" Width="75" HorizontalAlignment="Left" VerticalAlignment=" Top" HorizontalContentAlignment="Center" Margin="130,35,0,0" PreviewKeyDown="isNumber" MouseEnter="changeCurrentHint"></TextBox>
                     <Label Height="25" Width="135" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="215,0,0,0">Условие</Label>
-                    <ListBox x:Name="AOC_1" Height="25" Width="135" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="215,35,0,0">
+                    <ListBox x:Name="AOC_1" Height="25" Width="135" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="215,35,0,0" MouseEnter="changeCurrentHint">
                         <ListBoxItem>больше</ListBoxItem>
                         <ListBoxItem>больше или равно</ListBoxItem>
                         <ListBoxItem>меньше</ListBoxItem>
@@ -226,9 +228,9 @@
                     <Label Height="25" Width="135" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="-8,0,0,0">Полезное ископаемое</Label>
                     <TextBox x:Name="AON_2" Height="25" Width="120" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Center" Margin="0,35,0,0"></TextBox>
                     <Label Height="25" Width="75" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="130,0,0,0">Значение</Label>
-                    <TextBox x:Name="AOV_2" Height="25" Width="75" HorizontalAlignment="Left" VerticalAlignment=" Top" HorizontalContentAlignment="Center" Margin="130,35,0,0" PreviewKeyDown="isNumber"></TextBox>
+                    <TextBox x:Name="AOV_2" Height="25" Width="75" HorizontalAlignment="Left" VerticalAlignment=" Top" HorizontalContentAlignment="Center" Margin="130,35,0,0" PreviewKeyDown="isNumber" MouseEnter="changeCurrentHint"></TextBox>
                     <Label Height="25" Width="135" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="215,0,0,0">Условие</Label>
-                    <ListBox x:Name="AOC_2" Height="25" Width="135" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="215,35,0,0">
+                    <ListBox x:Name="AOC_2" Height="25" Width="135" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="215,35,0,0" MouseEnter="changeCurrentHint">
                         <ListBoxItem>больше</ListBoxItem>
                         <ListBoxItem>больше или равно</ListBoxItem>
                         <ListBoxItem>меньше</ListBoxItem>
@@ -241,9 +243,9 @@
                     <Label Height="25" Width="135" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="-8,0,0,0">Полезное ископаемое</Label>
                     <TextBox x:Name="AON_3" Height="25" Width="120" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Center" Margin="0,35,0,0"></TextBox>
                     <Label Height="25" Width="75" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="130,0,0,0">Значение</Label>
-                    <TextBox x:Name="AOV_3" Height="25" Width="75" HorizontalAlignment="Left" VerticalAlignment=" Top" HorizontalContentAlignment="Center" Margin="130,35,0,0" PreviewKeyDown="isNumber"></TextBox>
+                    <TextBox x:Name="AOV_3" Height="25" Width="75" HorizontalAlignment="Left" VerticalAlignment=" Top" HorizontalContentAlignment="Center" Margin="130,35,0,0" PreviewKeyDown="isNumber" MouseEnter="changeCurrentHint"></TextBox>
                     <Label Height="25" Width="135" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="215,0,0,0">Условие</Label>
-                    <ListBox x:Name="AOC_3" Height="25" Width="135" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="215,35,0,0">
+                    <ListBox x:Name="AOC_3" Height="25" Width="135" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="215,35,0,0" MouseEnter="changeCurrentHint">
                         <ListBoxItem>больше</ListBoxItem>
                         <ListBoxItem>больше или равно</ListBoxItem>
                         <ListBoxItem>меньше</ListBoxItem>
@@ -256,9 +258,9 @@
                     <Label Height="25" Width="135" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="-8,0,0,0">Полезное ископаемое</Label>
                     <TextBox x:Name="AON_4" Height="25" Width="120" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Center" Margin="0,35,0,0"></TextBox>
                     <Label Height="25" Width="75" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="130,0,0,0">Значение</Label>
-                    <TextBox x:Name="AOV_4" Height="25" Width="75" HorizontalAlignment="Left" VerticalAlignment=" Top" HorizontalContentAlignment="Center" Margin="130,35,0,0" PreviewKeyDown="isNumber"></TextBox>
+                    <TextBox x:Name="AOV_4" Height="25" Width="75" HorizontalAlignment="Left" VerticalAlignment=" Top" HorizontalContentAlignment="Center" Margin="130,35,0,0" PreviewKeyDown="isNumber" MouseEnter="changeCurrentHint"></TextBox>
                     <Label Height="25" Width="135" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="215,0,0,0">Условие</Label>
-                    <ListBox x:Name="AOC_4" Height="25" Width="135" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="215,35,0,0">
+                    <ListBox x:Name="AOC_4" Height="25" Width="135" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="215,35,0,0" MouseEnter="changeCurrentHint">
                         <ListBoxItem>больше</ListBoxItem>
                         <ListBoxItem>больше или равно</ListBoxItem>
                         <ListBoxItem>меньше</ListBoxItem>
@@ -271,9 +273,9 @@
                     <Label Height="25" Width="135" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="-8,0,0,0">Полезное ископаемое</Label>
                     <TextBox x:Name="AON_5" Height="25" Width="120" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Center" Margin="0,35,0,0"></TextBox>
                     <Label Height="25" Width="75" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="130,0,0,0">Значение</Label>
-                    <TextBox x:Name="AOV_5" Height="25" Width="75" HorizontalAlignment="Left" VerticalAlignment=" Top" HorizontalContentAlignment="Center" Margin="130,35,0,0" PreviewKeyDown="isNumber"></TextBox>
+                    <TextBox x:Name="AOV_5" Height="25" Width="75" HorizontalAlignment="Left" VerticalAlignment=" Top" HorizontalContentAlignment="Center" Margin="130,35,0,0" PreviewKeyDown="isNumber" MouseEnter="changeCurrentHint"></TextBox>
                     <Label Height="25" Width="135" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="215,0,0,0">Условие</Label>
-                    <ListBox x:Name="AOC_5" Height="25" Width="135" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="215,35,0,0">
+                    <ListBox x:Name="AOC_5" Height="25" Width="135" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="215,35,0,0" MouseEnter="changeCurrentHint">
                         <ListBoxItem>больше</ListBoxItem>
                         <ListBoxItem>больше или равно</ListBoxItem>
                         <ListBoxItem>меньше</ListBoxItem>
@@ -286,9 +288,9 @@
                     <Label Height="25" Width="135" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="-8,0,0,0">Полезное ископаемое</Label>
                     <TextBox x:Name="AON_6" Height="25" Width="120" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Center" Margin="0,35,0,0"></TextBox>
                     <Label Height="25" Width="75" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="130,0,0,0">Значение</Label>
-                    <TextBox x:Name="AOV_6" Height="25" Width="75" HorizontalAlignment="Left" VerticalAlignment=" Top" HorizontalContentAlignment="Center" Margin="130,35,0,0" PreviewKeyDown="isNumber"></TextBox>
+                    <TextBox x:Name="AOV_6" Height="25" Width="75" HorizontalAlignment="Left" VerticalAlignment=" Top" HorizontalContentAlignment="Center" Margin="130,35,0,0" PreviewKeyDown="isNumber" MouseEnter="changeCurrentHint"></TextBox>
                     <Label Height="25" Width="135" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="215,0,0,0">Условие</Label>
-                    <ListBox x:Name="AOC_6" Height="25" Width="135" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="215,35,0,0">
+                    <ListBox x:Name="AOC_6" Height="25" Width="135" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="215,35,0,0" MouseEnter="changeCurrentHint">
                         <ListBoxItem>больше</ListBoxItem>
                         <ListBoxItem>больше или равно</ListBoxItem>
                         <ListBoxItem>меньше</ListBoxItem>
@@ -301,9 +303,9 @@
                     <Label Height="25" Width="135" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="-8,0,0,0">Полезное ископаемое</Label>
                     <TextBox x:Name="AON_7" Height="25" Width="120" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Center" Margin="0,35,0,0"></TextBox>
                     <Label Height="25" Width="75" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="130,0,0,0">Значение</Label>
-                    <TextBox x:Name="AOV_7" Height="25" Width="75" HorizontalAlignment="Left" VerticalAlignment=" Top" HorizontalContentAlignment="Center" Margin="130,35,0,0" PreviewKeyDown="isNumber"></TextBox>
+                    <TextBox x:Name="AOV_7" Height="25" Width="75" HorizontalAlignment="Left" VerticalAlignment=" Top" HorizontalContentAlignment="Center" Margin="130,35,0,0" PreviewKeyDown="isNumber" MouseEnter="changeCurrentHint"></TextBox>
                     <Label Height="25" Width="135" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="215,0,0,0">Условие</Label>
-                    <ListBox x:Name="AOC_7" Height="25" Width="135" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="215,35,0,0">
+                    <ListBox x:Name="AOC_7" Height="25" Width="135" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="215,35,0,0" MouseEnter="changeCurrentHint">
                         <ListBoxItem>больше</ListBoxItem>
                         <ListBoxItem>больше или равно</ListBoxItem>
                         <ListBoxItem>меньше</ListBoxItem>
@@ -316,9 +318,9 @@
                     <Label Height="25" Width="135" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="-8,0,0,0">Полезное ископаемое</Label>
                     <TextBox x:Name="AON_8" Height="25" Width="120" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Center" Margin="0,35,0,0"></TextBox>
                     <Label Height="25" Width="75" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="130,0,0,0">Значение</Label>
-                    <TextBox x:Name="AOV_8" Height="25" Width="75" HorizontalAlignment="Left" VerticalAlignment=" Top" HorizontalContentAlignment="Center" Margin="130,35,0,0" PreviewKeyDown="isNumber"></TextBox>
+                    <TextBox x:Name="AOV_8" Height="25" Width="75" HorizontalAlignment="Left" VerticalAlignment=" Top" HorizontalContentAlignment="Center" Margin="130,35,0,0" PreviewKeyDown="isNumber" MouseEnter="changeCurrentHint"></TextBox>
                     <Label Height="25" Width="135" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="215,0,0,0">Условие</Label>
-                    <ListBox x:Name="AOC_8" Height="25" Width="135" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="215,35,0,0">
+                    <ListBox x:Name="AOC_8" Height="25" Width="135" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="215,35,0,0" MouseEnter="changeCurrentHint">
                         <ListBoxItem>больше</ListBoxItem>
                         <ListBoxItem>больше или равно</ListBoxItem>
                         <ListBoxItem>меньше</ListBoxItem>
@@ -331,9 +333,9 @@
                     <Label Height="25" Width="135" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="-8,0,0,0">Полезное ископаемое</Label>
                     <TextBox x:Name="AON_9" Height="25" Width="120" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Center" Margin="0,35,0,0"></TextBox>
                     <Label Height="25" Width="75" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="130,0,0,0">Значение</Label>
-                    <TextBox x:Name="AOV_9" Height="25" Width="75" HorizontalAlignment="Left" VerticalAlignment=" Top" HorizontalContentAlignment="Center" Margin="130,35,0,0" PreviewKeyDown="isNumber"></TextBox>
+                    <TextBox x:Name="AOV_9" Height="25" Width="75" HorizontalAlignment="Left" VerticalAlignment=" Top" HorizontalContentAlignment="Center" Margin="130,35,0,0" PreviewKeyDown="isNumber" MouseEnter="changeCurrentHint"></TextBox>
                     <Label Height="25" Width="135" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="215,0,0,0">Условие</Label>
-                    <ListBox x:Name="AOC_9" Height="25" Width="135" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="215,35,0,0">
+                    <ListBox x:Name="AOC_9" Height="25" Width="135" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="215,35,0,0" MouseEnter="changeCurrentHint">
                         <ListBoxItem>больше</ListBoxItem>
                         <ListBoxItem>больше или равно</ListBoxItem>
                         <ListBoxItem>меньше</ListBoxItem>

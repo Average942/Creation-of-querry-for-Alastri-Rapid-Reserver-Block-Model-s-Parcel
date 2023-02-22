@@ -25,12 +25,13 @@ namespace Diplom
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
+    /// 
+
     public partial class MainWindow : Window
     {
 
         private int counter = 1;
-        private Dictionary<int, object> addOres = new Dictionary<int, object>();
-
+        private string[] allHints = { "Выберите ВСЕ условия перед Стартом (Кликнуть по нужному тексту в списке)", "Метод 1 и Метод 2 собирают запрос в окошко parcel", "Метод 3 собирает c# код для обработки", "Для ввода десятичных значений используйте \".\" на Numpad"};
 
         private byte methodnum = 1;
         public MainWindow()
@@ -47,7 +48,7 @@ namespace Diplom
             {
                 e.Handled = true;
             }
-            //check if it is not number or control keys (delete, backspace, left, right, delete)
+            //check if it is not number or control keys (delete, backspace, left, right, delete) or decimal (numpad".")
             e.Handled = !checkBothNumberAndNumpad(e.Key) && !checkControlKeys(e.Key) && !checkDecimalKey(e.Key);
             base.OnPreviewKeyDown(e);
         }
@@ -185,6 +186,7 @@ namespace Diplom
                     resultQuery.Text = thirdM();
                     break;
                 default:
+                    resultQuery.Text ="";
                     break;
             }
 
@@ -192,7 +194,7 @@ namespace Diplom
         //Methods realisation 
         private string firstM()
         {
-            //string parcel = "N(\"" + oreNameM1.Text + "\") > " + oreValueM1.Text + " ? \"" + firstResultM1.Text + "\" : \"" + secondResultM1.Text + "\"";
+            //
 
             try
             {
@@ -212,10 +214,10 @@ namespace Diplom
         }
         private string secondM()
         {
-            //string parcel = "N(\"" + oreNameM2.Text + "\") > " + oreValue1M2.Text + " ? \"" + oreResult1M2.Text + "\" : " + "N(\"" + oreNameM2.Text + "\") > " + oreValue2M2.Text + " ? \"" + oreResult2M2.Text + "\" : " + "N(\"" + oreNameM2.Text + "\") > " + oreValue3M2.Text + " ? \"" + oreResult3M2.Text + "\" : " + "N(\"" + oreNameM2.Text + "\") > " + oreValue4M2.Text + " ? \"" + oreResult4M2.Text + "\" : " + "N(\"" + oreNameM2.Text + "\") > " + oreValue5M2.Text + " ? \"" + oreResult5M2.Text + "\" : \"" + oreResult6M2.Text + "\"";
+            //
             try
             {
-                //int[] array3 = { 1, 2, 3, 4, 5, 6 };
+                //
                 string[] selectedListBoxItem_TextValues = {
                     ((ListBoxItem)MTL1.SelectedItem).Content.ToString(),
                     ((ListBoxItem)MTL2.SelectedItem).Content.ToString(),
@@ -245,7 +247,7 @@ namespace Diplom
                 {
                     stroka = makeAnExpression(valueOne, valuesTwo[i], selectedListBoxItem_TextValues[i], results[i], stroka);
                 }
-                //stroka = makeAnExpression(valueOne, valuesTwo[0])
+                //
                 return stroka;
             }
             catch (NullReferenceException e)
@@ -269,7 +271,7 @@ namespace Diplom
                 {
                     string[] GetInput = GetAddOresInput(i);
                     Add_Ore_Name[i] = GetInput[0];
-                    Add_Ore_Value[i] = GetInput[1];//Convert.ToDouble(GetInput[1]);
+                    Add_Ore_Value[i] = GetInput[1];//
                     Add_Ore_Condition[i] = ConditionStringToSymbol(GetInput[2]);
 
                 }
@@ -505,6 +507,25 @@ namespace Diplom
                 }
             }
         }
+        private void changeCurrentHint(object sender, MouseEventArgs e)
+        {
+            int k = 0;
+            if(sender is Button)
+            {
+                if ((sender as Button).Name == "BtnM3") k = 2;
+                if ((sender as Button).Name == "BtnM2" || (sender as Button).Name == "BtnM1") k = 1;
+            }
+            if (sender is ListBox)
+            {
+                k = 0;
+            }
+            if (sender is TextBox)
+            {
+                k = 3;
+            }
+            currentHint.Content = allHints[k];
+        }
 
+        
     }
 }
