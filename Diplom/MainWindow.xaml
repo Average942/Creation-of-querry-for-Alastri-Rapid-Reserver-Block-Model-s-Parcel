@@ -9,7 +9,7 @@
     <Grid Height="Auto" Width="Auto">
         <Border BorderBrush="Gray" BorderThickness="1" HorizontalAlignment="Left" Height="22" VerticalAlignment="Top" Width="1300" Grid.ColumnSpan="2"/>
 
-        <Label x:Name="currentHint" Content="Метод 1 и Метод 2 собирают запрос в окошко parcel" HorizontalAlignment="Left" VerticalAlignment="Top" Height="22" Width="510" Margin="335,0,0,0" FontSize="10"/>
+        <Label x:Name="currentHint" Content="Метод 1 и Метод 2 собирают запрос в окно parcel" HorizontalAlignment="Left" VerticalAlignment="Top" Height="22" Width="510" Margin="335,0,0,0" FontSize="10"/>
 
         <Button x:Name="BtnM3" Content="Метод 3" HorizontalAlignment="Left" VerticalAlignment="Top" Height="22" Width="110" Margin="220,0,0,0" Click="Button_Click_2" MouseEnter="changeCurrentHint" BorderBrush="Gray"/>
 
