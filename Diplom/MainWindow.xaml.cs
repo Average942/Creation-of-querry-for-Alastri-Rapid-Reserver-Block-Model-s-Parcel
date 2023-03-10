@@ -293,7 +293,7 @@ namespace Diplom
                 string mainIni = "//Input Data\n" + "\tdouble mainOreValue = " + "context.N(\"" + oreNameM3.Text + "\")" + ";\n" + "\tstring[] gradeOre = new string[] " + grades + ";\n" + "\tdouble[] mainOreControlValues = new double[] " + mControlV + ";\n" + "\tstring[] mainConditions = new string[] " + mConditions + ";\n";
                 string addIni = "int counter = " + counter + ";\n" + "\tdouble[] addOresValues = new double[] " + addNames + ";\n" + "\tdouble[] addOresControlValues = new double[] " + addValues + ";\n" + "\tstring[] addConditions = new string[] " + addConditions + ";\n";
 
-                string mainControl = "int k = 0;\n" + "do\n{\n" + "\tk++;\n" + "}while" + "(!(ConditionChecker(mainConditions[k], mainOreValue, mainOreControlValues[k]))&&(k<(mainOreControlValues.Length-1)))" + ";\n" + "if ((k == (mainOreControlValues.Length - 1))&&!(ConditionChecker(mainConditions[k], mainOreValue, mainOreControlValues[k]))) k++;\n";
+                string mainControl = "int k = 0;\n" + "do\n{\n" + "\tk++;\n" + "}while" + "(!(ConditionChecker(mainConditions[k], mainOreValue, mainOreControlValues[k]))&&(k<(mainOreControlValues.Length-1)))" + ";\n" + "if ((k == (mainOreControlValues.Length - 1))&&!(ConditionChecker(mainConditions[k], mainOreValue, mainOreControlValues[k]))) k++;\nif(k<0)k=0;\n";
                 string addControl = "for (int i = 0; i < counter; i++)\n{\n" + "\tif (ConditionChecker(addConditions[i], addOresValues[i], addOresControlValues[i]))k--;\n" + "}\n";
                 string output = "return gradeOre[k];";
                 //
