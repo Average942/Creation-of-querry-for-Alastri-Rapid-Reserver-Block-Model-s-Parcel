@@ -5,25 +5,33 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Diplom"
         mc:Ignorable="d"
-        Title="Генератор сортов полезного ископаемого" Height="325" Width="850">
-    <Grid Height="Auto" Width="Auto">
-        <Border BorderBrush="Gray" BorderThickness="1" HorizontalAlignment="Left" Height="22" VerticalAlignment="Top" Width="1300" Grid.ColumnSpan="2"/>
+        Title="Генератор сортов полезного ископаемого" Height="450" Width="850"  ResizeMode="NoResize">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Dictionary1.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+    <Grid x:Name="mainGrid" Height="Auto" Width="Auto">
+        <Grid x:Name="menuGrid" HorizontalAlignment="Left" Height="32" VerticalAlignment="Top" Width="1300">
+            <Border BorderBrush="Gray" BorderThickness="1" HorizontalAlignment="Left" Height="32" VerticalAlignment="Top" Width="1600" Grid.ColumnSpan="2"/>
 
-        <Label x:Name="currentHint" Content="Метод 1 и Метод 2 собирают запрос в окно parcel" HorizontalAlignment="Left" VerticalAlignment="Top" Height="22" Width="510" Margin="335,0,0,0" FontSize="10"/>
+            <Label x:Name="currentHint" Content="Метод 1 и Метод 2 собирают запрос в окно parcel" HorizontalAlignment="Left" VerticalAlignment="Top" Height="32" Width="510" Margin="335,0,0,0" FontSize="14"/>
 
-        <Button x:Name="BtnM3" Content="Метод 3" HorizontalAlignment="Left" VerticalAlignment="Top" Height="22" Width="110" Margin="220,0,0,0" Click="Button_Click_2" MouseEnter="changeCurrentHint" BorderBrush="Gray"/>
+            <Button x:Name="BtnM3" Content="Метод 3" HorizontalAlignment="Left" VerticalAlignment="Top" Height="32" Width="110" Margin="220,0,0,0" Click="Button_Click_2" MouseEnter="changeCurrentHint" BorderBrush="Gray"/>
 
-        <Button x:Name="BtnM2" Content="Метод 2" HorizontalAlignment="Left" VerticalAlignment="Top" Height="22" Width="110" Margin="110,0,0,0" Click="Button_Click_1" MouseEnter="changeCurrentHint" BorderBrush="Gray"/>
+            <Button x:Name="BtnM2" Content="Метод 2" HorizontalAlignment="Left" VerticalAlignment="Top" Height="32" Width="110" Margin="110,0,0,0" Click="Button_Click_1" MouseEnter="changeCurrentHint" BorderBrush="Gray"/>
 
-        <Button x:Name="BtnM1" Content="Метод 1" HorizontalAlignment="Left" VerticalAlignment="Top" Height="22" Width="110" Click="Button_Click" MouseEnter="changeCurrentHint" BorderBrush="LightSkyBlue"/>
-              
-        <Grid x:Name="firstMethod" Visibility="Visible" HorizontalAlignment="Left" Height="70" VerticalAlignment="Top" Width="666" Margin="18,22,0,0" Grid.ColumnSpan="2">
-            <Label Content="Полезное ископаемое" HorizontalAlignment="Left" VerticalAlignment="Top" Height="25" Width="135" Margin="-8,0,0,0"/>
-            <TextBox x:Name="oreNameM1" HorizontalAlignment="Left" Margin="0,35,0,0" HorizontalContentAlignment="Center" VerticalAlignment="Top" Width="120" Height="25"/>
-            <Label Content="Значение" HorizontalAlignment="Left" Margin="135,0,0,0" VerticalAlignment="Top" Height="25" Width="66" />
-            <TextBox x:Name="oreValueM1" HorizontalAlignment="Left" Margin="135,35,0,0" HorizontalContentAlignment="Center" VerticalAlignment="Top" Width="65" Height="25" PreviewKeyDown="isNumber" MouseEnter="changeCurrentHint"/>
-            <Label Content="Условие" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="215,0,0,0" Width="140" Height="25" HorizontalContentAlignment="Center"></Label>
-            <ListBox x:Name="MethodOneList" Width="140" Height="25" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="215,35,0,0" MouseEnter="changeCurrentHint">
+            <Button x:Name="BtnM1" Content="Метод 1" HorizontalAlignment="Left" VerticalAlignment="Top" Height="32" Width="110" Click="Button_Click" MouseEnter="changeCurrentHint" BorderBrush="LightSkyBlue"/>
+        </Grid>
+        <Grid x:Name="firstMethod" Visibility="Visible" HorizontalAlignment="Left" Height="180" VerticalAlignment="Top" Width="800" Margin="18,37,0,0" Grid.ColumnSpan="2">
+            <Label Content="Полезное ископаемое" HorizontalAlignment="Left" VerticalAlignment="Top" Height="Auto" Width="Auto" Margin="0,0,0,0"/>
+            <TextBox x:Name="oreNameM1" HorizontalAlignment="Left" Margin="0,35,0,0" HorizontalContentAlignment="Center" VerticalAlignment="Top" Width="135" Height="25"/>
+            <Label Content="Значение" HorizontalAlignment="Left" Margin="165,0,0,0" VerticalAlignment="Top" Height="Auto" Width="Auto" />
+            <TextBox x:Name="oreValueM1" HorizontalAlignment="Left" Margin="165,35,0,0" HorizontalContentAlignment="Center" VerticalAlignment="Top" Width="65" Height="25" PreviewKeyDown="isNumber" MouseEnter="changeCurrentHint"/>
+            <Label Content="Условие" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="255,0,0,0" Width="Auto" Height="Auto" HorizontalContentAlignment="Center"></Label>
+            <ListBox x:Name="MethodOneList" Width="155" Height="25" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="255,35,0,0" MouseEnter="changeCurrentHint">
                 <ListBoxItem >больше</ListBoxItem>
                 <ListBoxItem>больше или равно</ListBoxItem>
                 <ListBoxItem>меньше</ListBoxItem>
@@ -31,19 +39,18 @@
                 <ListBoxItem>равно</ListBoxItem>
                 <ListBoxItem>неравное</ListBoxItem>
             </ListBox>
-            <Label Content="Условие верно" HorizontalAlignment="Left" Margin="370,0,0,0" VerticalAlignment="Top" Height="25" Width="110"/>
-            <TextBox x:Name="firstResultM1" HorizontalAlignment="Left" Margin="370,35,0,0" HorizontalContentAlignment="Center" VerticalAlignment="Top" Width="100" Height="25" />
-            <Label Content="иначе" HorizontalAlignment="Left" Margin="495,0,0,0" VerticalAlignment="Top" Height="25" Width="100"/>
-            <TextBox x:Name="secondResultM1" HorizontalAlignment="Left" Margin="495,35,0,0" HorizontalContentAlignment="Center" VerticalAlignment="Top" Width="100" Height="25" />
+            <Label Content="Условие верно" HorizontalAlignment="Left" Margin="430,0,0,0" VerticalAlignment="Top" Height="Auto" Width="Auto"/>
+            <TextBox x:Name="firstResultM1" HorizontalAlignment="Left" Margin="430,35,0,0" HorizontalContentAlignment="Center" VerticalAlignment="Top" Width="100" Height="25" />
+            <Label Content="иначе" HorizontalAlignment="Left" Margin="555,0,0,0" VerticalAlignment="Top" Height="Auto" Width="Auto"/>
+            <TextBox x:Name="secondResultM1" HorizontalAlignment="Left" Margin="555,35,0,0" HorizontalContentAlignment="Center" VerticalAlignment="Top" Width="100" Height="25" />
         </Grid>
-        <Grid x:Name="secondMethod" Visibility="Collapsed" HorizontalAlignment="Left" Height="152" VerticalAlignment="Top" Width="1250" Margin="18,22,0,0" Grid.ColumnSpan="2">
-            <Label Content="Полезное ископаемое" HorizontalAlignment="Left" VerticalAlignment="Top" Height="25" Width="135" Margin="-8,0,0,0"/>
+        <Grid x:Name="secondMethod" Visibility="Collapsed" HorizontalAlignment="Left" Height="180" VerticalAlignment="Top" Width="1500" Margin="18,37,0,0" Grid.ColumnSpan="2">
+            <Label Content="Полезное ископаемое" HorizontalAlignment="Left" VerticalAlignment="Top" Height="Auto" Width="Auto" Margin="-8,0,0,0"/>
             <TextBox x:Name="oreNameM2" HorizontalAlignment="Left" Margin="0,35,0,0" HorizontalContentAlignment="Center" VerticalAlignment="Top" Width="120" Height="25"/>
-
-            <Label Content="Значение 1" HorizontalAlignment="Left" Margin="135,0,0,0" VerticalAlignment="Top" Height="25" Width="75"/>
-            <TextBox x:Name="oreValue1M2" HorizontalAlignment="Left" Margin="135,35,0,0" HorizontalContentAlignment="Center" VerticalAlignment="Top" Width="65" Height="25" PreviewKeyDown="isNumber" MouseEnter="changeCurrentHint"/>
-            <Label Content="Условие 1" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="210,0,0,0" Width="140" Height="25" HorizontalContentAlignment="Center"></Label>
-            <ListBox x:Name="MTL1" Width="140" Height="25" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="210,35,0,0" MouseEnter="changeCurrentHint">
+            <Label Content="Значение 1" HorizontalAlignment="Left" Margin="160,0,0,0" VerticalAlignment="Top" Height="Auto" Width="Auto"/>
+            <TextBox x:Name="oreValue1M2" HorizontalAlignment="Left" Margin="165,35,0,0" HorizontalContentAlignment="Center" VerticalAlignment="Top" Width="65" Height="25" PreviewKeyDown="isNumber" MouseEnter="changeCurrentHint"/>
+            <Label Content="Условие 1" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="255,0,0,0" Width="Auto" Height="Auto" HorizontalContentAlignment="Center"></Label>
+            <ListBox x:Name="MTL1" Width="155" Height="25" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="255,35,0,0" MouseEnter="changeCurrentHint">
                 <ListBoxItem>больше</ListBoxItem>
                 <ListBoxItem>больше или равно</ListBoxItem>
                 <ListBoxItem>меньше</ListBoxItem>
@@ -52,10 +59,10 @@
                 <ListBoxItem>неравное</ListBoxItem>
             </ListBox>
 
-            <Label Content="Значение 2" HorizontalAlignment="Left" Margin="360,0,0,0" VerticalAlignment="Top" Height="25" Width="75"/>
-            <TextBox x:Name="oreValue2M2" HorizontalAlignment="Left" Margin="360,35,0,0" HorizontalContentAlignment="Center" VerticalAlignment="Top" Width="65" Height="25" PreviewKeyDown="isNumber" MouseEnter="changeCurrentHint"/>
-            <Label Content="Условие 2" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="435,0,0,0" Width="140" Height="25" HorizontalContentAlignment="Center"></Label>
-            <ListBox x:Name="MTL2" Width="140" Height="25" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="435,35,0,0" MouseEnter="changeCurrentHint">
+            <Label Content="Значение 2" HorizontalAlignment="Left" Margin="430,0,0,0" VerticalAlignment="Top" Height="Auto" Width="Auto"/>
+            <TextBox x:Name="oreValue2M2" HorizontalAlignment="Left" Margin="435,35,0,0" HorizontalContentAlignment="Center" VerticalAlignment="Top" Width="65" Height="25" PreviewKeyDown="isNumber" MouseEnter="changeCurrentHint"/>
+            <Label Content="Условие 2" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="525,0,0,0" Width="Auto" Height="Auto" HorizontalContentAlignment="Center"></Label>
+            <ListBox x:Name="MTL2" Width="155" Height="25" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="525,35,0,0" MouseEnter="changeCurrentHint">
                 <ListBoxItem>больше</ListBoxItem>
                 <ListBoxItem>больше или равно</ListBoxItem>
                 <ListBoxItem>меньше</ListBoxItem>
@@ -64,10 +71,10 @@
                 <ListBoxItem>неравное</ListBoxItem>
             </ListBox>
 
-            <Label Content="Значение 3" HorizontalAlignment="Left" Margin="585,0,0,0" VerticalAlignment="Top" Height="25" Width="75"/>
-            <TextBox x:Name="oreValue3M2" HorizontalAlignment="Left" Margin="585,35,0,0" HorizontalContentAlignment="Center" VerticalAlignment="Top" Width="65" Height="25" PreviewKeyDown="isNumber" MouseEnter="changeCurrentHint"/>
-            <Label Content="Условие 3" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="660,0,0,0" Width="140" Height="25" HorizontalContentAlignment="Center"></Label>
-            <ListBox x:Name="MTL3" Width="140" Height="25" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="660,35,0,0" MouseEnter="changeCurrentHint">
+            <Label Content="Значение 3" HorizontalAlignment="Left" Margin="700,0,0,0" VerticalAlignment="Top" Height="Auto" Width="Auto"/>
+            <TextBox x:Name="oreValue3M2" HorizontalAlignment="Left" Margin="705,35,0,0" HorizontalContentAlignment="Center" VerticalAlignment="Top" Width="65" Height="25" PreviewKeyDown="isNumber" MouseEnter="changeCurrentHint"/>
+            <Label Content="Условие 3" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="795,0,0,0" Width="Auto" Height="Auto" HorizontalContentAlignment="Center"></Label>
+            <ListBox x:Name="MTL3" Width="155" Height="25" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="795,35,0,0" MouseEnter="changeCurrentHint">
                 <ListBoxItem>больше</ListBoxItem>
                 <ListBoxItem>больше или равно</ListBoxItem>
                 <ListBoxItem>меньше</ListBoxItem>
@@ -76,10 +83,10 @@
                 <ListBoxItem>неравное</ListBoxItem>
             </ListBox>
 
-            <Label Content="Значение 4" HorizontalAlignment="Left" Margin="810,0,0,0" VerticalAlignment="Top" Height="25" Width="75"/>
-            <TextBox x:Name="oreValue4M2" HorizontalAlignment="Left" Margin="810,35,0,0" HorizontalContentAlignment="Center" VerticalAlignment="Top" Width="65" Height="25" PreviewKeyDown="isNumber" MouseEnter="changeCurrentHint"/>
-            <Label Content="Условие 4" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="885,0,0,0" Width="140" Height="25" HorizontalContentAlignment="Center"></Label>
-            <ListBox x:Name="MTL4" Width="140" Height="25" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="885,35,0,0" MouseEnter="changeCurrentHint">
+            <Label Content="Значение 4" HorizontalAlignment="Left" Margin="970,0,0,0" VerticalAlignment="Top" Height="Auto" Width="Auto"/>
+            <TextBox x:Name="oreValue4M2" HorizontalAlignment="Left" Margin="975,35,0,0" HorizontalContentAlignment="Center" VerticalAlignment="Top" Width="65" Height="25" PreviewKeyDown="isNumber" MouseEnter="changeCurrentHint"/>
+            <Label Content="Условие 4" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="1065,0,0,0" Width="Auto" Height="Auto" HorizontalContentAlignment="Center"></Label>
+            <ListBox x:Name="MTL4" Width="155" Height="25" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="1065,35,0,0" MouseEnter="changeCurrentHint">
                 <ListBoxItem>больше</ListBoxItem>
                 <ListBoxItem>больше или равно</ListBoxItem>
                 <ListBoxItem>меньше</ListBoxItem>
@@ -88,10 +95,10 @@
                 <ListBoxItem>неравное</ListBoxItem>
             </ListBox>
 
-            <Label Content="Значение 5" HorizontalAlignment="Left" Margin="1035,0,0,0" VerticalAlignment="Top" Height="25" Width="75"/>
-            <TextBox x:Name="oreValue5M2" HorizontalAlignment="Left" Margin="1035,35,0,0" HorizontalContentAlignment="Center" VerticalAlignment="Top" Width="65" Height="25" PreviewKeyDown="isNumber" MouseEnter="changeCurrentHint"/>
-            <Label Content="Условие 5" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="1110,0,0,0" Width="140" Height="25" HorizontalContentAlignment="Center"></Label>
-            <ListBox x:Name="MTL5" Width="140" Height="25" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="1110,35,0,0" MouseEnter="changeCurrentHint">
+            <Label Content="Значение 5" HorizontalAlignment="Left" Margin="1240,0,0,0" VerticalAlignment="Top" Height="Auto" Width="Auto"/>
+            <TextBox x:Name="oreValue5M2" HorizontalAlignment="Left" Margin="1245,35,0,0" HorizontalContentAlignment="Center" VerticalAlignment="Top" Width="65" Height="25" PreviewKeyDown="isNumber" MouseEnter="changeCurrentHint"/>
+            <Label Content="Условие 5" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="1335,0,0,0" Width="Auto" Height="Auto" HorizontalContentAlignment="Center"></Label>
+            <ListBox x:Name="MTL5" Width="155" Height="25" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="1335,35,0,0" MouseEnter="changeCurrentHint">
                 <ListBoxItem>больше</ListBoxItem>
                 <ListBoxItem>больше или равно</ListBoxItem>
                 <ListBoxItem>меньше</ListBoxItem>
@@ -100,28 +107,27 @@
                 <ListBoxItem>неравное</ListBoxItem>
             </ListBox>
 
-            <Label Content="Условие 1 верно" HorizontalAlignment="Left" Margin="135,64,0,0" VerticalAlignment="Top" Height="30" Width="110"/>
-            <TextBox x:Name="oreResult1M2" HorizontalAlignment="Left" Margin="135,95,0,0" HorizontalContentAlignment="Center" VerticalAlignment="Top" Width="110" Height="25"/>
-            <Label Content="Условие 2 верно" HorizontalAlignment="Left" Margin="255,64,0,0" VerticalAlignment="Top" Height="30" Width="110"/>
-            <TextBox x:Name="oreResult2M2" HorizontalAlignment="Left" Margin="255,95,0,0" HorizontalContentAlignment="Center" VerticalAlignment="Top" Width="110" Height="25"/>
-            <Label Content="Условие 3 верно" HorizontalAlignment="Left" Margin="375,64,0,0" VerticalAlignment="Top" Height="30" Width="110"/>
-            <TextBox x:Name="oreResult3M2" HorizontalAlignment="Left" Margin="375,95,0,0" HorizontalContentAlignment="Center" VerticalAlignment="Top" Width="110" Height="25"/>
-            <Label Content="Условие 4 верно" HorizontalAlignment="Left" Margin="495,64,0,0" VerticalAlignment="Top" Height="30" Width="110"/>
-            <TextBox x:Name="oreResult4M2" HorizontalAlignment="Left" Margin="495,95,0,0" HorizontalContentAlignment="Center" VerticalAlignment="Top" Width="110" Height="25"/>
-            <Label Content="Условие 5 верно" HorizontalAlignment="Left" Margin="615,64,0,0" VerticalAlignment="Top" Height="30" Width="110"/>
-            <TextBox x:Name="oreResult5M2" HorizontalAlignment="Left" Margin="615,95,0,0" HorizontalContentAlignment="Center" VerticalAlignment="Top" Width="110" Height="25"/>
-            <Label Content="Иначе" HorizontalAlignment="Left" Margin="735,64,0,0" VerticalAlignment="Top" Height="30" Width="110"/>
-            <TextBox x:Name="oreResult6M2" HorizontalAlignment="Left" Margin="735,95,0,0" HorizontalContentAlignment="Center" VerticalAlignment="Top" Width="110" Height="25"/>
+            <Label Content="Условие 1 верно" HorizontalAlignment="Left" Margin="160,64,0,0" VerticalAlignment="Top" Height="Auto" Width="Auto"/>
+            <TextBox x:Name="oreResult1M2" HorizontalAlignment="Left" Margin="160,95,0,0" HorizontalContentAlignment="Center" VerticalAlignment="Top" Width="110" Height="25"/>
+            <Label Content="Условие 2 верно" HorizontalAlignment="Left" Margin="295,64,0,0" VerticalAlignment="Top" Height="Auto" Width="Auto"/>
+            <TextBox x:Name="oreResult2M2" HorizontalAlignment="Left" Margin="295,95,0,0" HorizontalContentAlignment="Center" VerticalAlignment="Top" Width="110" Height="25"/>
+            <Label Content="Условие 3 верно" HorizontalAlignment="Left" Margin="430,64,0,0" VerticalAlignment="Top" Height="Auto" Width="Auto"/>
+            <TextBox x:Name="oreResult3M2" HorizontalAlignment="Left" Margin="430,95,0,0" HorizontalContentAlignment="Center" VerticalAlignment="Top" Width="110" Height="25"/>
+            <Label Content="Условие 4 верно" HorizontalAlignment="Left" Margin="565,64,0,0" VerticalAlignment="Top" Height="Auto" Width="Auto"/>
+            <TextBox x:Name="oreResult4M2" HorizontalAlignment="Left" Margin="565,95,0,0" HorizontalContentAlignment="Center" VerticalAlignment="Top" Width="110" Height="25"/>
+            <Label Content="Условие 5 верно" HorizontalAlignment="Left" Margin="700,64,0,0" VerticalAlignment="Top" Height="Auto" Width="Auto"/>
+            <TextBox x:Name="oreResult5M2" HorizontalAlignment="Left" Margin="700,95,0,0" HorizontalContentAlignment="Center" VerticalAlignment="Top" Width="110" Height="25"/>
+            <Label Content="Иначе" HorizontalAlignment="Left" Margin="835,64,0,0" VerticalAlignment="Top" Height="Auto" Width="Auto"/>
+            <TextBox x:Name="oreResult6M2" HorizontalAlignment="Left" Margin="835,95,0,0" HorizontalContentAlignment="Center" VerticalAlignment="Top" Width="110" Height="25"/>
 
         </Grid>
-        <Grid x:Name="thirdMethod" Visibility="Collapsed" HorizontalAlignment="Left" Height="Auto" VerticalAlignment="Top" Width="1250" Margin="18,22,0,0" Grid.ColumnSpan="2">
-            <Label Content="Полезное ископаемое" HorizontalAlignment="Left" VerticalAlignment="Top" Height="25" Width="135" Margin="-8,0,0,0"/>
+        <Grid x:Name="thirdMethod" Visibility="Collapsed" HorizontalAlignment="Left" Height="180" VerticalAlignment="Top" Width="1500" Margin="18,37,0,0" Grid.ColumnSpan="2">
+            <Label Content="Полезное ископаемое" HorizontalAlignment="Left" VerticalAlignment="Top" Height="Auto" Width="Auto" Margin="-8,0,0,0"/>
             <TextBox x:Name="oreNameM3" HorizontalAlignment="Left" Margin="0,35,0,0" HorizontalContentAlignment="Center" VerticalAlignment="Top" Width="120" Height="25"/>
-
-            <Label Content="Значение 1" HorizontalAlignment="Left" Margin="135,0,0,0" VerticalAlignment="Top" Height="25" Width="75"/>
-            <TextBox x:Name="oreValue1M3" HorizontalAlignment="Left" Margin="135,35,0,0" HorizontalContentAlignment="Center" VerticalAlignment="Top" Width="65" Height="25" PreviewKeyDown="isNumber" MouseEnter="changeCurrentHint"/>
-            <Label Content="Условие 1" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="210,0,0,0" Width="140" Height="25" HorizontalContentAlignment="Center"></Label>
-            <ListBox x:Name="MMTL1" Width="140" Height="25" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="210,35,0,0" MouseEnter="changeCurrentHint">
+            <Label Content="Значение 1" HorizontalAlignment="Left" Margin="160,0,0,0" VerticalAlignment="Top" Height="Auto" Width="Auto"/>
+            <TextBox x:Name="oreValue1M3" HorizontalAlignment="Left" Margin="165,35,0,0" HorizontalContentAlignment="Center" VerticalAlignment="Top" Width="65" Height="25" PreviewKeyDown="isNumber" MouseEnter="changeCurrentHint"/>
+            <Label Content="Условие 1" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="255,0,0,0" Width="Auto" Height="Auto" HorizontalContentAlignment="Center"></Label>
+            <ListBox x:Name="MMTL1" Width="155" Height="25" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="255,35,0,0" MouseEnter="changeCurrentHint">
                 <ListBoxItem>больше</ListBoxItem>
                 <ListBoxItem>больше или равно</ListBoxItem>
                 <ListBoxItem>меньше</ListBoxItem>
@@ -130,10 +136,10 @@
                 <ListBoxItem>неравное</ListBoxItem>
             </ListBox>
 
-            <Label Content="Значение 2" HorizontalAlignment="Left" Margin="360,0,0,0" VerticalAlignment="Top" Height="25" Width="75"/>
-            <TextBox x:Name="oreValue2M3" HorizontalAlignment="Left" Margin="360,35,0,0" HorizontalContentAlignment="Center" VerticalAlignment="Top" Width="65" Height="25" PreviewKeyDown="isNumber" MouseEnter="changeCurrentHint"/>
-            <Label Content="Условие 2" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="435,0,0,0" Width="140" Height="25" HorizontalContentAlignment="Center"></Label>
-            <ListBox x:Name="MMTL2" Width="140" Height="25" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="435,35,0,0" MouseEnter="changeCurrentHint">
+            <Label Content="Значение 2" HorizontalAlignment="Left" Margin="430,0,0,0" VerticalAlignment="Top" Height="Auto" Width="Auto"/>
+            <TextBox x:Name="oreValue2M3" HorizontalAlignment="Left" Margin="435,35,0,0" HorizontalContentAlignment="Center" VerticalAlignment="Top" Width="65" Height="25" PreviewKeyDown="isNumber" MouseEnter="changeCurrentHint"/>
+            <Label Content="Условие 2" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="525,0,0,0" Width="Auto" Height="Auto" HorizontalContentAlignment="Center"></Label>
+            <ListBox x:Name="MMTL2" Width="155" Height="25" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="525,35,0,0" MouseEnter="changeCurrentHint">
                 <ListBoxItem>больше</ListBoxItem>
                 <ListBoxItem>больше или равно</ListBoxItem>
                 <ListBoxItem>меньше</ListBoxItem>
@@ -142,10 +148,10 @@
                 <ListBoxItem>неравное</ListBoxItem>
             </ListBox>
 
-            <Label Content="Значение 3" HorizontalAlignment="Left" Margin="585,0,0,0" VerticalAlignment="Top" Height="25" Width="75"/>
-            <TextBox x:Name="oreValue3M3" HorizontalAlignment="Left" Margin="585,35,0,0" HorizontalContentAlignment="Center" VerticalAlignment="Top" Width="65" Height="25" PreviewKeyDown="isNumber" MouseEnter="changeCurrentHint"/>
-            <Label Content="Условие 3" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="660,0,0,0" Width="140" Height="25" HorizontalContentAlignment="Center"></Label>
-            <ListBox x:Name="MMTL3" Width="140" Height="25" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="660,35,0,0" MouseEnter="changeCurrentHint">
+            <Label Content="Значение 3" HorizontalAlignment="Left" Margin="700,0,0,0" VerticalAlignment="Top" Height="Auto" Width="Auto"/>
+            <TextBox x:Name="oreValue3M3" HorizontalAlignment="Left" Margin="705,35,0,0" HorizontalContentAlignment="Center" VerticalAlignment="Top" Width="65" Height="25" PreviewKeyDown="isNumber" MouseEnter="changeCurrentHint"/>
+            <Label Content="Условие 3" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="795,0,0,0" Width="Auto" Height="Auto" HorizontalContentAlignment="Center"></Label>
+            <ListBox x:Name="MMTL3" Width="155" Height="25" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="795,35,0,0" MouseEnter="changeCurrentHint">
                 <ListBoxItem>больше</ListBoxItem>
                 <ListBoxItem>больше или равно</ListBoxItem>
                 <ListBoxItem>меньше</ListBoxItem>
@@ -154,10 +160,10 @@
                 <ListBoxItem>неравное</ListBoxItem>
             </ListBox>
 
-            <Label Content="Значение 4" HorizontalAlignment="Left" Margin="810,0,0,0" VerticalAlignment="Top" Height="25" Width="75"/>
-            <TextBox x:Name="oreValue4M3" HorizontalAlignment="Left" Margin="810,35,0,0" HorizontalContentAlignment="Center" VerticalAlignment="Top" Width="65" Height="25" PreviewKeyDown="isNumber" MouseEnter="changeCurrentHint"/>
-            <Label Content="Условие 4" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="885,0,0,0" Width="140" Height="25" HorizontalContentAlignment="Center"></Label>
-            <ListBox x:Name="MMTL4" Width="140" Height="25" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="885,35,0,0" MouseEnter="changeCurrentHint">
+            <Label Content="Значение 4" HorizontalAlignment="Left" Margin="970,0,0,0" VerticalAlignment="Top" Height="Auto" Width="Auto"/>
+            <TextBox x:Name="oreValue4M3" HorizontalAlignment="Left" Margin="975,35,0,0" HorizontalContentAlignment="Center" VerticalAlignment="Top" Width="65" Height="25" PreviewKeyDown="isNumber" MouseEnter="changeCurrentHint"/>
+            <Label Content="Условие 4" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="1065,0,0,0" Width="Auto" Height="Auto" HorizontalContentAlignment="Center"></Label>
+            <ListBox x:Name="MMTL4" Width="155" Height="25" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="1065,35,0,0" MouseEnter="changeCurrentHint">
                 <ListBoxItem>больше</ListBoxItem>
                 <ListBoxItem>больше или равно</ListBoxItem>
                 <ListBoxItem>меньше</ListBoxItem>
@@ -166,10 +172,10 @@
                 <ListBoxItem>неравное</ListBoxItem>
             </ListBox>
 
-            <Label Content="Значение 5" HorizontalAlignment="Left" Margin="1035,0,0,0" VerticalAlignment="Top" Height="25" Width="75"/>
-            <TextBox x:Name="oreValue5M3" HorizontalAlignment="Left" Margin="1035,35,0,0" HorizontalContentAlignment="Center" VerticalAlignment="Top" Width="65" Height="25" PreviewKeyDown="isNumber" MouseEnter="changeCurrentHint"/>
-            <Label Content="Условие 5" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="1110,0,0,0" Width="140" Height="25" HorizontalContentAlignment="Center"></Label>
-            <ListBox x:Name="MMTL5" Width="140" Height="25" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="1110,35,0,0" MouseEnter="changeCurrentHint">
+            <Label Content="Значение 5" HorizontalAlignment="Left" Margin="1240,0,0,0" VerticalAlignment="Top" Height="Auto" Width="Auto"/>
+            <TextBox x:Name="oreValue5M3" HorizontalAlignment="Left" Margin="1245,35,0,0" HorizontalContentAlignment="Center" VerticalAlignment="Top" Width="65" Height="25" PreviewKeyDown="isNumber" MouseEnter="changeCurrentHint"/>
+            <Label Content="Условие 5" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="1335,0,0,0" Width="Auto" Height="Auto" HorizontalContentAlignment="Center"></Label>
+            <ListBox x:Name="MMTL5" Width="155" Height="25" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="1335,35,0,0" MouseEnter="changeCurrentHint">
                 <ListBoxItem>больше</ListBoxItem>
                 <ListBoxItem>больше или равно</ListBoxItem>
                 <ListBoxItem>меньше</ListBoxItem>
@@ -178,29 +184,30 @@
                 <ListBoxItem>неравное</ListBoxItem>
             </ListBox>
 
-            <Label Content="Условие 1 верно" HorizontalAlignment="Left" Margin="360,64,0,0" VerticalAlignment="Top" Height="30" Width="110"/>
-            <TextBox x:Name="oreResult1M3" HorizontalAlignment="Left" Margin="360,95,0,0" HorizontalContentAlignment="Center" VerticalAlignment="Top" Width="110" Height="25"/>
-            <Label Content="Условие 2 верно" HorizontalAlignment="Left" Margin="480,64,0,0" VerticalAlignment="Top" Height="30" Width="110"/>
-            <TextBox x:Name="oreResult2M3" HorizontalAlignment="Left" Margin="480,95,0,0" HorizontalContentAlignment="Center" VerticalAlignment="Top" Width="110" Height="25"/>
-            <Label Content="Условие 3 верно" HorizontalAlignment="Left" Margin="600,64,0,0" VerticalAlignment="Top" Height="30" Width="110"/>
-            <TextBox x:Name="oreResult3M3" HorizontalAlignment="Left" Margin="600,95,0,0" HorizontalContentAlignment="Center" VerticalAlignment="Top" Width="110" Height="25"/>
-            <Label Content="Условие 4 верно" HorizontalAlignment="Left" Margin="720,64,0,0" VerticalAlignment="Top" Height="30" Width="110"/>
-            <TextBox x:Name="oreResult4M3" HorizontalAlignment="Left" Margin="720,95,0,0" HorizontalContentAlignment="Center" VerticalAlignment="Top" Width="110" Height="25"/>
-            <Label Content="Условие 5 верно" HorizontalAlignment="Left" Margin="840,64,0,0" VerticalAlignment="Top" Height="30" Width="110"/>
-            <TextBox x:Name="oreResult5M3" HorizontalAlignment="Left" Margin="840,95,0,0" HorizontalContentAlignment="Center" VerticalAlignment="Top" Width="110" Height="25"/>
-            <Label Content="Иначе" HorizontalAlignment="Left" Margin="960,64,0,0" VerticalAlignment="Top" Height="30" Width="110"/>
-            <TextBox x:Name="oreResult6M3" HorizontalAlignment="Left" Margin="960,95,0,0" HorizontalContentAlignment="Center" VerticalAlignment="Top" Width="110" Height="25"/>
+            <Label Content="Условие 1 верно" HorizontalAlignment="Left" Margin="430,65,0,0" VerticalAlignment="Top" Height="Auto" Width="Auto"/>
+            <TextBox x:Name="oreResult1M3" HorizontalAlignment="Left" Margin="430,100,0,0" HorizontalContentAlignment="Center" VerticalAlignment="Top" Width="110" Height="25"/>
+            <Label Content="Условие 2 верно" HorizontalAlignment="Left" Margin="565,65,0,0" VerticalAlignment="Top" Height="Auto" Width="Auto"/>
+            <TextBox x:Name="oreResult2M3" HorizontalAlignment="Left" Margin="565,100,0,0" HorizontalContentAlignment="Center" VerticalAlignment="Top" Width="110" Height="25"/>
+            <Label Content="Условие 3 верно" HorizontalAlignment="Left" Margin="700,65,0,0" VerticalAlignment="Top" Height="Auto" Width="Auto"/>
+            <TextBox x:Name="oreResult3M3" HorizontalAlignment="Left" Margin="700,100,0,0" HorizontalContentAlignment="Center" VerticalAlignment="Top" Width="110" Height="25"/>
+            <Label Content="Условие 4 верно" HorizontalAlignment="Left" Margin="835,65,0,0" VerticalAlignment="Top" Height="Auto" Width="Auto"/>
+            <TextBox x:Name="oreResult4M3" HorizontalAlignment="Left" Margin="835,100,0,0" HorizontalContentAlignment="Center" VerticalAlignment="Top" Width="110" Height="25"/>
+            <Label Content="Условие 5 верно" HorizontalAlignment="Left" Margin="970,65,0,0" VerticalAlignment="Top" Height="Auto" Width="Auto"/>
+            <TextBox x:Name="oreResult5M3" HorizontalAlignment="Left" Margin="970,100,0,0" HorizontalContentAlignment="Center" VerticalAlignment="Top" Width="110" Height="25"/>
+            <Label Content="Иначе" HorizontalAlignment="Left" Margin="1105,65,0,0" VerticalAlignment="Top" Height="Auto" Width="Auto"/>
+            <TextBox x:Name="oreResult6M3" HorizontalAlignment="Left" Margin="1105,100,0,0" HorizontalContentAlignment="Center" VerticalAlignment="Top" Width="110" Height="25"/>
 
-            <Grid x:Name="AddOre" HorizontalAlignment="Left" VerticalAlignment="Top" Width="365" Height="Auto" Margin="0,64,0,0" Visibility="Visible">
+            <Grid x:Name="AddOre" HorizontalAlignment="Left" VerticalAlignment="Top" Width="420" Height="Auto" Margin="0,65,0,0" Visibility="Visible">
                 <Button x:Name="AddOreBtn" Width="120" Height="25" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,75,0,0" Click="AddOreBtn_Click">Добавить руду</Button>
                 <Button x:Name="DelOreBtn" Width="120" Height="25" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="135,75,0,0" Visibility="Collapsed" Click="DelOreBtn_Click">Убрать руду</Button>
-                <Grid x:Name="AOG_0" Height="65" Width="360" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,0,0,0" Visibility="Visible">
-                    <Label Height="25" Width="135" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="-8,0,0,0">Полезное ископаемое</Label>
+                
+                <Grid x:Name="AOG_0" Height="65" Width="Auto" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,0,0,0" Visibility="Visible">
+                    <Label Height="Auto" Width="Auto" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="-8,0,0,0">Полезное ископаемое</Label>
                     <TextBox x:Name="AON_0" Height="25" Width="120" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Center" Margin="0,35,0,0"></TextBox>
-                    <Label Height="25" Width="75" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="130,0,0,0">Значение</Label>
-                    <TextBox x:Name="AOV_0" Height="25" Width="75" HorizontalAlignment="Left" VerticalAlignment=" Top" HorizontalContentAlignment="Center" Margin="130,35,0,0" PreviewKeyDown="isNumber" MouseEnter="changeCurrentHint"></TextBox>
-                    <Label Height="25" Width="135" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="215,0,0,0">Условие</Label>
-                    <ListBox x:Name="AOC_0" Height="25" Width="135" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="215,35,0,0" MouseEnter="changeCurrentHint">
+                    <Label Height="Auto" Width="Auto" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="160,0,0,0">Значение</Label>
+                    <TextBox x:Name="AOV_0" Height="25" Width="75" HorizontalAlignment="Left" VerticalAlignment=" Top" HorizontalContentAlignment="Center" Margin="160,35,0,0" PreviewKeyDown="isNumber" MouseEnter="changeCurrentHint"></TextBox>
+                    <Label Height="Auto" Width="Auto" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="255,0,0,0">Условие</Label>
+                    <ListBox x:Name="AOC_0" Height="25" Width="155" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="255,35,0,0" MouseEnter="changeCurrentHint">
                         <ListBoxItem>больше</ListBoxItem>
                         <ListBoxItem>больше или равно</ListBoxItem>
                         <ListBoxItem>меньше</ListBoxItem>
@@ -209,13 +216,13 @@
                         <ListBoxItem>неравное</ListBoxItem>
                     </ListBox>
                 </Grid>
-                <Grid x:Name="AOG_1" Height="65" Width="360" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,0,0,0" Visibility="Collapsed">
-                    <Label Height="25" Width="135" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="-8,0,0,0">Полезное ископаемое</Label>
+                <Grid x:Name="AOG_1" Height="65" Width="Auto" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,0,0,0" Visibility="Collapsed">
+                    <Label Height="Auto" Width="Auto" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="-8,0,0,0">Полезное ископаемое</Label>
                     <TextBox x:Name="AON_1" Height="25" Width="120" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Center" Margin="0,35,0,0"></TextBox>
-                    <Label Height="25" Width="75" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="130,0,0,0">Значение</Label>
-                    <TextBox x:Name="AOV_1" Height="25" Width="75" HorizontalAlignment="Left" VerticalAlignment=" Top" HorizontalContentAlignment="Center" Margin="130,35,0,0" PreviewKeyDown="isNumber" MouseEnter="changeCurrentHint"></TextBox>
-                    <Label Height="25" Width="135" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="215,0,0,0">Условие</Label>
-                    <ListBox x:Name="AOC_1" Height="25" Width="135" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="215,35,0,0" MouseEnter="changeCurrentHint">
+                    <Label Height="Auto" Width="Auto" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="160,0,0,0">Значение</Label>
+                    <TextBox x:Name="AOV_1" Height="25" Width="75" HorizontalAlignment="Left" VerticalAlignment=" Top" HorizontalContentAlignment="Center" Margin="160,35,0,0" PreviewKeyDown="isNumber" MouseEnter="changeCurrentHint"></TextBox>
+                    <Label Height="Auto" Width="Auto" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="255,0,0,0">Условие</Label>
+                    <ListBox x:Name="AOC_1" Height="25" Width="155" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="255,35,0,0" MouseEnter="changeCurrentHint">
                         <ListBoxItem>больше</ListBoxItem>
                         <ListBoxItem>больше или равно</ListBoxItem>
                         <ListBoxItem>меньше</ListBoxItem>
@@ -224,13 +231,13 @@
                         <ListBoxItem>неравное</ListBoxItem>
                     </ListBox>
                 </Grid>
-                <Grid x:Name="AOG_2" Height="65" Width="360" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,35,0,0" Visibility="Collapsed">
-                    <Label Height="25" Width="135" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="-8,0,0,0">Полезное ископаемое</Label>
+                <Grid x:Name="AOG_2" Height="65" Width="Auto" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,35,0,0" Visibility="Collapsed">
+                    <Label Height="Auto" Width="Auto" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="-8,0,0,0">Полезное ископаемое</Label>
                     <TextBox x:Name="AON_2" Height="25" Width="120" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Center" Margin="0,35,0,0"></TextBox>
-                    <Label Height="25" Width="75" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="130,0,0,0">Значение</Label>
-                    <TextBox x:Name="AOV_2" Height="25" Width="75" HorizontalAlignment="Left" VerticalAlignment=" Top" HorizontalContentAlignment="Center" Margin="130,35,0,0" PreviewKeyDown="isNumber" MouseEnter="changeCurrentHint"></TextBox>
-                    <Label Height="25" Width="135" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="215,0,0,0">Условие</Label>
-                    <ListBox x:Name="AOC_2" Height="25" Width="135" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="215,35,0,0" MouseEnter="changeCurrentHint">
+                    <Label Height="Auto" Width="Auto" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="160,0,0,0">Значение</Label>
+                    <TextBox x:Name="AOV_2" Height="25" Width="75" HorizontalAlignment="Left" VerticalAlignment=" Top" HorizontalContentAlignment="Center" Margin="160,35,0,0" PreviewKeyDown="isNumber" MouseEnter="changeCurrentHint"></TextBox>
+                    <Label Height="Auto" Width="Auto" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="255,0,0,0">Условие</Label>
+                    <ListBox x:Name="AOC_2" Height="25" Width="155" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="255,35,0,0" MouseEnter="changeCurrentHint">
                         <ListBoxItem>больше</ListBoxItem>
                         <ListBoxItem>больше или равно</ListBoxItem>
                         <ListBoxItem>меньше</ListBoxItem>
@@ -239,13 +246,13 @@
                         <ListBoxItem>неравное</ListBoxItem>
                     </ListBox>
                 </Grid>
-                <Grid x:Name="AOG_3" Height="65" Width="360" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,35,0,0" Visibility="Collapsed">
-                    <Label Height="25" Width="135" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="-8,0,0,0">Полезное ископаемое</Label>
+                <Grid x:Name="AOG_3" Height="65" Width="Auto" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,35,0,0" Visibility="Collapsed">
+                    <Label Height="Auto" Width="Auto" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="-8,0,0,0">Полезное ископаемое</Label>
                     <TextBox x:Name="AON_3" Height="25" Width="120" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Center" Margin="0,35,0,0"></TextBox>
-                    <Label Height="25" Width="75" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="130,0,0,0">Значение</Label>
-                    <TextBox x:Name="AOV_3" Height="25" Width="75" HorizontalAlignment="Left" VerticalAlignment=" Top" HorizontalContentAlignment="Center" Margin="130,35,0,0" PreviewKeyDown="isNumber" MouseEnter="changeCurrentHint"></TextBox>
-                    <Label Height="25" Width="135" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="215,0,0,0">Условие</Label>
-                    <ListBox x:Name="AOC_3" Height="25" Width="135" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="215,35,0,0" MouseEnter="changeCurrentHint">
+                    <Label Height="Auto" Width="Auto" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="160,0,0,0">Значение</Label>
+                    <TextBox x:Name="AOV_3" Height="25" Width="75" HorizontalAlignment="Left" VerticalAlignment=" Top" HorizontalContentAlignment="Center" Margin="160,35,0,0" PreviewKeyDown="isNumber" MouseEnter="changeCurrentHint"></TextBox>
+                    <Label Height="Auto" Width="Auto" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="255,0,0,0">Условие</Label>
+                    <ListBox x:Name="AOC_3" Height="25" Width="155" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="255,35,0,0" MouseEnter="changeCurrentHint">
                         <ListBoxItem>больше</ListBoxItem>
                         <ListBoxItem>больше или равно</ListBoxItem>
                         <ListBoxItem>меньше</ListBoxItem>
@@ -254,13 +261,13 @@
                         <ListBoxItem>неравное</ListBoxItem>
                     </ListBox>
                 </Grid>
-                <Grid x:Name="AOG_4" Height="65" Width="360" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,35,0,0" Visibility="Collapsed">
-                    <Label Height="25" Width="135" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="-8,0,0,0">Полезное ископаемое</Label>
+                <Grid x:Name="AOG_4" Height="65" Width="Auto" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,35,0,0" Visibility="Collapsed">
+                    <Label Height="Auto" Width="Auto" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="-8,0,0,0">Полезное ископаемое</Label>
                     <TextBox x:Name="AON_4" Height="25" Width="120" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Center" Margin="0,35,0,0"></TextBox>
-                    <Label Height="25" Width="75" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="130,0,0,0">Значение</Label>
-                    <TextBox x:Name="AOV_4" Height="25" Width="75" HorizontalAlignment="Left" VerticalAlignment=" Top" HorizontalContentAlignment="Center" Margin="130,35,0,0" PreviewKeyDown="isNumber" MouseEnter="changeCurrentHint"></TextBox>
-                    <Label Height="25" Width="135" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="215,0,0,0">Условие</Label>
-                    <ListBox x:Name="AOC_4" Height="25" Width="135" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="215,35,0,0" MouseEnter="changeCurrentHint">
+                    <Label Height="Auto" Width="Auto" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="160,0,0,0">Значение</Label>
+                    <TextBox x:Name="AOV_4" Height="25" Width="75" HorizontalAlignment="Left" VerticalAlignment=" Top" HorizontalContentAlignment="Center" Margin="160,35,0,0" PreviewKeyDown="isNumber" MouseEnter="changeCurrentHint"></TextBox>
+                    <Label Height="Auto" Width="Auto" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="255,0,0,0">Условие</Label>
+                    <ListBox x:Name="AOC_4" Height="25" Width="155" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="255,35,0,0" MouseEnter="changeCurrentHint">
                         <ListBoxItem>больше</ListBoxItem>
                         <ListBoxItem>больше или равно</ListBoxItem>
                         <ListBoxItem>меньше</ListBoxItem>
@@ -269,13 +276,13 @@
                         <ListBoxItem>неравное</ListBoxItem>
                     </ListBox>
                 </Grid>
-                <Grid x:Name="AOG_5" Height="65" Width="360" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,35,0,0" Visibility="Collapsed">
-                    <Label Height="25" Width="135" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="-8,0,0,0">Полезное ископаемое</Label>
+                <Grid x:Name="AOG_5" Height="65" Width="Auto" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,35,0,0" Visibility="Collapsed">
+                    <Label Height="Auto" Width="Auto" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="-8,0,0,0">Полезное ископаемое</Label>
                     <TextBox x:Name="AON_5" Height="25" Width="120" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Center" Margin="0,35,0,0"></TextBox>
-                    <Label Height="25" Width="75" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="130,0,0,0">Значение</Label>
-                    <TextBox x:Name="AOV_5" Height="25" Width="75" HorizontalAlignment="Left" VerticalAlignment=" Top" HorizontalContentAlignment="Center" Margin="130,35,0,0" PreviewKeyDown="isNumber" MouseEnter="changeCurrentHint"></TextBox>
-                    <Label Height="25" Width="135" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="215,0,0,0">Условие</Label>
-                    <ListBox x:Name="AOC_5" Height="25" Width="135" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="215,35,0,0" MouseEnter="changeCurrentHint">
+                    <Label Height="Auto" Width="Auto" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="160,0,0,0">Значение</Label>
+                    <TextBox x:Name="AOV_5" Height="25" Width="75" HorizontalAlignment="Left" VerticalAlignment=" Top" HorizontalContentAlignment="Center" Margin="160,35,0,0" PreviewKeyDown="isNumber" MouseEnter="changeCurrentHint"></TextBox>
+                    <Label Height="Auto" Width="Auto" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="255,0,0,0">Условие</Label>
+                    <ListBox x:Name="AOC_5" Height="25" Width="155" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="255,35,0,0" MouseEnter="changeCurrentHint">
                         <ListBoxItem>больше</ListBoxItem>
                         <ListBoxItem>больше или равно</ListBoxItem>
                         <ListBoxItem>меньше</ListBoxItem>
@@ -284,13 +291,13 @@
                         <ListBoxItem>неравное</ListBoxItem>
                     </ListBox>
                 </Grid>
-                <Grid x:Name="AOG_6" Height="65" Width="360" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,35,0,0" Visibility="Collapsed">
-                    <Label Height="25" Width="135" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="-8,0,0,0">Полезное ископаемое</Label>
+                <Grid x:Name="AOG_6" Height="65" Width="Auto" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,35,0,0" Visibility="Collapsed">
+                    <Label Height="Auto" Width="Auto" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="-8,0,0,0">Полезное ископаемое</Label>
                     <TextBox x:Name="AON_6" Height="25" Width="120" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Center" Margin="0,35,0,0"></TextBox>
-                    <Label Height="25" Width="75" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="130,0,0,0">Значение</Label>
-                    <TextBox x:Name="AOV_6" Height="25" Width="75" HorizontalAlignment="Left" VerticalAlignment=" Top" HorizontalContentAlignment="Center" Margin="130,35,0,0" PreviewKeyDown="isNumber" MouseEnter="changeCurrentHint"></TextBox>
-                    <Label Height="25" Width="135" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="215,0,0,0">Условие</Label>
-                    <ListBox x:Name="AOC_6" Height="25" Width="135" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="215,35,0,0" MouseEnter="changeCurrentHint">
+                    <Label Height="Auto" Width="Auto" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="160,0,0,0">Значение</Label>
+                    <TextBox x:Name="AOV_6" Height="25" Width="75" HorizontalAlignment="Left" VerticalAlignment=" Top" HorizontalContentAlignment="Center" Margin="160,35,0,0" PreviewKeyDown="isNumber" MouseEnter="changeCurrentHint"></TextBox>
+                    <Label Height="Auto" Width="Auto" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="255,0,0,0">Условие</Label>
+                    <ListBox x:Name="AOC_6" Height="25" Width="155" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="255,35,0,0" MouseEnter="changeCurrentHint">
                         <ListBoxItem>больше</ListBoxItem>
                         <ListBoxItem>больше или равно</ListBoxItem>
                         <ListBoxItem>меньше</ListBoxItem>
@@ -299,13 +306,13 @@
                         <ListBoxItem>неравное</ListBoxItem>
                     </ListBox>
                 </Grid>
-                <Grid x:Name="AOG_7" Height="65" Width="360" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,35,0,0" Visibility="Collapsed">
-                    <Label Height="25" Width="135" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="-8,0,0,0">Полезное ископаемое</Label>
+                <Grid x:Name="AOG_7" Height="65" Width="Auto" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,35,0,0" Visibility="Collapsed">
+                    <Label Height="Auto" Width="Auto" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="-8,0,0,0">Полезное ископаемое</Label>
                     <TextBox x:Name="AON_7" Height="25" Width="120" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Center" Margin="0,35,0,0"></TextBox>
-                    <Label Height="25" Width="75" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="130,0,0,0">Значение</Label>
-                    <TextBox x:Name="AOV_7" Height="25" Width="75" HorizontalAlignment="Left" VerticalAlignment=" Top" HorizontalContentAlignment="Center" Margin="130,35,0,0" PreviewKeyDown="isNumber" MouseEnter="changeCurrentHint"></TextBox>
-                    <Label Height="25" Width="135" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="215,0,0,0">Условие</Label>
-                    <ListBox x:Name="AOC_7" Height="25" Width="135" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="215,35,0,0" MouseEnter="changeCurrentHint">
+                    <Label Height="Auto" Width="Auto" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="160,0,0,0">Значение</Label>
+                    <TextBox x:Name="AOV_7" Height="25" Width="75" HorizontalAlignment="Left" VerticalAlignment=" Top" HorizontalContentAlignment="Center" Margin="160,35,0,0" PreviewKeyDown="isNumber" MouseEnter="changeCurrentHint"></TextBox>
+                    <Label Height="Auto" Width="Auto" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="255,0,0,0">Условие</Label>
+                    <ListBox x:Name="AOC_7" Height="25" Width="155" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="255,35,0,0" MouseEnter="changeCurrentHint">
                         <ListBoxItem>больше</ListBoxItem>
                         <ListBoxItem>больше или равно</ListBoxItem>
                         <ListBoxItem>меньше</ListBoxItem>
@@ -314,13 +321,13 @@
                         <ListBoxItem>неравное</ListBoxItem>
                     </ListBox>
                 </Grid>
-                <Grid x:Name="AOG_8" Height="65" Width="360" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,35,0,0" Visibility="Collapsed">
-                    <Label Height="25" Width="135" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="-8,0,0,0">Полезное ископаемое</Label>
+                <Grid x:Name="AOG_8" Height="65" Width="Auto" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,35,0,0" Visibility="Collapsed">
+                    <Label Height="Auto" Width="Auto" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="-8,0,0,0">Полезное ископаемое</Label>
                     <TextBox x:Name="AON_8" Height="25" Width="120" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Center" Margin="0,35,0,0"></TextBox>
-                    <Label Height="25" Width="75" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="130,0,0,0">Значение</Label>
-                    <TextBox x:Name="AOV_8" Height="25" Width="75" HorizontalAlignment="Left" VerticalAlignment=" Top" HorizontalContentAlignment="Center" Margin="130,35,0,0" PreviewKeyDown="isNumber" MouseEnter="changeCurrentHint"></TextBox>
-                    <Label Height="25" Width="135" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="215,0,0,0">Условие</Label>
-                    <ListBox x:Name="AOC_8" Height="25" Width="135" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="215,35,0,0" MouseEnter="changeCurrentHint">
+                    <Label Height="Auto" Width="Auto" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="160,0,0,0">Значение</Label>
+                    <TextBox x:Name="AOV_8" Height="25" Width="75" HorizontalAlignment="Left" VerticalAlignment=" Top" HorizontalContentAlignment="Center" Margin="160,35,0,0" PreviewKeyDown="isNumber" MouseEnter="changeCurrentHint"></TextBox>
+                    <Label Height="Auto" Width="Auto" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="255,0,0,0">Условие</Label>
+                    <ListBox x:Name="AOC_8" Height="25" Width="155" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="255,35,0,0" MouseEnter="changeCurrentHint">
                         <ListBoxItem>больше</ListBoxItem>
                         <ListBoxItem>больше или равно</ListBoxItem>
                         <ListBoxItem>меньше</ListBoxItem>
@@ -329,13 +336,13 @@
                         <ListBoxItem>неравное</ListBoxItem>
                     </ListBox>
                 </Grid>
-                <Grid x:Name="AOG_9" Height="65" Width="360" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,35,0,0" Visibility="Collapsed">
-                    <Label Height="25" Width="135" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="-8,0,0,0">Полезное ископаемое</Label>
+                <Grid x:Name="AOG_9" Height="65" Width="Auto" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,35,0,0" Visibility="Collapsed">
+                    <Label Height="Auto" Width="Auto" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="-8,0,0,0">Полезное ископаемое</Label>
                     <TextBox x:Name="AON_9" Height="25" Width="120" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Center" Margin="0,35,0,0"></TextBox>
-                    <Label Height="25" Width="75" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="130,0,0,0">Значение</Label>
-                    <TextBox x:Name="AOV_9" Height="25" Width="75" HorizontalAlignment="Left" VerticalAlignment=" Top" HorizontalContentAlignment="Center" Margin="130,35,0,0" PreviewKeyDown="isNumber" MouseEnter="changeCurrentHint"></TextBox>
-                    <Label Height="25" Width="135" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="215,0,0,0">Условие</Label>
-                    <ListBox x:Name="AOC_9" Height="25" Width="135" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="215,35,0,0" MouseEnter="changeCurrentHint">
+                    <Label Height="Auto" Width="Auto" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="160,0,0,0">Значение</Label>
+                    <TextBox x:Name="AOV_9" Height="25" Width="75" HorizontalAlignment="Left" VerticalAlignment=" Top" HorizontalContentAlignment="Center" Margin="160,35,0,0" PreviewKeyDown="isNumber" MouseEnter="changeCurrentHint"></TextBox>
+                    <Label Height="Auto" Width="Auto" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="255,0,0,0">Условие</Label>
+                    <ListBox x:Name="AOC_9" Height="25" Width="155" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="255,35,0,0" MouseEnter="changeCurrentHint">
                         <ListBoxItem>больше</ListBoxItem>
                         <ListBoxItem>больше или равно</ListBoxItem>
                         <ListBoxItem>меньше</ListBoxItem>
@@ -347,10 +354,10 @@
 
             </Grid>
         </Grid>
-        <Grid x:Name="ResultGrid" HorizontalAlignment="Left" Height="125" VerticalAlignment="Top" Width="800" Margin="18,160,0,0" Grid.ColumnSpan="2">
+        <Grid x:Name="ResultGrid" HorizontalAlignment="Left" Height="125" VerticalAlignment="Top" Width="800" Margin="18,285,0,0" Grid.ColumnSpan="2">
             <Button Content="Старт" HorizontalAlignment="Left" VerticalAlignment="Top" Height="25" Width="100" FontSize="14" Click="Button_Click_3"/>
             <TextBox x:Name="resultQuery" HorizontalAlignment="Left" Margin="0,35,0,0" HorizontalContentAlignment="Center" VerticalAlignment="Top" Width="700" Height="85"/>
-            <Button x:Name="Copy" Content="Копировать" HorizontalAlignment="Left" Margin="705,35,0,0" VerticalAlignment="Top" Height="85" Width="85" FontSize="10" Click="Button_Click_4"/>
+            <Button x:Name="Copy" Content="Копировать" HorizontalAlignment="Left" Margin="705,35,0,0" VerticalAlignment="Top" Height="85" Width="85" FontSize="14" Click="Button_Click_4"/>
             <Label x:Name="Note" Content="Внимание: Метод 3 выводит c# код!" HorizontalAlignment="Left" Height="30" Margin="116,0,0,0" VerticalAlignment="Top" Width="641" FontSize="14" Foreground="Blue" Visibility="Collapsed"/>
 
         </Grid>

@@ -25,19 +25,39 @@ namespace Diplom
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    /// 
-
+    ///
     public partial class MainWindow : Window
     {
+        private void MainWindow_SizeChanged(object sender, SizeChangedEventArgs e)
+        {
+            Application.Current.MainWindow = this;
+            double factor = Application.Current.MainWindow.Width / 850; // You can change the 800 value as per your requirement
 
+            // Find the ResourceDictionary that contains the styles you want to update
+            ResourceDictionary dict = Application.Current.Resources.MergedDictionaries
+                .FirstOrDefault(d => d.Source?.ToString().EndsWith("MyResourceDictionary.xaml") == true);
+            if (dict != null)
+            {
+                foreach (Style style in dict.Values.OfType<Style>())
+                {
+                    foreach (Setter setter in style.Setters.OfType<Setter>())
+                    {
+                        if (setter.Property == Control.FontSizeProperty)
+                        {
+                            setter.Value = 12 * factor; // You can change the 16 value as per your requirement
+                        }
+                    }
+                }
+            }
+        }
         private int counter = 1;
         private string[] allHints = { "Выберите ВСЕ условия перед Стартом (Кликнуть по нужному тексту в списке)", "Метод 1 и Метод 2 собирают запрос в окно parcel", "Метод 3 собирает c# код для обработки", "Для ввода десятичных значений используйте \".\" на Numpad"};
 
         private byte methodnum = 1;
         public MainWindow()
         {
-
             InitializeComponent();
+            this.SizeChanged += MainWindow_SizeChanged;
         }
 
         //Simple Check for Textbox values to make sure input is correct
@@ -113,7 +133,6 @@ namespace Diplom
 
         //Next three methods are for hiding and showing different input fields
         ///based on which button user clicks = which method they need
-        ////made realy sloopy but so what? It works :p
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             firstMethod.Visibility = Visibility.Visible;
@@ -125,12 +144,13 @@ namespace Diplom
             methodnum = 1;
             Application.Current.MainWindow = this;
             Application.Current.MainWindow.Width = 850;
-            Application.Current.MainWindow.Height = 325;
-            ResultGrid.Margin = new Thickness(18, 160, 0, 0);
+            Application.Current.MainWindow.Height = 450;
+            ResultGrid.Margin = new Thickness(18, 285, 0, 0);
             ResultGrid.Width = 800;
             Note.Visibility = Visibility.Collapsed;
             Copy.Margin = new Thickness(705, 35, 0, 0);
             resultQuery.Width = 700;
+            Clear();
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
@@ -143,13 +163,14 @@ namespace Diplom
             BtnM3.BorderBrush = new SolidColorBrush(Colors.Gray);
             methodnum = 2;
             Application.Current.MainWindow = this;
-            Application.Current.MainWindow.Width = 1325;
-            Application.Current.MainWindow.Height = 325;
-            ResultGrid.Margin = new Thickness(18, 160, 0, 0);
-            ResultGrid.Width = 1275;
+            Application.Current.MainWindow.Width = 1575;
+            Application.Current.MainWindow.Height = 450;
+            ResultGrid.Margin = new Thickness(18, 285, 0, 0);
+            ResultGrid.Width = 1525;
             Note.Visibility = Visibility.Collapsed;
-            Copy.Margin = new Thickness(1175, 35, 0, 0);
-            resultQuery.Width = 1170;
+            Copy.Margin = new Thickness(1425, 35, 0, 0);
+            resultQuery.Width = 1420;
+            Clear();
         }
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
@@ -162,14 +183,61 @@ namespace Diplom
             BtnM3.BorderBrush = new SolidColorBrush(Colors.LightSkyBlue);
             methodnum = 3;
             Application.Current.MainWindow = this;
-            Application.Current.MainWindow.Width = 1325;
-            Application.Current.MainWindow.Height = 400;
-            ResultGrid.Margin = new Thickness(18, 235, 0, 0);
-            ResultGrid.Width = 1275;
+            Application.Current.MainWindow.Width = 1575;
+            Application.Current.MainWindow.Height = 450;
+            ResultGrid.Margin = new Thickness(18, 285, 0, 0);
+            ResultGrid.Width = 1525;
             Note.Visibility = Visibility.Visible;
-            Copy.Margin = new Thickness(1175, 35, 0, 0);
-            resultQuery.Width = 1170;
+            Copy.Margin = new Thickness(1425, 35, 0, 0);
+            resultQuery.Width = 1420;
+            Clear();
         }
+        //Clearing values before swithcing between them:
+        private void Clear()
+        {
+            foreach (var control in firstMethod.Children)
+            {
+                if (control is TextBox)
+                {
+                    ((TextBox)control).Clear();
+                }
+                else if (control is ListBox)
+                {
+                    ListBox listBox = (ListBox)control;
+                    listBox.UnselectAll();
+                }
+            }
+            foreach (var control in secondMethod.Children)
+            {
+                if (control is TextBox)
+                {
+                    ((TextBox)control).Clear();
+                }
+                else if (control is ListBox)
+                {
+                    ListBox listBox = (ListBox)control;
+                    listBox.UnselectAll();
+                }
+            }
+            foreach (var control in thirdMethod.Children)
+            {
+                if (control is TextBox)
+                {
+                    ((TextBox)control).Clear();
+                }
+                else if (control is ListBox)
+                {
+                    ListBox listBox = (ListBox)control;
+                    listBox.UnselectAll();
+                }
+            }
+            while (counter>1)
+            {
+                DeactivateOreGrid(counter);
+                counter--;
+            }
+        }
+
         //To decide which method we make
         private void Button_Click_3(object sender, RoutedEventArgs e)
         {
@@ -385,6 +453,7 @@ namespace Diplom
                 ResultGrid.Margin = new Thickness(18, 160 + (i + 1) * 75, 0, 0);
                 Application.Current.MainWindow = this;
                 Application.Current.MainWindow.Height = this.Height + 75;
+                thirdMethod.Height = thirdMethod.Height + 75;
                 switch (i)
                 {
 
@@ -438,13 +507,14 @@ namespace Diplom
         }
         private void DeactivateOreGrid(int i = 1)
         {
-            if (i >= 0)
+            if (i >= 1)
             {
                 AddOreBtn.Margin = new Thickness(0, (i - 1) * 75, 0, 0);
                 DelOreBtn.Margin = new Thickness(135, (i - 1) * 75, 0, 0);
                 ResultGrid.Margin = new Thickness(18, 160 + (i - 1) * 75, 0, 0);
                 Application.Current.MainWindow = this;
-                Application.Current.MainWindow.Height = this.Height - 75;
+                //Application.Current.MainWindow.Height = this.Height - 75;//makes height negative, remained height doesn't seem to affect the work and I don't wanna spend time to fix it :P
+                thirdMethod.Height = thirdMethod.Height - 75;
                 switch (i - 1)
                 {
 
