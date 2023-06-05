@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Diplom"
         mc:Ignorable="d"
-        Title="Генератор сортов полезного ископаемого" Height="450" Width="850"  ResizeMode="NoResize">
+        Title="Генератор сортов полезного ископаемого" Height="450" Width="950"  ResizeMode="NoResize">
     <Window.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
@@ -14,16 +14,19 @@
         </ResourceDictionary>
     </Window.Resources>
     <Grid x:Name="mainGrid" Height="Auto" Width="Auto">
-        <Grid x:Name="menuGrid" HorizontalAlignment="Left" Height="32" VerticalAlignment="Top" Width="1300">
+        <Grid x:Name="menuGrid" HorizontalAlignment="Left" Height="32" VerticalAlignment="Top" Width="950">
             <Border BorderBrush="Gray" BorderThickness="1" HorizontalAlignment="Left" Height="32" VerticalAlignment="Top" Width="1600" Grid.ColumnSpan="2"/>
 
-            <Label x:Name="currentHint" Content="Метод 1 и Метод 2 собирают запрос в окно parcel" HorizontalAlignment="Left" VerticalAlignment="Top" Height="32" Width="510" Margin="335,0,0,0" FontSize="14"/>
+            <Label x:Name="currentHint" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Height="32" Width="510" Margin="335,0,0,0" FontSize="14"/>
+
+            <Button x:Name="langBtn" Content="ru" HorizontalAlignment="Right" Margin="0,0,25,0" VerticalAlignment="Center" Background="Transparent" BorderBrush="Transparent" Click="RadioButton_Click"/>
 
             <Button x:Name="BtnM3" Content="Метод 3" HorizontalAlignment="Left" VerticalAlignment="Top" Height="32" Width="110" Margin="220,0,0,0" Click="Button_Click_2" MouseEnter="changeCurrentHint" BorderBrush="Gray"/>
 
             <Button x:Name="BtnM2" Content="Метод 2" HorizontalAlignment="Left" VerticalAlignment="Top" Height="32" Width="110" Margin="110,0,0,0" Click="Button_Click_1" MouseEnter="changeCurrentHint" BorderBrush="Gray"/>
 
             <Button x:Name="BtnM1" Content="Метод 1" HorizontalAlignment="Left" VerticalAlignment="Top" Height="32" Width="110" Click="Button_Click" MouseEnter="changeCurrentHint" BorderBrush="LightSkyBlue"/>
+            
         </Grid>
         <Grid x:Name="firstMethod" Visibility="Visible" HorizontalAlignment="Left" Height="180" VerticalAlignment="Top" Width="800" Margin="18,37,0,0" Grid.ColumnSpan="2">
             <Label Content="Полезное ископаемое" HorizontalAlignment="Left" VerticalAlignment="Top" Height="Auto" Width="Auto" Margin="0,0,0,0"/>
@@ -37,7 +40,7 @@
                 <ListBoxItem>меньше</ListBoxItem>
                 <ListBoxItem>меньше или равно</ListBoxItem>
                 <ListBoxItem>равно</ListBoxItem>
-                <ListBoxItem>неравное</ListBoxItem>
+                <ListBoxItem>неравно</ListBoxItem>
             </ListBox>
             <Label Content="Условие верно" HorizontalAlignment="Left" Margin="430,0,0,0" VerticalAlignment="Top" Height="Auto" Width="Auto"/>
             <TextBox x:Name="firstResultM1" HorizontalAlignment="Left" Margin="430,35,0,0" HorizontalContentAlignment="Center" VerticalAlignment="Top" Width="100" Height="25" />
@@ -56,7 +59,7 @@
                 <ListBoxItem>меньше</ListBoxItem>
                 <ListBoxItem>меньше или равно</ListBoxItem>
                 <ListBoxItem>равно</ListBoxItem>
-                <ListBoxItem>неравное</ListBoxItem>
+                <ListBoxItem>неравно</ListBoxItem>
             </ListBox>
 
             <Label Content="Значение 2" HorizontalAlignment="Left" Margin="430,0,0,0" VerticalAlignment="Top" Height="Auto" Width="Auto"/>
@@ -68,7 +71,7 @@
                 <ListBoxItem>меньше</ListBoxItem>
                 <ListBoxItem>меньше или равно</ListBoxItem>
                 <ListBoxItem>равно</ListBoxItem>
-                <ListBoxItem>неравное</ListBoxItem>
+                <ListBoxItem>неравно</ListBoxItem>
             </ListBox>
 
             <Label Content="Значение 3" HorizontalAlignment="Left" Margin="700,0,0,0" VerticalAlignment="Top" Height="Auto" Width="Auto"/>
@@ -80,7 +83,7 @@
                 <ListBoxItem>меньше</ListBoxItem>
                 <ListBoxItem>меньше или равно</ListBoxItem>
                 <ListBoxItem>равно</ListBoxItem>
-                <ListBoxItem>неравное</ListBoxItem>
+                <ListBoxItem>неравно</ListBoxItem>
             </ListBox>
 
             <Label Content="Значение 4" HorizontalAlignment="Left" Margin="970,0,0,0" VerticalAlignment="Top" Height="Auto" Width="Auto"/>
@@ -92,7 +95,7 @@
                 <ListBoxItem>меньше</ListBoxItem>
                 <ListBoxItem>меньше или равно</ListBoxItem>
                 <ListBoxItem>равно</ListBoxItem>
-                <ListBoxItem>неравное</ListBoxItem>
+                <ListBoxItem>неравно</ListBoxItem>
             </ListBox>
 
             <Label Content="Значение 5" HorizontalAlignment="Left" Margin="1240,0,0,0" VerticalAlignment="Top" Height="Auto" Width="Auto"/>
@@ -104,7 +107,7 @@
                 <ListBoxItem>меньше</ListBoxItem>
                 <ListBoxItem>меньше или равно</ListBoxItem>
                 <ListBoxItem>равно</ListBoxItem>
-                <ListBoxItem>неравное</ListBoxItem>
+                <ListBoxItem>неравно</ListBoxItem>
             </ListBox>
 
             <Label Content="Условие 1 верно" HorizontalAlignment="Left" Margin="160,64,0,0" VerticalAlignment="Top" Height="Auto" Width="Auto"/>
@@ -133,7 +136,7 @@
                 <ListBoxItem>меньше</ListBoxItem>
                 <ListBoxItem>меньше или равно</ListBoxItem>
                 <ListBoxItem>равно</ListBoxItem>
-                <ListBoxItem>неравное</ListBoxItem>
+                <ListBoxItem>неравно</ListBoxItem>
             </ListBox>
 
             <Label Content="Значение 2" HorizontalAlignment="Left" Margin="430,0,0,0" VerticalAlignment="Top" Height="Auto" Width="Auto"/>
@@ -145,7 +148,7 @@
                 <ListBoxItem>меньше</ListBoxItem>
                 <ListBoxItem>меньше или равно</ListBoxItem>
                 <ListBoxItem>равно</ListBoxItem>
-                <ListBoxItem>неравное</ListBoxItem>
+                <ListBoxItem>неравно</ListBoxItem>
             </ListBox>
 
             <Label Content="Значение 3" HorizontalAlignment="Left" Margin="700,0,0,0" VerticalAlignment="Top" Height="Auto" Width="Auto"/>
@@ -157,7 +160,7 @@
                 <ListBoxItem>меньше</ListBoxItem>
                 <ListBoxItem>меньше или равно</ListBoxItem>
                 <ListBoxItem>равно</ListBoxItem>
-                <ListBoxItem>неравное</ListBoxItem>
+                <ListBoxItem>неравно</ListBoxItem>
             </ListBox>
 
             <Label Content="Значение 4" HorizontalAlignment="Left" Margin="970,0,0,0" VerticalAlignment="Top" Height="Auto" Width="Auto"/>
@@ -169,7 +172,7 @@
                 <ListBoxItem>меньше</ListBoxItem>
                 <ListBoxItem>меньше или равно</ListBoxItem>
                 <ListBoxItem>равно</ListBoxItem>
-                <ListBoxItem>неравное</ListBoxItem>
+                <ListBoxItem>неравно</ListBoxItem>
             </ListBox>
 
             <Label Content="Значение 5" HorizontalAlignment="Left" Margin="1240,0,0,0" VerticalAlignment="Top" Height="Auto" Width="Auto"/>
@@ -181,7 +184,7 @@
                 <ListBoxItem>меньше</ListBoxItem>
                 <ListBoxItem>меньше или равно</ListBoxItem>
                 <ListBoxItem>равно</ListBoxItem>
-                <ListBoxItem>неравное</ListBoxItem>
+                <ListBoxItem>неравно</ListBoxItem>
             </ListBox>
 
             <Label Content="Условие 1 верно" HorizontalAlignment="Left" Margin="430,65,0,0" VerticalAlignment="Top" Height="Auto" Width="Auto"/>
@@ -200,7 +203,7 @@
             <Grid x:Name="AddOre" HorizontalAlignment="Left" VerticalAlignment="Top" Width="420" Height="Auto" Margin="0,65,0,0" Visibility="Visible">
                 <Button x:Name="AddOreBtn" Width="120" Height="25" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,75,0,0" Click="AddOreBtn_Click">Добавить руду</Button>
                 <Button x:Name="DelOreBtn" Width="120" Height="25" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="135,75,0,0" Visibility="Collapsed" Click="DelOreBtn_Click">Убрать руду</Button>
-                
+
                 <Grid x:Name="AOG_0" Height="65" Width="Auto" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,0,0,0" Visibility="Visible">
                     <Label Height="Auto" Width="Auto" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="-8,0,0,0">Полезное ископаемое</Label>
                     <TextBox x:Name="AON_0" Height="25" Width="120" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Center" Margin="0,35,0,0"></TextBox>
@@ -213,7 +216,7 @@
                         <ListBoxItem>меньше</ListBoxItem>
                         <ListBoxItem>меньше или равно</ListBoxItem>
                         <ListBoxItem>равно</ListBoxItem>
-                        <ListBoxItem>неравное</ListBoxItem>
+                        <ListBoxItem>неравно</ListBoxItem>
                     </ListBox>
                 </Grid>
                 <Grid x:Name="AOG_1" Height="65" Width="Auto" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,0,0,0" Visibility="Collapsed">
@@ -228,7 +231,7 @@
                         <ListBoxItem>меньше</ListBoxItem>
                         <ListBoxItem>меньше или равно</ListBoxItem>
                         <ListBoxItem>равно</ListBoxItem>
-                        <ListBoxItem>неравное</ListBoxItem>
+                        <ListBoxItem>неравно</ListBoxItem>
                     </ListBox>
                 </Grid>
                 <Grid x:Name="AOG_2" Height="65" Width="Auto" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,35,0,0" Visibility="Collapsed">
@@ -243,7 +246,7 @@
                         <ListBoxItem>меньше</ListBoxItem>
                         <ListBoxItem>меньше или равно</ListBoxItem>
                         <ListBoxItem>равно</ListBoxItem>
-                        <ListBoxItem>неравное</ListBoxItem>
+                        <ListBoxItem>неравно</ListBoxItem>
                     </ListBox>
                 </Grid>
                 <Grid x:Name="AOG_3" Height="65" Width="Auto" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,35,0,0" Visibility="Collapsed">
@@ -258,7 +261,7 @@
                         <ListBoxItem>меньше</ListBoxItem>
                         <ListBoxItem>меньше или равно</ListBoxItem>
                         <ListBoxItem>равно</ListBoxItem>
-                        <ListBoxItem>неравное</ListBoxItem>
+                        <ListBoxItem>неравно</ListBoxItem>
                     </ListBox>
                 </Grid>
                 <Grid x:Name="AOG_4" Height="65" Width="Auto" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,35,0,0" Visibility="Collapsed">
@@ -273,7 +276,7 @@
                         <ListBoxItem>меньше</ListBoxItem>
                         <ListBoxItem>меньше или равно</ListBoxItem>
                         <ListBoxItem>равно</ListBoxItem>
-                        <ListBoxItem>неравное</ListBoxItem>
+                        <ListBoxItem>неравно</ListBoxItem>
                     </ListBox>
                 </Grid>
                 <Grid x:Name="AOG_5" Height="65" Width="Auto" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,35,0,0" Visibility="Collapsed">
@@ -288,7 +291,7 @@
                         <ListBoxItem>меньше</ListBoxItem>
                         <ListBoxItem>меньше или равно</ListBoxItem>
                         <ListBoxItem>равно</ListBoxItem>
-                        <ListBoxItem>неравное</ListBoxItem>
+                        <ListBoxItem>неравно</ListBoxItem>
                     </ListBox>
                 </Grid>
                 <Grid x:Name="AOG_6" Height="65" Width="Auto" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,35,0,0" Visibility="Collapsed">
@@ -303,7 +306,7 @@
                         <ListBoxItem>меньше</ListBoxItem>
                         <ListBoxItem>меньше или равно</ListBoxItem>
                         <ListBoxItem>равно</ListBoxItem>
-                        <ListBoxItem>неравное</ListBoxItem>
+                        <ListBoxItem>неравно</ListBoxItem>
                     </ListBox>
                 </Grid>
                 <Grid x:Name="AOG_7" Height="65" Width="Auto" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,35,0,0" Visibility="Collapsed">
@@ -318,7 +321,7 @@
                         <ListBoxItem>меньше</ListBoxItem>
                         <ListBoxItem>меньше или равно</ListBoxItem>
                         <ListBoxItem>равно</ListBoxItem>
-                        <ListBoxItem>неравное</ListBoxItem>
+                        <ListBoxItem>неравно</ListBoxItem>
                     </ListBox>
                 </Grid>
                 <Grid x:Name="AOG_8" Height="65" Width="Auto" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,35,0,0" Visibility="Collapsed">
@@ -333,7 +336,7 @@
                         <ListBoxItem>меньше</ListBoxItem>
                         <ListBoxItem>меньше или равно</ListBoxItem>
                         <ListBoxItem>равно</ListBoxItem>
-                        <ListBoxItem>неравное</ListBoxItem>
+                        <ListBoxItem>неравно</ListBoxItem>
                     </ListBox>
                 </Grid>
                 <Grid x:Name="AOG_9" Height="65" Width="Auto" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,35,0,0" Visibility="Collapsed">
@@ -348,16 +351,16 @@
                         <ListBoxItem>меньше</ListBoxItem>
                         <ListBoxItem>меньше или равно</ListBoxItem>
                         <ListBoxItem>равно</ListBoxItem>
-                        <ListBoxItem>неравное</ListBoxItem>
+                        <ListBoxItem>неравно</ListBoxItem>
                     </ListBox>
                 </Grid>
 
             </Grid>
         </Grid>
-        <Grid x:Name="ResultGrid" HorizontalAlignment="Left" Height="125" VerticalAlignment="Top" Width="800" Margin="18,285,0,0" Grid.ColumnSpan="2">
+        <Grid x:Name="ResultGrid" HorizontalAlignment="Left" Height="125" VerticalAlignment="Top" Width="900" Margin="18,285,0,0" Grid.ColumnSpan="2">
             <Button Content="Старт" HorizontalAlignment="Left" VerticalAlignment="Top" Height="25" Width="100" FontSize="14" Click="Button_Click_3"/>
-            <TextBox x:Name="resultQuery" HorizontalAlignment="Left" Margin="0,35,0,0" HorizontalContentAlignment="Center" VerticalAlignment="Top" Width="700" Height="85"/>
-            <Button x:Name="Copy" Content="Копировать" HorizontalAlignment="Left" Margin="705,35,0,0" VerticalAlignment="Top" Height="85" Width="85" FontSize="14" Click="Button_Click_4"/>
+            <TextBox x:Name="resultQuery" HorizontalAlignment="Left" Margin="0,35,0,0" HorizontalContentAlignment="Center" VerticalAlignment="Top" Width="800" Height="85"/>
+            <Button x:Name="Copy" Content="Копировать" HorizontalAlignment="Left" Margin="815,35,0,0" VerticalAlignment="Top" Height="85" Width="85" FontSize="14" Click="Button_Click_4"/>
             <Label x:Name="Note" Content="Внимание: Метод 3 выводит c# код!" HorizontalAlignment="Left" Height="30" Margin="116,0,0,0" VerticalAlignment="Top" Width="641" FontSize="14" Foreground="Blue" Visibility="Collapsed"/>
 
         </Grid>

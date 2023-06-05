@@ -28,6 +28,62 @@ namespace Diplom
     ///
     public partial class MainWindow : Window
     {
+        public void ReplaceContentWithDictionaryValues(Dictionary<string, string> dictionary, DependencyObject parent)
+        {
+            int childCount = VisualTreeHelper.GetChildrenCount(parent);
+
+            for (int i = 0; i < childCount; i++)
+            {
+                var child = VisualTreeHelper.GetChild(parent, i);
+                var frameworkElement = child as FrameworkElement;
+
+                if (frameworkElement != null)
+                {
+                    if (frameworkElement is Label label)
+                    {
+                        string content = label.Content.ToString();
+                        foreach (var key in dictionary.Keys)
+                        {
+                            if (content.Contains(key))
+                            {
+                                content = content.Replace(key, dictionary[key]);
+                            }
+                        }
+                        label.Content = content;
+                    }
+                    else if (frameworkElement is Button button)
+                    {
+                        string content = button.Content.ToString();
+                        foreach (var key in dictionary.Keys)
+                        {
+                            if (content.Contains(key))
+                            {
+                                content = content.Replace(key, dictionary[key]);
+                            }
+                        }
+                        button.Content = content;
+                    }
+                    else if (frameworkElement is ListBox listBox)
+                    {
+                        foreach (ListBoxItem listBoxItem in listBox.Items)
+                        {
+                            string content = listBoxItem.Content.ToString();
+                            foreach (var key in dictionary.Keys)
+                            {
+                                if (content.Contains(key))
+                                {
+                                    content = content.Replace(key, dictionary[key]);
+                                }
+                            }
+                            listBoxItem.Content = content;
+                        }
+                    }
+                }
+
+                ReplaceContentWithDictionaryValues(dictionary, child); // Recursive call to handle children of children
+            }
+        }
+
         private void MainWindow_SizeChanged(object sender, SizeChangedEventArgs e)
         {
             Application.Current.MainWindow = this;
@@ -52,11 +108,63 @@ namespace Diplom
         }
         private int counter = 1;
         private string[] allHints = { "Выберите ВСЕ условия перед Стартом (Кликнуть по нужному тексту в списке)", "Метод 1 и Метод 2 собирают запрос в окно parcel", "Метод 3 собирает c# код для обработки", "Для ввода десятичных значений используйте \".\" на Numpad"};
-
+        private Dictionary<string, string> ruTOengDictionary = new Dictionary<string, string>();
+        private Dictionary<string, string> engTOruDictionary = new Dictionary<string, string>();
+        private bool langFlag = false;
+        private string errorMsg = "\"Ошибка!\nВыберите ВСЕ условия перед стартом! \n(Кликнуть по нужному тексту в списке)";
         private byte methodnum = 1;
+        void fillDictionaries()
+        {
+            ruTOengDictionary.Add("Метод 3", "Method 3");
+            engTOruDictionary.Add("Method 3", "Метод 3");
+            ruTOengDictionary.Add("Метод 2", "Method 1");
+            engTOruDictionary.Add("Method 2", "Метод 1");
+            ruTOengDictionary.Add("Метод 1", "Method 1");
+            engTOruDictionary.Add("Method 1", "Метод 1");
+            ruTOengDictionary.Add("Полезное ископаемое", "Useful component");
+            engTOruDictionary.Add("Useful component", "Полезное ископаемое");
+            ruTOengDictionary.Add("Значение", "Value");
+            engTOruDictionary.Add("Value", "Значение");
+            ruTOengDictionary.Add("Условие", "Condition");
+            engTOruDictionary.Add("Condition", "Условие");
+            ruTOengDictionary.Add("верно", "true");
+            engTOruDictionary.Add("true", "верно");
+            ruTOengDictionary.Add("Иначе", "Else");
+            engTOruDictionary.Add("Else", "Иначе");
+            ruTOengDictionary.Add("больше", "more");
+            engTOruDictionary.Add("more", "больше");
+            ruTOengDictionary.Add("или", "or");
+            engTOruDictionary.Add("ore", "руду");
+            engTOruDictionary.Add("or", "или");
+            ruTOengDictionary.Add("меньше", "less");
+            engTOruDictionary.Add("less", "меньше");
+            ruTOengDictionary.Add("равно", "equal");
+            engTOruDictionary.Add("equal", "равно");
+            ruTOengDictionary.Add("не", "non");
+            engTOruDictionary.Add("non", "не");
+            ruTOengDictionary.Add("Старт", "Start");
+            engTOruDictionary.Add("Start", "Старт");
+            ruTOengDictionary.Add("Копировать", "Copy");
+            engTOruDictionary.Add("Copy", "Копировать");
+            ruTOengDictionary.Add("Внимание", "Warning");
+            engTOruDictionary.Add("Warning", "Внимание");
+            ruTOengDictionary.Add("выводит", "generates");
+            engTOruDictionary.Add("generates", "выводит");
+            ruTOengDictionary.Add("код", "code");
+            engTOruDictionary.Add("code", "код");
+            ruTOengDictionary.Add("Добавить", "Add");
+            engTOruDictionary.Add("Add", "Добавить");
+            ruTOengDictionary.Add("Убрать", "Remove");
+            engTOruDictionary.Add("Remove", "Убрать");
+            ruTOengDictionary.Add("руду", "ore");
+            //ruTOengDictionary.Add("", "");
+            //engTOruDictionary.Add("", "");
+
+        }
         public MainWindow()
         {
             InitializeComponent();
+            fillDictionaries();
             this.SizeChanged += MainWindow_SizeChanged;
         }
 
@@ -116,7 +224,25 @@ namespace Diplom
                 case "равно":
                     return "==";
                 //break;
-                case "неравное":
+                case "неравно":
+                    return "!=";
+                //break;
+                case "more":
+                    return ">";
+                //break;
+                case "more or equal":
+                    return ">=";
+                //break;
+                case "less":
+                    return "<";
+                //break;
+                case "less or equal":
+                    return "<=";
+                //break;
+                case "equal":
+                    return "==";
+                //break;
+                case "nonequal":
                     return "!=";
                 //break;
                 default:
@@ -143,13 +269,13 @@ namespace Diplom
             BtnM3.BorderBrush = new SolidColorBrush(Colors.Gray);
             methodnum = 1;
             Application.Current.MainWindow = this;
-            Application.Current.MainWindow.Width = 850;
+            Application.Current.MainWindow.Width = 950;
             Application.Current.MainWindow.Height = 450;
             ResultGrid.Margin = new Thickness(18, 285, 0, 0);
-            ResultGrid.Width = 800;
+            ResultGrid.Width = 900;
             Note.Visibility = Visibility.Collapsed;
-            Copy.Margin = new Thickness(705, 35, 0, 0);
-            resultQuery.Width = 700;
+            Copy.Margin = new Thickness(815, 35, 0, 0);
+            resultQuery.Width = 800;
             Clear();
         }
 
@@ -168,7 +294,7 @@ namespace Diplom
             ResultGrid.Margin = new Thickness(18, 285, 0, 0);
             ResultGrid.Width = 1525;
             Note.Visibility = Visibility.Collapsed;
-            Copy.Margin = new Thickness(1425, 35, 0, 0);
+            Copy.Margin = new Thickness(1435, 35, 0, 0);
             resultQuery.Width = 1420;
             Clear();
         }
@@ -188,7 +314,7 @@ namespace Diplom
             ResultGrid.Margin = new Thickness(18, 285, 0, 0);
             ResultGrid.Width = 1525;
             Note.Visibility = Visibility.Visible;
-            Copy.Margin = new Thickness(1425, 35, 0, 0);
+            Copy.Margin = new Thickness(1435, 35, 0, 0);
             resultQuery.Width = 1420;
             Clear();
         }
@@ -236,6 +362,7 @@ namespace Diplom
                 DeactivateOreGrid(counter);
                 counter--;
             }
+            menuGrid.Width = Application.Current.MainWindow.Width;
         }
 
         //To decide which method we make
@@ -277,7 +404,7 @@ namespace Diplom
             catch (NullReferenceException e)
             {
                 resultQuery.Foreground = Brushes.Red;
-                return "Ошибка!\nВыберите условие перед Стартом (Кликнуть по нужному тексту в списке)";
+                return errorMsg;
             }
         }
         private string secondM()
@@ -321,7 +448,7 @@ namespace Diplom
             catch (NullReferenceException e)
             {
                 resultQuery.Foreground = Brushes.Red;
-                return "Ошибка!\nВыберите ВСЕ условия перед Стартом (Кликнуть по нужному тексту в списке)";
+                return errorMsg;
             }
         }
 
@@ -374,7 +501,7 @@ namespace Diplom
             catch (NullReferenceException e)
             {
                 resultQuery.Foreground = Brushes.Red;
-                return "Ошибка!\nВыберите ВСЕ условия перед Стартом (Кликнуть по нужному тексту в списке)";
+                return errorMsg;
             }
         }
         private string[] GetAddOresInput(int i = 0)
@@ -596,6 +723,30 @@ namespace Diplom
             currentHint.Content = allHints[k];
         }
 
-        
+        private void RadioButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (!langFlag)
+            {
+                string[] newAllHints = { "Select ALL conditions before Start (Click on element in list)", "Method 1 and Method 2 build parcel", "Method 3 build c# code", "For input of decimals use \".\" on Numpad" };
+                allHints = newAllHints;
+                errorMsg = "\"Error!\nSelect All conditions before start! \n(Click on element in list)";
+                Application.Current.MainWindow.Title = "Generator of useful components\'s grades";
+                langBtn.Content = "eng";
+                ReplaceContentWithDictionaryValues(ruTOengDictionary, mainGrid);
+                currentHint.Content = "changed language to " + "english";
+                langFlag=!langFlag;
+            }
+            else
+            {
+                string[] newAllHints = { "Выберите ВСЕ условия перед стартом (Кликнуть по нужному тексту в списке)", "Метод 1 и Метод 2 собирают запрос в окно parcel", "Метод 3 собирает c# код для обработки", "Для ввода десятичных значений используйте \".\" на Numpad"};
+                allHints = newAllHints;
+                errorMsg = "\"Ошибка!\nВыберите ВСЕ условия перед стартом! \n(Кликнуть по нужному тексту в списке)";
+                Application.Current.MainWindow.Title = "Генератор сортов полезного ископаемого";
+                langBtn.Content = "ru";
+                ReplaceContentWithDictionaryValues(engTOruDictionary, mainGrid);
+                currentHint.Content = "поменял язык на " + "русский";//may also make this for several languages, i.e.: use index for switch instead of bool for if else?
+                langFlag = !langFlag;
+            }
+        }
     }
 }
