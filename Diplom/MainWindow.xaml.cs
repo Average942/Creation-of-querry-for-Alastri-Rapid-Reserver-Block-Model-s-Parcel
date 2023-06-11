@@ -430,12 +430,12 @@ namespace Diplom
                 };
                 string[] results =
                 {
-                    oreResult1M2.Text,//0
-                    oreResult2M2.Text,//1
-                    oreResult3M2.Text,//2
-                    oreResult4M2.Text,//3
-                    oreResult5M2.Text,//4
-                    oreResult6M2.Text,//5
+                    "\"" + oreResult1M2.Text + "\"",//0
+                    "\"" + oreResult2M2.Text + "\"",//1
+                    "\"" + oreResult3M2.Text + "\"",//2
+                    "\"" + oreResult4M2.Text + "\"",//3
+                    "\"" + oreResult5M2.Text + "\"",//4
+                    "\"" + oreResult6M2.Text + "\"",//5
                 };
                 string stroka = makeAnExpression(valueOne, valuesTwo[4], selectedListBoxItem_TextValues[4], results[4], results[5]);
                 for (int i = valuesTwo.Length - 2; i > -1; i--)
@@ -483,17 +483,17 @@ namespace Diplom
                 //-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
                 //Code Blocks
                 //-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-                string Method = "bool ConditionChecker(string symbol, double x, double y)\n{\n" + "\t" + "switch (symbol)\n{\n" + "\t\t" + "case \">\": return x > y" + ";\n" + "\t\t" + "case \">=\": return x >= y" + ";\n" + "\t\t" + "case \"<\": return x < y" + ";\n" + "\t\t" + "case \"<=\": return x <= y" + ";\n" + "\t\t" + "case \"==\": return x == y" + ";\n" + "\t\t" + "case \"!=\": return x != y" + ";\n" + "\t}\n}\n";
+                string Method = "bool ConditionChecker(string symbol, double x, double y)\n{\n" + "\t" + "switch (symbol)\n{\n" + "\t\t" + "case \">\": return x > y" + ";\n" + "\t\t" + "case \">=\": return x >= y" + ";\n" + "\t\t" + "case \"<\": return x < y" + ";\n" + "\t\t" + "case \"<=\": return x <= y" + ";\n" + "\t\t" + "case \"==\": return x == y" + ";\n" + "\t\t" + "case \"!=\": return x != y" + ";\n" + "\t}\t\nreturn false;\n}\n";
 
                 string mainIni = "//Input Data\n" + "\tdouble mainOreValue = " + "context.N(\"" + oreNameM3.Text + "\")" + ";\n" + "\tstring[] gradeOre = new string[] " + grades + ";\n" + "\tdouble[] mainOreControlValues = new double[] " + mControlV + ";\n" + "\tstring[] mainConditions = new string[] " + mConditions + ";\n";
                 string addIni = "int counter = " + counter + ";\n" + "\tdouble[] addOresValues = new double[] " + addNames + ";\n" + "\tdouble[] addOresControlValues = new double[] " + addValues + ";\n" + "\tstring[] addConditions = new string[] " + addConditions + ";\n";
 
-                string mainControl = "int k = 0;\n" + "do\n{\n" + "\tk++;\n" + "}while" + "(!(ConditionChecker(mainConditions[k], mainOreValue, mainOreControlValues[k]))&&(k<(mainOreControlValues.Length-1)))" + ";\n" + "if ((k == (mainOreControlValues.Length - 1))&&!(ConditionChecker(mainConditions[k], mainOreValue, mainOreControlValues[k]))) k++;\nif(k<0)k=0;\n";
+                string mainControl = "int k = 0;\n" + "do\n{\n" + "\tk++;\n" + "}while" + "(!(ConditionChecker(mainConditions[k], mainOreValue, mainOreControlValues[k]))&&(k<(mainOreControlValues.Length-1)))" + ";\n" + "if ((k == (mainOreControlValues.Length - 1))&&!(ConditionChecker(mainConditions[k], mainOreValue, mainOreControlValues[k]))) k++;\n";
                 string addControl = "for (int i = 0; i < counter; i++)\n{\n" + "\tif (ConditionChecker(addConditions[i], addOresValues[i], addOresControlValues[i]))k--;\n" + "}\n";
-                string output = "return gradeOre[k];";
+                string output = "if(k<0)k=0;\nreturn gradeOre[k];";
                 //
                 //Assembling Code
-                string ModelMaket = "using System;\nusing System.Collections.Generic;\nusing System.Text;\nusing System.Linq;\nusing Alastri.Scripting;\nusing Alastri.BlockModel.Engine.CustomVariables;\n\npublic class OreType : ITextCustomVariable\n{\n\tprivate" + Method + "\n\tpublic string GetText(CustomVariablesContext context)\n\t{\n\t\t" + mainIni + addIni + mainControl + addControl + output + "\n\t}\n}";
+                string ModelMaket = "using System;\nusing System.Collections.Generic;\nusing System.Text;\nusing System.Linq;\nusing Alastri.Scripting;\nusing Alastri.BlockModel.Engine.CustomVariables;\n\npublic class OreType : ITextCustomVariable\n{\n\tprivate " + Method + "\n\tpublic string GetText(CustomVariablesContext context)\n\t{\n\t\t" + mainIni + addIni + mainControl + addControl + output + "\n\t}\n}";
 
 
                 return ModelMaket;

@@ -29,7 +29,7 @@
             
         </Grid>
         <Grid x:Name="firstMethod" Visibility="Visible" HorizontalAlignment="Left" Height="180" VerticalAlignment="Top" Width="800" Margin="18,37,0,0" Grid.ColumnSpan="2">
-            <Label Content="Полезное ископаемое" HorizontalAlignment="Left" VerticalAlignment="Top" Height="Auto" Width="Auto" Margin="0,0,0,0"/>
+            <Label Content="Полезное ископаемое" HorizontalAlignment="Left" VerticalAlignment="Top" Height="Auto" Width="Auto" Margin="-8,0,0,0"/>
             <TextBox x:Name="oreNameM1" HorizontalAlignment="Left" Margin="0,35,0,0" HorizontalContentAlignment="Center" VerticalAlignment="Top" Width="135" Height="25"/>
             <Label Content="Значение" HorizontalAlignment="Left" Margin="165,0,0,0" VerticalAlignment="Top" Height="Auto" Width="Auto" />
             <TextBox x:Name="oreValueM1" HorizontalAlignment="Left" Margin="165,35,0,0" HorizontalContentAlignment="Center" VerticalAlignment="Top" Width="65" Height="25" PreviewKeyDown="isNumber" MouseEnter="changeCurrentHint"/>
